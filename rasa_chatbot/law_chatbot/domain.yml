@@ -29,6 +29,1186 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  entities:
+  - destination
+  slots: destination
+  type: text
+  auto_fill: true
+
+  utter_law:
+  - text: "
+  - '(1)Where any person having sufficient means, neglects or unreasonably refuses to
+  maintain such person''s spouse who is unable to maintain himself or herself, theMagistrate
+  may, upon an application being made for maintenance and upon proof of such neglect
+  or unreasonable refusal, order such person to make a monthly allowance forthe maintenance
+  of such spouse at such monthly rate as the Magistrate thinks fit, having regard
+  to the income of such ''person and the means and circumstances of such spouse :''Provided
+  however, that no such order shall be made if the applicant spouse is living in adultery
+  or both the spouses areliving separately by mutual consent.
+
+  (2)Where a parent having sufficient means neglects or refuses to maintain his or
+  her child who is unable to maintain himself or herself, the Magistrate may upon
+  an application being made for maintenance and upon proof of such neglector refusal,
+  order such parent to make a monthly allowance for the maintenance of such child
+  at such monthly rate as the Magistrate thinks fit, having regard to the income of
+  the parentsand the means and circumstances of the child. Order for Maintenance of
+  aspouse or child oradult offspring or disabled offspring. Maintenance Act, No. 37
+  of 1999 2 :Provided however, that no such order shall be made in the case of a non-marital
+  child unless parentage is established bycogent evidence to the satisfaction of the
+  Magistrate.
+
+  (3) Where a parent having sufficient means neglects or refuses to maintain his or
+  her adult offspring who is unable tomaintain himself or herself, the Magistrate
+  may upon anapplication being made for maintenance and upon proof of such neglect
+  or refusal, order such parent to make a monthly ''allowance for the Maintenance
+  of such adult offspring at suchmonthly rate as the Magistrate thinks fit, having
+  regard to theincome of the parents and the means and circumstances of theadult offspring
+  :'' Provided however, that no such order shall be made in the case of an non-marital
+  adult offspring unless parentage is established by cogent evidence to the satisfaction
+  of the Magistrate.
+
+  (4) where a parent having sufficient means neglects or refuses to maintain his or
+  her disabled offspring who is unable to maintain himself or herself, the Magistrate
+  may upon an application being made for maintenance and upon proof of such neglect
+  or refusal, order such parent to make a monthlyallowance for the maintenance of
+  such disabled off spring atsuch monthly rate as the Magistrate thinks fit, having
+  regard to the income of the parents and the means and circumstances ''of the disabled
+  offspring :''Provided however, that no such order shall be made in the case of a
+  disabled non-marital offspring unless parentage isestablished by cogent evidence
+  to the satisfaction of theMagistrate.
+
+  (5) Where an order is made by a Magistrate for the payment of an allowance pursuant
+  to an application madeunder subsection (1) or (2) or (3) or (4), such allowance
+  shallbe payable from the date on which the application for maintenance was made
+  to such court, unless the Magistrate, for good reasons to be recorded, orders payment
+  from any other date.Maintenance Act, No. 37 of 1999 3
+
+  (6) Where an application is made for the maintenance of a child, adult offspring
+  or disabled offspring, as the case may be under subsection (2), (3) or (4), as the
+  case may be, the court may, either on the application of the parties or of its own
+  motion, add the other parentas a party to such application and make such order asis
+  appropriate against one or both such parents. '
+- 3.No Order for an allowance for the maintenance of any child, adult offspring or
+  disabled offspring made under this Act shall, except for the purpose of recoveringmoney
+  previously due under such Order, be of anyforce or validity after the person in
+  respect of whomthe order is made ceases to be a child, \nadult offspringor disabled\
+  \ offspring, as the case may be, within the meaning of this Act.
+- An application for maintenance  may be made 2013\" \n(a) where such application\
+  \ is for the maintenance of a child or disabled offspring, by such child or disabledoffspring\
+  \ or by any person who has custody of such child or disabled offspring ; \n(b) where\
+  \ such application is for the maintenance of an adult offspring, by such adult offspring\
+  \ or where suchadult offspring is incapable of making such application,by any person\
+  \ on his or her behalf ; and \n(c) where such application is for the maintenance\
+  \ of a spouse, by such spouse or where such spouse isincapable of making such application,\
+  \ by any personon his or her behalf ;
+- An application for maintenance may be made to the Magistrates Court within whose
+  jurisdiction the applicantor the person in respect of whom the application is made
+  or the person against whom such application is made, resides.Application for maintenance.Period
+  of validity of Order.Maintenance Act, No. 37 of 1999 4
+- '(1) Subject to the provisions contained in section 10, where any person against
+  whom an order is made under section 2 or the provison to section 11 (1) (here inafter
+  called the Crespondent) neglects to comply with such order, the Magistrate may,
+  for every breach of the order, sentence suchrespondent for the whole or any part
+  of each months allowance in default, to simple or rigorous imprisonment for a term
+  which may extend to one month.
+
+  - (2) The Magistrate may, if an application is made in that behalf by any person
+  entitled to receive any payment underan order of maintenance, before passing a sentence
+  of imprisonment on the respondent, issue a warrant directing the amount in default
+  to be levied in the manner provided by lawfor levying fines imposed by Magistrates
+  in the Magistrate Courts.
+
+  - (2) Where a direction has been made under subsection (1) of this section and there
+  has been default in the deposit ofpayments as specified in such direction, the person
+  entitled to receive payment may report such default to the Court, and the Magistrate
+  may in such event, notice the respondent to showcause why he should not be dealt
+  with for such default, and if satisfied after due inquiry that there has been any
+  default, impose such punishment as is provided for by this Act forsuch default.'
+- On the application of any person receiving or ordered to pay a monthly allowance\
+  \ under the provisions of this Act and on proof of a change in the circumstances\
+  \ of any person for whose benifit or against whome an order for maintenancehas been\
+  \ made under this Act, the Magistrate may either canc such order or make such alteration\
+  \ in the allowance ordered 'as he deems fit :' \nProvided that such cancellation\
+  \ or alteration shall take effect from the date on which the application for cancellation\
+  \ oralteration was made to such Court, unless the Magistrate for good reasons to\
+  \ be recorded, orders otherwise.
+- A copy of the order of maintenance certified under the hand of the Magistrate shall\
+  \ be given without payment to the person in whose favour it is made, or to his or\
+  \ her guardian ora person having actual custody of such person, \nif any, or to\
+  \ the person to whom the allowance is to be paid, and the Court making such order\
+  \ or any Magistrate having jurisdiction overthe place where any such person or the\
+  \ respondent may be, shall, on the production of such order and on being satisfied\
+  \ as to the identity of the parties and the non-payment of theallowance due, proceed\
+  \ under section 5 or section 6. \nApplication for cancellation oforder or alterationin\
+  \ amount ofallowance.
+
+- '11.(1) Every application for an order of maintenance or to enforce an order of
+  maintenance shall be supported by an affidavit stating the facts in support of the
+  application, and the Magistrate shall, if satisfied that the facts set out in the
+  affidavit are sufficient, issue a summons together with a copy of such affidavit,
+  on the person against whom the appication is made to appear and to show cause why
+  the application should ''not be granted :'' Provided however the Magistrate may
+  in his discretion at any time make an interim order for the payment of monthly allowance
+  which shall remain operative until an order on theapplication is made, unless such
+  interim order is earlier varied or revoked, and such interim order shall have effect
+  from the date of the application or from such later date as the Magistrate may fix.
+
+  - (2) The Magistrate shall, after such inquiry as he may consider necessary, make
+  order allowing or refusing the ''application, and if necessary, may make an order
+  under section 5 or section 6 :'' Provided however, and application under this Act
+  shall not be rejected on account of any error, omission or irregularity in the application,
+  or affidavit required to be field in terms of subsection (1) of this section, or
+  in the summons issuedtherunder, or in other proceedings before, or during, an inquiry
+  under this Act, unless such error, omission or irregularity has caused material
+  prejudice to a party.'
+- '12.(1) The Magistrate may proceed in the manner provided in Chapter V and VI of
+  the Code of Criminal Procedure Act, No, 15 of 1979 to compel the attendance of the
+  person against whom the application is made and of any person required by the applicant
+  or the person against whom the application is made or by the Magistrate to give
+  evedence, and the production of any document necessary, for the purposes of the
+  inquiry.Commencement of Inquiry. Application to be in writing and process to be
+  free of stamp duty. Attendance of respondent andwitnesses.Maintenance Act, No. 37
+  of 1999 10
+
+  - (2) When the person against whom the application is made is absent, the provisions
+  of section 192 of the Code of Criminal Procedure Act, No. 15 of 1979 shall, mutatis
+  mutandis, apply.'
+- 13.Subject to subsection (2) of section 12 all evidence taken by a Magistrate under\
+  \ this Act shall be taken in thepresence of the person against whom the application\
+  \ is made or, when his personal attendance is not required by the Magistrate, in\
+  \ the presence of his attorney-at-law, if any, andshall be recorded in the manner\
+  \ prescribed for trials in the 'Magistrates Court :' \nProvided however, it shall\
+  \ not be necessary to frame a charge or to record the statement of the person aginst\
+  \ whom 'the application is made in the manner prescribed in the Code of Criminal\
+  \ Procedure Act, No.15 of 1979 :' Provided further, that in any proceedings under\
+  \ this Act it shall be competent for the person against whom the application is\
+  \ made to give evidence upon oath or affirmation as an ordinary witness, and each\
+  \ spouse shall be a competent witnessagainst the other spouse.
+- '(1) Any person who shall be dissatisfied with any order made by a Magistrate under
+  section 2 or section 11 may prefer an appeal to the relevant High Court established
+  by Article 154P of the Constitution in like manner as if the orderwas a final order\
+  pronounced by Magistrate''s Court in a criminal case or matter, and sections 320
+  to 330 (both inclusive) and sections 357 and 358 of the Code of CriminalProcedure
+  Act, No, 15 of 1979 shall, mutatis mutandis, apply ''to such appeal :'' Provided
+  however, notwithstanding anything to the contrary in section 323 of the Criminal
+  Procedure Code Act, No. 15 of 1979 such order under section 2 shall not be stayed
+  by reasonof such appeal, unless the High Court directs otherwise for ''reasons to
+  be recorded :'' Provided futher that the Magistrate in forwarding the record to
+  the High Court shall retain a copy of his order for purposes of enforcement.Proceedings
+  in absence ofrespondent. Form of proceedings. Right of Appeal.Maintenance Act, No.
+  37 of 1999 11
+
+  - (2) Any person dissatisfied with an order made by a High Court in the exercise
+  of its appellate jurisdiction under this section, may prefer an appeal therefrom
+  to the Supreme Court, on a question of law, with the leave of the High Court, andwhere
+  such leave is refused, with the special leave of theSupreme Court, first had an
+  obtained.'
+- 'The forms specified in the Schedule to this Act, with such variations as the circumstances
+  of any case may require, shall be used for the respective purposes therein mentioned. '
+- When disposing of any application or appeal under this Act, a court may order either
+  party to pay all or any partof the costs of such application or the costs of such
+  applicationand appeal, as the case may be, and the amount due under anysuch order
+  shall be recoverable as if it were a fine and indefault of payment, simple imprisonment
+  may be imposed fora period not exceeding one month.
+- Nothing in this Act shall be construed as depriving a person including a child,
+  adult offspring,disabled offspring spouse or parent of the right, if any to maintain
+  a civil actionfor maintenance.
+- 'The Married Women Property Ordinance is hereby amended by the repeal of section
+  26 and section 27 of that Ordinance. '
+- 'The Maintenance Ordinance is hereby repealed.
+
+  (1) Notwithstanding the repeal of the Maintenance Ordinance- (a) all proceedings
+  instituted under that Ordinance; and (b) all appeals from orders made under that
+  ordinance, and pending on the day preceeding the date of commecement of this Act,
+  shall be heard and disposed of , in all respects, as though such Ordinance had not
+  been repealed.Forms. Costs. Other actions not barred. Amendment of Chapter 56. Repeal
+  of Chapter ''91.'' Transitional provision.Maintenance Act, No. 37 of 1999 12 (2)
+  Every order made under the Maintenance Ordinance and pending on the day preceeding
+  the date of commencement of this Act, shall be deemed to be an order made under
+  thisAct and may be enforced accordingly.'
+- In the event of any inconsistency between the Sinhala and Tamil texts of this Act,
+  the Sinhala text shall prevail.
+- In this Act, unless the context otherwise requires \adopted\ when used in relation\
+  \ to a child or offspring\ means a child or offspring adopted under theprovisions\
+  \ of the Adoption of Children Ordinance \nor the Kandyan Law Declaration and Amendment\
+  \ Ordinance ; \adult offspring\ means any marital or non-marital or\ adopted\
+  \ offspring, who is eighteen years of age or isover eighteen years of age and under\
+  \ twentyfive years of age ; \"child\" means any marital or \nnon-marital or adopted\
+  \ offspring, who has not reached eighteen years of age ; \"disabled offspring\"\
+  \ means any marital or non-marital or\" asopted offspring of whatever age, who is\
+  \ or becomesphysically or mentally disabled so as to render such offspring incapable\
+  \ of earning a livelihood or of adequately supporting himself or herself;\n\"marital\"\
+  \ when used in relation to a child or offspring means a child or offspring born\
+  \ to parents who arenot married ; \"non-marital\" when used in relation to a child\
+  \ or offspring means a child or offspring born to parents who are not married ;\
+  \ \"parent\" includes an adoptive parent ; \"salary\" includes all allowances and\
+  \ wages.Sinhala text to\" prevail in case ofinconsistency.
+- (1) A victim of crime shall have the right-\n (a) to be treated with equality and\
+  \ with fairness and respect to the dignity and privacy of such victim of crime;Right\
+  \ of a victim of crime to a fair treatment\n (b) to receive prompt, adequate and\
+  \ fair redress including reparation and restitution which is commensurate with any\
+  \ injury, damage or loss suffered as a victim of crime;\n (c) to be protected from\
+  \ any injury or potential injury, including threats, intimidation, reprisal or retaliation;\n\
+  \ (d) to be treated for any physical, psychological, emotional or mental harm, including\
+  \ impairmentor disability, suffered as a victim of crime;\n (e) where such victim\
+  \ of crime is a child, to be treated in a manner that ensures the best interest\
+  \ of such child;\n (f) where such victim of crime is a female who has to be medically\
+  \ examined, to make a request to be so examined, by a female medical professional;\
+  \ and\n (g) where the offence is of sexual nature, to specify the gender of the\
+  \ officer who is to carry out the investigation or inquiry into the offence.
+- Whenever a victim of crime, in exercising the right where such victim of crime\
+  \ is a female who has to be medically examined, to make a request to be so examined,\
+  \ by a female medical professional; and where the offence is of sexual nature, to\
+  \ specify the gender of the officer who is to \n carry out the investigation or\
+  \ inquiry into the offence., makes a request to be examined by a female medical\
+  \ professional or specifies the gender of the officer who is to carry out the investigation\
+  \ or inquiry, as the case may be,  \n it shall be the duty of the State to make\
+  \ all endeavors to ensure that such medical examination or investigation or inquiry\
+  \ is carried out by a medical professional or investigation or inquiring officer,\
+  \ as the case may be, of the gender requested or specifiedby the victim of crime.
+- Right of a victim of crime to receive information on assistance, protection and\
+  \ remedies available to him\n A victim of crime shall have the right, upon a request\
+  \ made by such victim of crime, to be informed-\n (a) by the Authority or the Protection\
+  \ Division or any law enforcement authority-\n (i) of the measures of protection\
+  \ available to such victim of crime under this Act;\n (ii) of the legal remedies\
+  \ including delictual remedies available for the redress of any injury which such\
+  \  victim of crime has suffered; and\n (iii) of the time periods within which legal\
+  \ action shall be instituted to obtain legal remedies; and\n (b) by the Authority\
+  \ or the Protection Division, of the medical services, social services and other\
+  \ assistance available for the treatment of any harm caused to such victim of crime\
+  \ and the availability of any facilities to assist such victim of crime.
+- Right of a victim of crime in relation to complaints, inquiries, investigations\
+  \ \n  A victim of crime shall have the right-\n (a) to make a complaint or to cause\
+  \ a complaint to be made in relation to any conduct constituting an offence under\
+  \ this Act in the manner provided for- in this Act and to have such complaint recorded\
+  \ and investigated according to law;\n (b) without prejudice to any ongoing investigation\
+  \ or inquiry, to make representations to the investigation authority or inquiring\
+  \ authority in person or  through an attorney-at-law and receive a response within\
+  \ a reasonable period of time;\n (c) without prejudice to the prosecution and in\
+  \ accordance with the provisions of this Act, to be represented by an attorney-at-law\
+  \ at any stage of any proceedings before a court or Commission;\n (d) to make a\
+  \ request, if necessary, for legal aid to be provided by the State; \n (e) upon\
+  \ conviction of the offender and prior to the determination of the sentence, to\
+  \ submit to the court or Commission  a victim impact statement in accordance with\
+  \ section 8, either personally or through an attorney-at-law;\n (f) in the event\
+  \ of any person in authority considering the grant of a pardon or remission of sentence\
+  \ imposed on any person convicted of an offence, to receive notice there of and\
+  \ submit through the Authority to the person granting such pardon or remission,\
+  \ the manner in which the offence committed has impacted on such victim of crime\
+  \ physically, emotionally, psychologically,financially, professionally or in any\
+  \ other manner;\n (g) at any stage of the investigation, inquiry or proceeding,\
+  \ to make representations to the Attorney-General, through an attorney-at-law or\
+  \ in writing by such victim of crime or any person authorised by such victim of\
+  \ crime, as regards the manner in which the offence has impacted on him;\n (h) to\
+  \ receive from the Authority any relevant information and assistance that facilitates\
+  \ the attendance and participation at any proceedings before a court or Commission\
+  \ relating to the offence alleged to have been committed and to be present at any\
+  \  civil or criminal  judicial or quasi-judicial proceedings relating to an offence,\
+  \ including at the non-summary inquiries, trials,appeals and any applications in\
+  \ revision, unless the court, Commission or other tribunal determines,for reasons\
+  \ to be recorded, that future evidence of such victim of crime  would be  materially\
+  \ affected if he hears other evidence at such proceedings or,the due discharge of\
+  \ justice could be secured only by the exclusion of such victim of crime from being\
+  \ present during the hearing of certain parts of such proceedings.\n 
+- A victim of crime shall have the right, upon a request made by such victim of crime,\
+  \ to be informed -\n (a) by the officer-in-charge of the relevant police 'station\
+  \ or other authority conducting the investigation or inquiry into the alleged\n\
+  \  offence,of the progress of the investigation or inquiry:' Provided however, the\
+  \ release of such information may be withheld for justifiable reasons;\n (b) by\
+  \ the officer-in-charge of the relevant police station, other authority conducting\
+  \ the investigation or inquiry into the alleged offence,the Attorney-General or\
+  \ the Registrar of the relevant court, as the case may be, of the dates fixed for\
+  \ the hearing of the case or the progress or disposal of judicial proceedings relating\
+  \ to the alleged offence and the rights and entitlements of the victim ofcrime pertaining\
+  \ to such judicial proceedings;\n (c) by the officer-in-charge of the relevant police\
+  \ station, other authority conducting an investigation or inquiry into the alleged\
+  \ offence, the Attorney-General, the Registrar of the relevant court or the Superintendent\
+  \ of Prisons, as the case may be, of the date on which the proceedings in relation\
+  \ to any of the following is scheduled next -\n (i) release on bail or discharge\
+  \ of the suspect;\n (ii) institution of criminal proceedings against the accused;\n\
+  \ (iii) the conviction, acquittal, discharge or sentence of the suspect or the accused,\
+  \ as the case may be; or\n (iv) the release from prison of the suspect or convicted\
+  \ person.
+- (a) A victim of crime may make a request to the Registrar of court in the prescribed\
+  \ form accompanied bythe prescribed fee to obtain a copy of the order of courtrelating\
+  \ to the release on bail or otherwise of the suspect orthe accused.\n (b) Upon receipt\
+  \ of a request under paragraph (a), the\n Registrar of court shall proceed with\
+  \ such request in an expeditious manner.
+- In the event the person in authority considering the' grant of a pardon or remission\
+  \ of sentence referred to in below is the President, the duty of informing the Authority\
+  \ of such fact for the purpose of giving notice there of to the victim of crime\
+  \ shall be on the Secretary to the President, and in the event such person in authority\
+  \ is the Governor of a Province, such duty shall be on the Secretary to the Governor\
+  \ of such Province.\n  - in the event of any person in authority considering the\
+  \ grant of a pardon or remission of sentence imposed on any person convicted of\
+  \ an offence, to receive notice thereof and submit through the Authority to the\
+  \ person granting such pardon or remission, the manner in which the offence committed\
+  \ has impacted on such victim of crime physically, emotionally, psychologically,\
+  \ financially, professionally or in any other manner;
+- Right of a victim of crime to obtain copies of certain documents\n (1) A victim\
+  \ of crime or other person on behalf a victim of crime shall have the right to make\
+  \ an application in the prescribed form and on payment of the prescribed fee to\
+  \ anycourt or Commission to obtain certified copies of-\n (a) the cause of death\
+  \ form;\n (b) the postmortem report;Right of a victim of crime to obtain copies\
+  \ of certain documents \n (c) the medico-legal report;\n (d) the report of the Registrar\
+  \ of Finger Prints;\n (e) the report of the Government Analyst; or\n (f) any other\
+  \ report that may be useful to such victim of crime, \n that may have been filed\
+  \ in such court or Commission in relation to the investigation, inquiry or trial\
+  \ of the offence alleged to have been committed.\n (2) Where any court or Commission\
+  \ receives an application under subsection (1), such court or Commission-\n (a)\
+  \ shall issue such form or report, if the victim of crime proves to the satisfaction\
+  \ of such court or Commission of the necessity of such form or report;\n (b) shall\
+  \ not issue such form or report, if, in its opinion, the issuance of the same may\
+  \ cause prejudice to any ongoing investigation, inquiry, trial or proceeding.\n 
+- The onus of proving the necessity to obtain any form or report specified in below\
+  \ shall be on the person who makes such application. \n - A victim of crime or other\
+  \ person on behalf a victim of crime shall have the right to make an application\
+  \ in the prescribed form and on payment of the prescribed fee to anycourt or Commission\
+  \ to obtain certified copies of-\n (a) the cause of death form;\n (b) the postmortem\
+  \ report;Right of a victim of crime to obtain copies of certain documents 
+- Entitlements of a victim of crime to receive financial assistance\n A victim of\
+  \ crime shall be entitled to request and receive reasonable financial assistance\
+  \ from the Authority according to the availability of such assistance,  in consideration\
+  \ of the expenses incurred as a result of-\n (a) the offence alleged to have been\
+  \ committed; and\n (b) his participation in any proceedings before a court or Commission\
+  \ in relation to such offence. Entitlements of a victim of crime to receive financial\
+  \ assistance
+- A victim of crime shall be entitled to request and receive from the State any medical\
+  \ treatment including appropriate medical services, medicines and other medical\
+  \ facilities, or psychological or social   assistance in respect ofany harm suffered\
+  \ by him as a result of being a victim of crime.\n 
+- A victim of crime shall be entitled to request and receive necessary counseling\
+  \ or rehabilitation services from the State, through any means including through\
+  \ community-based organizations.\n 
+- A request for any medical treatment, services, facilities or assistance under subsection\
+  \ (2) or (3) may be made to theAuthority in such manner as may be prescribed and\
+  \ theAuthority shall proceed with such request and causeappropriate treatment, services,\
+  \ facilities or assistance to be provided to such victim of crime in an expeditious\
+  \ manner.\n  - (2)  A victim of crime shall be entitled to request and receive from\
+  \ the State any medical treatment including appropriate medical services, medicines\
+  \ and other medical facilities, or psychological or social   assistance in respect\
+  \ of any harm suffered by him as a result of being a victim of crime.\n  - (3) \
+  \ A victim of crime shall be entitled to request and receive necessary counseling\
+  \ or rehabilitation services from the State, through any means including through\
+  \ community-based organizations.\n 
+- The Authority may consider the grant of an interim award in relation to any request
+  made under this section, under section 67  of this Act (Assistance to and Protection
+  of Victims of Crime and Witnesses Act, No. 10 of 2023).
+- (1) Victim impact statement\nA victim of crime shall have the right to make a \"\
+  statement in writing (in this Act referred to as the \u201Cvictim impact statement\u201D\
+  ) to the court or Commission to describe the manner in which the offence alleged\
+  \ to have been committed has impacted him physically, emotionally,\"psychologically,\
+  \ financially, professionally or in any other manner.\n (2) Where any victim of\
+  \ crime is unable to make, or incapable of making, such victim impact statement\
+  \ due to any reason acceptable to the court or Commission, any other person on behalf\
+  \ of the victim of crime as may be permitted by the court or Commission may make\
+  \ such statement. \n (3)  The victim impact statement shall consist of -\n (a) \
+  \  a victim personal statement; and\n (b)   a victim impact report.\n A victim personal\
+  \ statement referred to in paragraph (a) -\n (a) shall set out the physical, emotional,\
+  \ psychological, financial, professional  or other impact of the offence on the\
+  \ victim of crime;\n (b) may contain a statement, where applicable, whether the\
+  \ offence has been motivated by the age, gender,ethnicity, faith, religion, sexuality\
+  \ or disability ofthe victim of crime;\n (c) may state whether the victim wishes\
+  \ to claim compensation or requires any assistance as providedfor in this Act.\n\
+  \ (5)   A victim impact report referred to in paragraph ( b) shall be a report issued\
+  \ by a medical expert or psychologist and shall-\n (a) contain an opinion on the\
+  \ traumatic impact of the offence on the victim of crime; and\n (b) contain a report\
+  \ on needs assessment of the victim of crime, consequent to the impact of the offence\
+  \ on the victim of crime.
+- The victim personal statement and victim impact report made by a victim of crime\
+  \ or any other person on his behalf to a court or Commission shall be made available\
+  \ to the defence, and the victim of crime or other person who made such statement\
+  \ or the medical expert or psychologist who issued the victim impact report may\
+  \ be summoned to give evidence at any proceedings before such court or Commission.\n\
+  \  A court or Commission may, at any stage of the proceedings and with notice to\
+  \ the defence, call for a victim impact statement from the victim of crime or any\
+  \ other personcon behalf of the victim of crime and the provisions of above shall\
+  \ apply in relation to such victim impact statement.
+- Rights and entitlements of a witness\n (1) A witness shall always be treated with\
+  \ respect to his dignity and privacy in a manner that is fair in all circumstances.\n\
+  \ (2)   Every witness is entitled to protection and it shall be the duty of the\
+  \ State to provide such protection.\n (3) ( a) A witness shall be entitled to provide\
+  \ any information or make a statement freely and voluntarily  to any court, Commission\
+  \ or law enforcement authority relatingto the alleged commission of an offence or\
+  \ in fringement of any fundamental right or violation of any right granted underthe\
+  \ ICCPR Act.\n (b) Subject to the provisions of the laws of evidence, and subject\
+  \ to the service of summons at the discretion of acourt or Commission on a witness,\
+  \ a witness shall be entitled to testify before any court or Commission freely and\
+  \ voluntarily.
+- Where the participation of a witness is required prior to, or during the course
+  of, an investigation or inquiry, orduring the pendency of any proceedings in any
+  court or Commission, such witness shall not be harassed, intimidated, coerced or
+  treated in a manner that violates his rights andentitlements set out in this Act.
+- Rights and entitlements of a witness\n  A witness shall be entitled to protection\
+  \ against any real or possible harm, threat, intimidation, reprisal or retaliation\
+  \ resulting from such witness-\n (a) having provided information or communication\
+  \ or lodged a complaint;\n (b) having made a statement or submitted an affidavit\
+  \ to any law enforcement authority during an investigation or inquiry;\n (c) having\
+  \ provided any testimony or given any evidence in any court or before any Commission;\n\
+  \ (d) being a public officer, having been engaged in any manner in the administration\
+  \ of justice; or\n (e) for instituting legal proceedings, \n in relation to the\
+  \ commission of an offence or in fringement of any fundamental right or violation\
+  \ of any right granted under the ICCPR Act, by any person.
+- 10. Making complaints regarding violation of rights or denial of entitlements\
+  \ of victims of crime or witnesses\n (1) A victim of crime or witness or any other\
+  \ person on behalf of a victim of crime or witness may make a complaint regarding\
+  \ the violation or denial, or imminent violation or denial, of any right or entitlement\
+  \ specified in this Part of this Act either orally or in writing to the Authority\
+  \ within thirty\n days from the date of the alleged violation or denial, or imminent\
+  \ violation or denial, of such right or entitlement.\n (2)   Where a complaint under\
+  \ subsection (1) has been made orally, it shall be recorded forthwith in writing\
+  \ by the officer receiving such complaint.\n (3)  The procedure applicable for investigation\
+  \ or inquiry of any complaint received by the Authority under subsection (1) shall\
+  \ be as specified in the First Schedule to this Act.
+- Duty of public officers to respect the rights and entitlements of victims of crime\
+  \ and witnesses\n It shall be the duty of every public officer including every judicial\
+  \ officer and every member of the armed forcesvand the police force to recognize,\
+  \ protect and promote the rights and entitlements of victims of crime and witnesses\
+  \ setout. 
+- Limitation of rights and entitlements\n Nothing in this Part of this Act shall\
+  \ be construed as-\n (a) giving any person a right to require a public authority\
+  \ to incur specific expenditure in relation to rights and entitlements of victims\
+  \ of crime and witnesses set out under this Part of this Act; or\n (b) requiring\
+  \ a public authority to incur expenditure in relation to rights and entitlements\
+  \ of victims ofcrime and witnesses set out under this Part of this Act.
+- Victim Information Register\n (1) The Authority shall maintain a register called\
+  \ \"Victim Information Register\" in such form and containing such information relating\
+  \ to victims of crime, as may be determined by the Authority.\"\n (2)  A victim\
+  \ of crime may, on application made by himself or through an attorney-at-law, request\
+  \ the Authority to register himself in the Victim Information Register by providing\
+  \ the information referred to in subsection (1).\n (3) A victim of crime shall,\
+  \ after registration in the Victim 'Information Register, be entitled, upon a request\
+  \ made to the Authority, to receive information on any of the following matters\
+  \ in relation to the offender, from the Authority -'\n (a) the punishment imposed\
+  \ on the offender;\n (b) any instance of escape from custody and recapture of the\
+  \ offender, if any;Duty of public officers to respect the rights and entitlements\
+  \ of victims of crime and witnesses\n (c) the impending dates on which the offender\
+  \ is to be released from custody; or\n (d) details of appeals against the conviction\
+  \ and sentence of the offender, if any.\n (4)  It shall be the duty of the Authority\
+  \ to provide the information requested by a victim of crime under subsection(3)\
+  \ in writing without delay.
+- The Authority shall maintain confidentiality with regard to the information relating
+  to victims of crime and witnesses contained in the Victim Information Register and
+  shall not share any such information except as required by law.
+- 14. Intimidation to a victim of crimeor witness \n Any person who threatens a victim\
+  \ of crime or  witness with any harm to his person, reputation or property, or to\
+  \ the person or reputation or property of any other person in whom such victim of\
+  \ crime or witness has an interest, with the \"intention of -\"\n (a) causing alarm\
+  \ to such victim of crime or witness;\n (b) causing such victim of crime or witness\
+  \ to refrain from -\n (i) lodging a complaint against such person with a law enforcement\
+  \ authority; or\n (ii) testifying at any judicial or quasi-judicial proceedings\
+  \ against such person; or\n (c) compelling such victim of crime or witness to withdraw\
+  \ a complaint lodged or legal action instituted against such person, commits an\
+  \ offence under this Act, and shall, on conviction, by the High Court, be liable\
+  \ to a fine not exceeding one hundred and fifty thousand rupees or to imprisonment\
+  \ of either description for a period not exceeding three years or to both such fine\
+  \ and imprisonment. In addition, such person may also be ordered to pay compensation\
+  \ of an amount not exceeding five hundred thousand rupees.
+- Causing hurt to a victim of crime or witness\n Any person who  voluntarily causes\
+  \ hurt or grievous hurt to a victim of crime or witness, with the intention of-\n\
+  \  (a) causing such victim of crime or witness to refrain from-\n     (i) lodging\
+  \ a complaint against such person with a law enforcement authority; or\n     (ii)\
+  \ testifying at any judicial or quasi-judicial proceedings against such person;\n\
+  \  (b) compelling such victim of crime or witness to withdraw a complaint lodged\
+  \ or legal action instituted against such person; or\n  (c) retaliating for a statement\
+  \ made or testimony provided by such victim of crime or witness in any court or\
+  \ before any Commission, against such person, \n           commits an offence under\
+  \ this Act, and shall on conviction by the High Court, be liable to a fine not exceeding\
+  \ three hundred thousand rupees or to imprisonment of either description for a period\
+  \ not exceeding five years or to both such fine and imprisonment.\n  Restraining\
+  \ a victim of crimeor witness - \n Any person who wrongfully restrains a victim\
+  \ of crime or witness with the intention of-\n (a) preventing such victim of crime\
+  \ or witness from-\n (i) lodging a complaint against such person with a law enforcement\
+  \ authority; or\n (ii) testifying at any judicial or quasi-judicial proceedings\
+  \ against such person;\n (b) compelling such victim of crime or witness to withdraw\
+  \ a complaint lodged or a legal action instituted against such person; or\n (c)\
+  \ retaliating for a statement made or testimony provided by such victim of crime\
+  \ or witness in any court or before any Commission against such person, \n     \
+  \      commits an offence under this Act, and shall on conviction by the High Court,\
+  \ be liable to a fine not exceeding  three hundred thousand rupees or to imprisonment\
+  \ of either description for a period not exceeding five years or to both such fine\
+  \ and imprisonment.
+- Compelling or inducing a victim of crime or witness to leave any place,or causing\
+  \ loss or damage to the property of a victim of crime or witness \n Any person who\n\
+  \ (a) compels, or by practice of deceitful means or by abuse of authority or by\
+  \ any other means of illegal practice induces or forces any victim of crime or witness\
+  \ to leave any place; or\n (b) intentionally or knowingly causes any loss, damage\
+  \ or destruction to a property in which a victim of crime or witness has a legitimate\
+  \ interest, \n           with the intention of preventing such victim of crime or\
+  \ witness from lodging a complaint or making any statement against such person to\
+  \ a law enforcement authority or testifying against such person at any judicial\
+  \ or quasi- judicial proceedings or in retaliation for a statement madeto a law\
+  \ enforcement authority or due to the testimony made against such person in any\
+  \ judicial or quasi-judicial proceedings by such victim of crime or witness, commits\
+  \ an offence under this Act, and shall on conviction by the High Court, be liable\
+  \ to a fine not exceeding three hundred thousand rupees or to imprisonment of either\
+  \ description fora period not exceeding five years or to both such fine\n  an dimprisonment.\
+  \  In addition, such person shall also be liableto pay such compensation as the\
+  \ Court may order him to pay in relation to the loss, damage or destruction caused\
+  \ by him to the property of the victim of crime or witness.
+- (1) Nature of protection that may be sought by a victim of crime or witness\n The\
+  \ nature of protection that may be provided to any victim of crime or witness under\
+  \ this Part of this Act may include -\n (a) the providing of security to the person\
+  \ or property;\n (b) the provision of temporary accommodation including facilities\
+  \ for sustenance;\n (c) the permanent or temporary re-location with the consent\
+  \ of the victim of crime or witness, as the case may be;\n (d) the conducting of\
+  \ either the entirety or part of the proceedings in camera;\n (e) the concealing\
+  \ of the identity of the victim of crime or witness;\n (f) in the case of a child\
+  \ victim of crime or witness, the adoption of special measures to ensure his best\
+  \ interest and to protect his rights including the right to education;\n (g) the\
+  \ adoption of necessar+B50y measures to prevent the victim of crime or witness from\
+  \ being harassed, intimidated, coerced, or influenced by encountering the presence\
+  \ of the accused at the venue of the trial,investigation or inquiry;\n (h) the prevention\
+  \ of the disclosure, including in the print media or electronic media, of the identity\
+  \ and background information of the victim of crime or witness;\n (i) the adoption\
+  \ of appropriate measures to prevent the disclosure of evidence that may be provided\
+  \ by the victim of crime or witness, save as permitted in law for the purposes of\
+  \ pre-trial disclosure;\n (j) where appropriate, the provision of temporary or permanent\
+  \ employment; and\n (k) the adoption of  any other measure a court, Commission,\
+  \ the Authority or Protection Division may consider necessary.\n (2)  The Authority\
+  \ or Protection Division may request assistance from a public authority or public\
+  \ officer in providing any measure of protection or assistance referredto in subsection\
+  \ (1) to  a victim of crime or witness, and where such request is made, it shall\
+  \ be the duty of such public authority or public officer, unless such public authority\
+  \ or public officer is unable to do so for reasons to be stated, to assist the Authority\
+  \ or Protection Division as requested.
+- Providing gratification to prevent legal proceedings\n  Any person who is alleged,\
+  \ suspected or accused of having committed an offence offers, provides or gives\
+  \ any gratification to any other person who is-\n (a) intending or preparing to\
+  \ institute legal proceedings against such first mentioned personfor having committed\
+  \ such offence; or\n (b) likely to provide information or testimony against such\
+  \ first mentioned person to any law enforcement authority, court or Commission,\
+  \ \n     with a view to preventing, discouraging or dissuading such other person\
+  \ from instituting legal proceedings or providing truthful information or testimony\
+  \ against such first mentioned person, commits an offence under this Act, and shall\
+  \ on conviction by the High Court, be liable to a fine not exceeding three hundred\
+  \ thousand rupees or to imprisonment of either description for a period not exceeding\
+  \ five years or to both such fine and imprisonment.
+- Disclosure of information\n Any person who -\n (a) having received any information\
+  \ provided for the purpose of commencing or conducting an investigation or inquiry\
+  \ into an alleged offence;\n (b) having gathered any information in the course of\
+  \ an investigation or inquiry into an alleged offence;or\n (c) having received any\
+  \ information referred to in paragraph ( a) or ( b) from another person, \n    \
+  \ provides, issues or gives to a third person, publishes or otherwise disseminates\
+  \ any such information or part there of,particularly as regards the identity of\
+  \ a victim of crime, witness or informant and thereby places the life of such victim\
+  \ of crime, witness or informant in danger, commits an offence  under this Act,\
+  \ and shall, on conviction by the High Court, be liable to a fine not exceeding\
+  \ three hundred thousand rupees or to imprisonment of either description for a period\
+  \ not exceeding five years or to both such fine and 'imprisonment:'\n  Provided\
+  \ however, the provision, issuance or giving out, publishing or dissemination of\
+  \ information in good faith and in accordance with or in compliance with-\n (i)\
+  \ any provision or procedure established by law;\n (ii) an order made by a court;\
+  \ or\n (iii) a directive issued by a person duly authorised to do so by or under\
+  \ any written law,\n       shall not be an offence.
+- Providing false information\n Any person who, with the intention of obtaining any\
+  \ assistance  or protection from the Authority, the Police including the Protection\
+  \ Division, a court or Commission, provides any information knowing or having reasonable\
+  \ grounds to believe that such information is false, commits an offence under this\
+  \ Act and shall, on conviction by the High Court, be  liable to a fine not exceeding\
+  \ five hundred thousand rupees or to imprisonment of either description for a period\
+  \ not exceeding six years or to both such fine and imprisonment.
+- Disclosure of information by a person providing protection \n  Any person who -\n\
+  \ (a) is in charge of, or is providing protection or assisting in providing protection\
+  \ to a victim of crime or witness; or\n (b) is otherwise in possession of any information\
+  \ relating to the protection being afforded to a victim of crime or witness, provides,\
+  \  issues or gives to another person such information and thereby places the life\
+  \ of  such victim of crime or witness in danger, commits an offence under this Act\
+  \ and shall, on conviction by the High Court, be liable to a fine not exceeding\
+  \ three hundred thousand rupees or to imprisonment of either description for a period\
+  \ not exceeding 'five years or to both such fine and imprisonment:'\n Provided however,\
+  \ the provision, issuance or giving out of information in good faith and in accordance\
+  \ with or in compliance with-\n (i) any provision or procedure established by law;\n\
+  \ (ii) an order made by a court; or\n (iii) a directive issued by a person duly\
+  \ authorised to do so by or under any written law,\n      shall not be an offence.
+- Where a victim of crime or witness or any other person on behalf of a victim of\
+  \ crime or witness has reasonable grounds to believe that\n  such victim of crime\
+  \ or witness maybe subject to any harm, injury, intimidation,\n  reprisal or retaliation\
+  \ as a consequence of the circumstances relating to his being\n  a victim of crime\
+  \ or witness, such victim of crime or witness or other person shall be entitled\
+  \ to apply for\n protection in terms of the provisions of this Part of this Act.
+- (1) Nature of protection that may be sought by a victim of crime or witness\n The\
+  \ nature of protection that may be provided to any victim of crime or witness under\
+  \ this Part of this Act may include -\n (a) the providing of security to the person\
+  \ or property;\n (b) the provision of temporary accommodation including facilities\
+  \ for sustenance;\n (c) the permanent or temporary re-location with the consent\
+  \ of the victim of crime or witness, as the case may be;\n (d) the conducting of\
+  \ either the entirety or part of the proceedings in camera;\n (e) the concealing\
+  \ of the identity of the victim of crime or witness;\n (f) in the case of a child\
+  \ victim of crime or witness, the adoption of special measures to ensure his best\
+  \ interest and to protect his rights including the right to education;\n (g) the\
+  \ adoption of necessary measures to prevent the victim of crime or witness from\
+  \ being harassed, intimidated, coerced, or influenced by encountering the presence\
+  \ of the accused at the venue of the trial,investigation or inquiry;\n (h) the prevention\
+  \ of the disclosure, including in the print media or electronic media, of the identity\
+  \ and background information of the victim of crime or witness;\n (i) the adoption\
+  \ of appropriate measures to prevent the disclosure of evidence that may be provided\
+  \ by the victim of crime or witness, save as permitted in law for the purposes of\
+  \ pre-trial disclosure;\n (j) where appropriate, the provision of temporary or permanent\
+  \ employment; and\n (k) the adoption of  any other measure a court, Commission,\
+  \ the Authority or Protection Division may consider necessary.\n (2)  The Authority\
+  \ or Protection Division may request assistance from a public authority or public\
+  \ officer in providing any measure of protection or assistance referredto in subsection\
+  \ (1) to  a victim of crime or witness, and where such request is made, it shall\
+  \ be the duty of such public authority or public officer, unless such public authority\
+  \ or public officer is unable to do so for reasons to be stated, to assist the Authority\
+  \ or Protection Division as requested.
+- Application for protection\n (1) A victim of crime or witness who seeks protection\
+  \ under this Part of this Act shall make a request in such form and manner as may\
+  \ be prescribed, to-\n (a) the Authority;\n (b) the Protection Division;\n (c) any\
+  \ police station;\n (d) any court or Commission; or\n (e) any law enforcement authority\
+  \ or public officer.\n (2)  Where the request for protection received under ( c),\
+  \ (d) or ( e) of subsection (1) is in relation to an offence specified in the Second\
+  \ Schedule to this Act, such request shall be referred to the Authority or Protection\
+  \ Division, without delay.\n (3)  Where the request for protection received under\
+  \ ( a), (b), (d) or ( e) of subsection (1) is in relation to an offence not specified\
+  \ in the Second Schedule to this Act,such request shall be referred to the relevant\
+  \ police station,without delay.
+- (1) Upon receipt or reference of a request for protection under section 29, in\
+  \ relation to an offence specified in the Second Schedule to this Act-\n (a) where\
+  \ such request is received by or referred to the Authority, the Authority shall\
+  \ take immediate measures to cause a threat assessment to be made in relation to\
+  \ the victim of crime or witness; or\n (b) where such request is received or referred\
+  \ to the Protection Division, the Protection Division shall take immediate measures\
+  \ to make a threat assessment in relation to the victim of crime or witness,\n \
+  \   and based on the findings of such threat assessment, the Authority or Protection\
+  \ Division, as the case may be, shall take appropriate measures to provide the necessary\
+  \ protection forthwith.\n (2)   Any request for protection made under this Part\
+  \ of this Act shall be treated as confidential.
+- (1) Where, in the case of an offence not specified in the Second Schedule to this\
+  \ Act, the request for protection isreceived by or referred\n  to a police station\
+  \ under section 29, the Protection Officer assigned to such police\n  station undersection\
+  \ 38 shall immediately conduct a threat assessmentand based on\n  the findings of\
+  \ the threat assessment, and withthe concurrence of the Superintendent\n  of Police\
+  \ of the area,provide the necessary protection to the victim of crime orwitness.\n\
+  \ (2) In the event that-'\n (a) the Authority, the Protection Division or the officer-\
+  \ in charge of the police station is of the opinion thatthere is a serious threat\
+  \ to a victim of crime orwitness, in relation to an offence which is not specified\
+  \ in the Second Schedule; or\n (b) the victim of crime or witness alleges bias against\
+  \ the police station of the area, the Protection Division shall proceed to provide\
+  \ appropriate protection to such victim of crime or witness.
+- Duty of court or Commission in relation to proceedings\n (1)  Whenever a  court\
+  \  or  Commission   has reasonable  grounds  to  believe  that  a  victim  of  crime\
+  \  or witness  in  any  legal   proceedings requires protection from injury,  intimidation,\
+  \  reprisal  or retaliation  or,  assistance to  attend  and  participate  in  any\
+  \ legal proceedings, such court  or  Commission   may   direct the Authority, the\
+  \ Protection Division, a police station  or other law enforcement authority to take\
+  \  all  necessary  measures to  provide  or cause to be  provided  such  protection\
+  \ to  such  victim of crime or  witness  and  the Authority, the Protection Division,\n\
+  \ such  police station or such law enforcement authority shall comply with such\
+  \ direction, without delay.\n (2) In complying with a direction issued by a court\
+  \ or Commission under subsection (1),  the Authority, Protection Division, police\
+  \ station or law enforcement authority may make a preliminary needs assessment on\
+  \ the protection needed by such victim of crime or witness and provide such protection\
+  \ as may be necessary.\n (3) The Authority, Protection Division, a police station\
+  \ or other law enforcement authority may provide necessary protection to any victim\
+  \ of crime or witness, immediately upon the receipt of any information or request\
+  \ or complaint from such victim of crime or witness that such victim of crime or\
+  \ witness is likely to be subject to any harm, injury, harassment, intimidation\
+  \ or retaliation, whether prior to, during or  after the conduct of any legal proceedings\
+  \ before any court or Commission.
+- Protection to be provided by law enforcement authorities and public officers\n\
+  \ (1) Where any law enforcement authority or public officer has reasonable grounds\
+  \ to believe that a victim of crime or witness requires protection from any possible\
+  \ injury, intimidation, reprisal or retaliation in attending and participating in\
+  \ any proceedings under any law, such law enforcement authority or the public officer\
+  \ shall forthwith issue a communication to that effect to the Authority or to the\
+  \ Protection Division.\n (2)  The provisions of sections 29, 30 and 31 shall mutatis\
+  \ mutandis  apply to and in respect of providing protection in relation to any matter\
+  \ referred to in subsection (1).
+- Special measures for vulnerable victims of crime or witnesses\n (1) Not withstanding\
+  \ anything to the contrary in any other written law, a court or Commission may,\
+  \ on application made by or on behalf of any vulnerable victim of crime or witness,\
+  \ order the Authority or the Protection Division the grant of any special measures\
+  \ for the protection of such victim of crime or witness, as may be prescribed.\n\
+  \ (2) The Minister shall, when prescribing special measures for the purposes of\
+  \  subsection (1), seek recommendations of the Authority.\n (3)  The court or Commission,\
+  \ in ordering the grant of any special measures under subsection (1), shall ensure\
+  \ that the principles of fair trial are upheld in its proceedings.\n (4)  In determining\
+  \ the vulnerability of a victim of crime 'or witness, the following factors may\
+  \ also be considered -'\n (a) the nature of the offence alleged to have been committed\
+  \ and the attendant circumstances;\n (b) the nature of the evidence or statement\
+  \ the witness is expected to give or make;\n (c) any relationship between the victim\
+  \ of crime or witness and the accused;\n (d) the age and level of understanding\
+  \ of the victim of crime or witness;\n (e) the accused's behavior or attitudes towards\
+  \ the victim of crime or witness including the accused's behavior or attitudes towards\
+  \ the family membersor associates of, or any other person having a close kinship\
+  \ to, the victim of crime or witness; and\n (f) any other relevant matter including\
+  \ the racial, social and cultural background of the victim of crime or witness,\
+  \ the gender including transgender, sexualorientation, possibility of being subject\
+  \ to social marginalization, domestic or employment circumstances, religious or\
+  \ political beliefs, and any physical disability or impairment the victim of crimeor\
+  \ witness suffers from.\n (5)  Not withstanding anything to the contrary in any\
+  \ other law, a court or Commission may-\n (a) in proceedings relation to sexual\
+  \ offences or violence, permit a child victim of crime or childwitness to give evidence\
+  \ or make a statement through contemporaneous audio-visual linkage from a remote\
+  \ location, without requiring hispersonal attendance before such court orCommission;\
+  \ or\n (b) on being satisfied that any vulnerable victim of crime or witness is\
+  \ unable to understand the nature of an oath or an affirmation, permit such victim\
+  \ of crime or witness to give evidence or make a statement without an oath or an\
+  \ affirmation being administered, and such victim of crime or witness shall be informed\
+  \ that he is bound to state the truthon all matters to which his evidence or statement\
+  \ relates.
+- Continuous needs assessment by Protection Officer and variation of protection arrangement\n\
+  \ (1) The Authority or the Protection Division shall require a Protection Officer\
+  \ to conduct a continuous needs assessment of victims of crime and witnesses who\
+  \ have received protection under the provisions of this Act.\n (2)  A Protection\
+  \ Officer may, where he is of the opinion that any protection arrangement made in\
+  \ respect of any victim of crime or witness needs to be varied, vary such protection\
+  \ arrangement  and shall report such fact, along with the reasons there for, to\
+  \ the Protection Division through the officer-in-charge of the relevant police station.\n\
+  \ (3)  In deciding whether any protection arrangement shall be varied under this\
+  \ section, particular regard shall be had to\n (a) the nature and the extent of\
+  \ the risk to the safety of the victim of crime or witness;\n (b) the practical\
+  \ aspects and the costs involved in the new arrangements; and\n (c) the ability\
+  \ of the victim of crime or witness or any other person associated with him to adapt\
+  \ to the changes in the circumstances arising from such variation.\n (4)  Where\
+  \ there is an urgent need to protect a victim of crime or witness in any police\
+  \ division, a  Protection Officer shall make such arrangement  as he considers appropriate\
+  \ for the purpose of providing such urgent protection to such victim of crime or\
+  \ witness.
+- (1) Any victim of crime or witness who has received any assistance or protection\
+  \ under this Act shall not -\n (a) abuse such assistance or protection;\n (b) provide\
+  \ any false information or testimony to the Authority, Protection Division, a court,Commission,\
+  \ police station or law enforcement authority; or\n (c) act contrary to the written\
+  \ advice or terms and conditions agreed upon with the Authority or Protection Division.\n\
+  \ (2)  Where there is credible information that a victim of crime or witness is\
+  \ acting in a manner that contraveness subsection (1), the Authority\n  or the Protection\
+  \ Division shall conduct an inquiry and the findings of such inquiry\n  shall be\
+  \ communicated to the court or Commission. The court or Commission shall, after\n\
+  \  a further inquiry, shall make an appropriate order in regard to the assistance\
+  \ or\n  protection that has been provided to such victim of crime or witness.
+- (1) The Inspector General of Police shall, in consultation with the Authority,\
+  \ assign to each police station such number of police officers to be designated\
+  \ as Victims and Witnesses Protection Officers (in this Act referred to as \"Protection\
+  \ Officers\") as may be necessary, for the purposesof this Part of this Act - \n\
+  \ Provided however, at least one of such officers shall be a female officer.\n (2)\
+  \  In deciding the number of Protection Officers required to be assigned to any\
+  \ police station, the Inspector General of Police shall take into account the population\
+  \ of the police division, the prevalence of serious crimes\n and the perceived vulnerability\
+  \ of special categories of persons including children, women or disabled persons\
+  \ in that police division and other relevant data and statistics related to that\
+  \ police division.\n (3) ( a) The Head of the Protection Division, in consultation\
+  \ with the Authority, shall issue directives to befollowed by the Protection Officers\
+  \ in performing and\n discharging their duties and functions, and such directives\
+  \ shall, where necessary, be treated as confidential not withstanding anything to\
+  \ the contrary in any other law.\n (b) The Authority shall conduct special training\
+  \ programmes for the purpose of developing the competence of the Protection Officers.\n\
+  \ (4)  A Protection Officer shall maintain a confidential record of every action\
+  \ that he takes in providing protection to a victim of crime or witness under this\
+  \ Act.
+- (1) There shall be established an authority which shall be called the National\
+  \ Authority for the Protection of Victims of Crime and Witnesses (in this Act referred\
+  \ to as the \"Authority\").\n (2) The Authority shall, by the name assigned to it\
+  \ by subsection (1), be a body corporate with perpetual succession and a common\
+  \ seal, and may sue and be sued in that name.\n 
+- (1) The duties and functions of the Authority shall be -\n (a) to protect and promote\
+  \ respect for, and recognition of, the rights and entitlements of victims of crimeand\
+  \ witnesses as provided for in this Act;\n (b) to investigate and inquire into any\
+  \ complaint or information received by the Authority regarding any alleged violation\
+  \ or denial, or imminent violation or denial, of rights and entitlements of victims\
+  \ of crime and witnesses provided for in this Act, and to-\n (i) give directions\
+  \ or make recommendations to any person or authority to take corrective measures;\n\
+  \ (ii) grant such financial or other assistance; or\n (iii) take any other appropriate\
+  \ measures, that ensure the protection and promotion of the rights and entitlement\
+  \ of victims of crime and witnesses provided for in this Act;\n (c) to take necessary\
+  \ steps to ensure security and protection of victims of crime and  witnesses, by\
+  \ way of providing or arranging the provision of,necessary medical treatment, counselling\
+  \ or rehabilitation services, or reparation or restitution measures;\n (d) to formulate\
+  \ and implement a scheme for the purpose of granting any interim awards to victims\
+  \ of crime from the Protection Fund established under this Act and to grant interim\
+  \ awards to such victims of crime as recommended by the Advisory Board under section\
+  \ 69 of this Act;\n (e) to create awareness among the public on the rights and entitlements\
+  \ of victims of crime and witnesses and the relief or remedies available to them\
+  \ under this Act;\n (f) to advise and make recommendations to the Department of\
+  \ Police, any other Government Department or statutory institution and public officers,\
+  \ on measures that should be implemented to give effect to, protect and promote,\
+  \ the rights and entitlements of victims of crime and witnesses provided for in\
+  \ this Act;\n (g) to review existing legislation, and the policies, practices or\
+  \ procedures adopted and followed by the relevant institutions, relating to the\
+  \ protection and promotion of the rights and entitlements of victims of crime and\
+  \ witnesses and to make recommendations, if any, to amend or update such legislation,\
+  \ policies, practices or procedures to ensure  conformity with the latest recognized\
+  \ international standards and best practices relating to the same;\n (h) upon request\
+  \ made  by any court or Commission, to provide necessary facilities to establish\
+  \ a contemporaneous audio-visual linkage for recording of evidence or statement\
+  \ of a victim of crime or witness from a remote location;\n (i) to develop and issue,\
+  \ in consultation with other relevant authorities, guidelines and procedures which\
+  \ ensure the best interest of victims of crime and witnesses;\n (j) to issue guidelines\
+  \ in regard to the independent functioning of the Protection Division;\n (k) to\
+  \ take measures to sensitize public officers including Government Medical Officers,\
+  \ officers of the Sri Lanka Police, the Department of Prisons or public officers\
+  \ associated with probation and social services-\n (i) on the needs of any victim\
+  \ of crime or witness; or\n (ii) on any special needs of any such specific category\
+  \ of victims of crime or witnesses asmay be specified by the Authority;\n (l) to\
+  \ conduct or promote the carrying out of research into ways and means through which\
+  \ -\n (i) the incidence of crime can be reduced;\n (ii) the impact of specific crimes\
+  \ on victims could be minimized or prevented;\n (iii) victims of crime can be effectively\
+  \ treated, rehabilitated, counselled, assisted,compensated and protected;\n (iv)\
+  \ the causes that prevent victims of crime or witnesses from seeking redress or\
+  \ relief through the available criminal justice mechanisms may be identified and\
+  \ eliminated; and\n (v) a conducive environment could be created for witnesses to\
+  \ make statements before the law enforcement authorities or to testify fearlessly\
+  \ at any proceedings before any courtor Commission;\n (m) to promote the application\
+  \ and observance of codes of conduct and recognized norms and best practices relating\
+  \ to the protection of the rights and entitlements of victims of crime and witnesses,\
+  \ by courts, Commissions, any other tribunals, public officers and employees of\
+  \ statutory bodies involved in the enforcement of law, including officers of the\
+  \ Sri Lanka Police, the Prisons Department,Government Medical Officers and officers\
+  \ of the Government social service institutions;\n (n)  to make recommendations\
+  \ to the Government and other appropriate authorities on the development,adoption\
+  \ and implementation of-\n (i) crime prevention policies in order to minimize the\
+  \ incidence of victimization;\n (ii) measures of restitution of victims of crime;\
+  \ and\n (iii) measures of restorative justice as an option to sentencing;\n (o)\
+  \ having regard to the existing financial regulations, to lay down the procedure\
+  \ and criteria for the granting of financial assistance to victims of crime and\
+  \ witnesses;\n (p) to organize training programmes on the treatment of child victims\
+  \ of crime or child witnesses and identify qualified personnel and proper procedures\
+  \ that may be employed to protect and meet anyspecial needs of such child victims\
+  \ of crime or witnesses;\n (q) to promote the development, adoption and implementation\
+  \ of measures of restitution for victims of crime as an option to sentencing  in\
+  \ the criminal justice system; and\n (r) to perform or discharge any other duty\
+  \ or function that may be necessary to achieve the objects of this Act.\n (2) Where\
+  \ the Authority issues any directive or makes any recommendation to any person or\
+  \ authority, or requires any person or authority to carry out any measure undersubsection\
+  \ (1), it shall be the duty of such person or authority -\n (a) to give effect to\
+  \ such directive or recommendations or carry out such measure and report back to\
+  \ the Authority of such fact; or\n (b) where such person or authority is unable\
+  \ to give effect to such directive or recommendation, or carryout the measure, to\
+  \ report back to the Authority of such inability, giving reasons for the same.\n\
+  \ (3)  The Authority shall monitor the implementation of the directive or recommendations\
+  \ or carrying out the measure referred to in subsection (2) by calling for periodical\
+  \ reports from such person, authority or any other relevant authority.
+- ( 1) The Authority shall have the power -\n (a) to receive any complaint or information\
+  \ on any alleged violation or denial, or imminent violationor denial, of any right\
+  \ or entitlement of a victim of crime or witness under this Act;\n (b) for the purpose\
+  \ of conducting an investigation or inquiry into any alleged violation or denial,\
+  \ orimminent  violation or denial, of any right or entitlement of a victim of crime\
+  \ or witness underthis Act, to -\n (i) require any person, other than a judicial\
+  \ officer or Commissioner of a Commission, to appear before the Authority and to\
+  \ participatein such investigation or inquiry;\n (ii) require any person, other\
+  \ than a court or Commission, to produce before the Authority any document, a certified\
+  \ copy of  any document or any other material in the possession or custody of such\
+  \ person, including any report of investigation or inquiry, an extract of an information\
+  \ book and extract of Police Officers' Visiting Book for examination and to  take\
+  \ copies there of;\n (iii) require any person, other than a court or Commission,\
+  \ to provide to the Authority in 'writing any information which such person possesses:'\
+  \ Provided however, if the disclosure of any information is detrimental to the national\
+  \ security, such person shall not be required to provide such information, and the\
+  \ onus of proving that the information is confidential shall lie with the person\
+  \ who so claims;\n (iv) interview and record a statement of any 'person, other than\
+  \ a judicial officer orCommissioner of any Commission; Provided however, anything\
+  \ stated during' the course of recording of  such statement shall not be used against\
+  \ such person at any subsequent trial of any charge or indictment relating to an\
+  \ offence;\n (v) request any court or Commission to provide to the Authority certified\
+  \ copies of the recordsof any proceedings, documents and other material filed of\
+  \ record in such court or Commission relating to any alleged offence against a victim\
+  \ of crime or witness or the alleged violation or denial, or imminent violation\
+  \ or denial, of any right or entitlement of a victim of crime or witness,without\
+  \ the payment of any fee, providedsufficient justification is shown for such request;\
+  \ and \n (vi) subject to prior approval of the relevant authorities, enter into,\
+  \ inspect or examine anyplace or location,  or observe and record any event or process\
+  \ progressing in any place,including an investigation, inquiry, trial or other proceeding;\n\
+  \ (c) for the purpose of providing redress to any victim of crime or witness, to-\n\
+  \ (i) make an appropriate order to remedy, or to provide relief, or to take corrective\
+  \ measures on any damage caused as a result of the violation of rights or denial\
+  \ of entitlements of any victim of crime or witness under this Act;\n (ii) direct,\
+  \ advise or recommend the relevant authorities to adopt appropriate measure forthe\
+  \ promotion or protection of the rights and entitlements of any victim of crime\
+  \ or witness under this Act; and\n (iii) use mechanisms including conciliation and\
+  \ mediation in addition to other available legal mechanisms;\n (d) to make representations\
+  \ to the Attorney-General or any other authority on the basis of any investigation\
+  \ or inquiry into any alleged violation or denial, orimminent violation or denial,\
+  \ of any right or entitlement of a victim of crime or witness under this Act;\n\
+  \ (e) to direct the Protection Division to take over an investigation or inquiry\
+  \ into any offence under this Act under paragraph (f) of subsection (1) of section\
+  \ 56;\n (f) to acquire, hold, take or give on lease or hire, mortgage, pledge, sell\
+  \ or otherwise dispose of any movable or immovable property; (g) to enter into such\
+  \ contracts as may be necessary for the performance and discharge of its duties\
+  \ and functions;\n (h) to invest monies lying to the credit of the Protection Fund\
+  \ in an appropriate and secure manner and open and maintain current, savings or\
+  \ deposit accounts in banks;\n (i) to appoint, dismiss and exercise disciplinary\
+  \ control over officers and other employees, consultants andadvisors of the Authority\
+  \ as may be necessary for the proper performance and discharge of its duties and\
+  \ functions;\n (j) subject to the provisions of subsection (2), to accept and receive\
+  \ donations, gifts, bequests and grants from any source within or outside Sri Lanka\
+  \ and to utilize the same for the proper performance and discharge of its duties\
+  \ and functions; and\n (k) to do all such other things as may be necessary for the\
+  \ proper performance and discharge of its duties and functions under this Act.\n\
+  \ (2) The Authority or the Protection Division shall not obtain any assistance from\
+  \ any foreign government or foreignor international organization in providing assistance\
+  \ or protection to a victim of crime or witness, without the prior approval of the\
+  \ Department of External Resources.\n (3) Any person who, without justifiable reason,\
+  \ fails to comply with any requirement, direction or order made or issued by the\
+  \ Authority in the exercise of the powers vested in the Authority under this section,\
+  \ commits an offence and shall, on conviction by a Magistrate, be liable to a fine\
+  \ not exceeding three hundred thousand rupees or to imprisonment of either description\
+  \ for a period not exceeding five years or to both such fine and imprisonment.
+- (1) The administration and management of the affairs of the Authority shall be\
+  \ vested in a Board of Management (in this Act referred to as the \"Board\").\n\
+  \ (2) The Board shall, for the purpose of administering and managing the affairs\
+  \ of the Authority, exercise, perform,and discharge the powers, duties and functions\
+  \ conferred on, assigned to, or imposed on, the Authority by this Act.\n (3) The\
+  \ Board shall consist of-\n (a) the following ex-officio  members -\n (i) the Secretary\
+  \ to the Ministry of the Minister assigned the subject of Justice or an Additional\
+  \ Secretary to such Ministry,nominated by such Secretary;\n (ii) the Secretary to\
+  \ the Ministry of the Minister assigned the Department of Police or anAdditional\
+  \ Secretary to such Ministry,nominated by such Secretary;\n (iii) the Secretary\
+  \ to the Ministry of the Minister \"assigned the subject of Women's Affairs oran\
+  \ Additional Secretary to such Ministry,nominated by such Secretary;\n (iv) the\
+  \ Secretary to the Ministry of the Minister assigned the subject of Children or\
+  \ an Additional Secretary to such Ministry, nominated by such Secretary;\n (v) a\
+  \ member of the Human Rights Commission of Sri Lanka established by the Human Rights\
+  \ Commission of Sri Lanka Act, No.  21 of 1996,nominated by such Commission;\n (vi)\
+  \ the Chairman of the Legal Aid Commission established by the Legal Aid Law, No.\
+  \ 27 of 1978  or a nominee of such Chairman not below the rank of Commissioner;\n\
+  \ (vii) the Commissioner-General of Prisons or a nominee of such Commissioner-General\
+  \ not below the rank of Commissioner;\n (viii) a nominee of the Attorney- General;\
+  \ and \n (ix) a nominee of the Inspector General of Police holding the rank of Senior\
+  \ Deputy Inspector General of Police -\n Provided however, where two or more subjects\
+  \ specified in subparagraph (i), (ii), (iii), or (iv) of this paragraph are assigned\
+  \ to a single Ministry, the nomination of a member of that Ministry to the Authority\
+  \ shall be by the Secretary to the Ministry of the Minister assigned those subjects;\
+  \ and\n (b) five members who are academically or professionally qualified and have\
+  \ experience in the field of Law, Criminology, Human Rights or Medicine, or in social\
+  \ service or civil society activities appointed by the President (in this Act referred\
+  \ to as the \"appointed members\").
+- (1) The President shall appoint one member of the Board as the Chairman of the\
+  \ Board who shall also be the Chairman of the Authority.\n (2)  The Chairman of\
+  \ the Authority shall be appointed for a period of three years and shall be eligible\
+  \ for re-appointment. \n (3)  The Chairman of the Authority may, at any time, resign\
+  \ from the office of Chairman by a letter addressed tothe President and such resignation\
+  \ shall take effect upon itbeing accepted by the President in writing.\n (4)  Where\
+  \ the Chairman of the Authority is, by reason of illness or absence from Sri Lanka,\
+  \ temporarily unable to perform the duties of his office, the President shall appoint\
+  \ another member of the Board to act in his place.\n (5)   The President may, for\
+  \ reasons assigned, remove the Chairman of the Authority from the office of Chairman.
+- A person shall be disqualified from being appointed or continuing as a member of\
+  \ the Board, if such person - \n (a) is or becomes, a member of Parliament, a Provincial\
+  \ Council or any local authority;\n (b) is not, or ceases to be, a citizen of Sri\
+  \ Lanka;\n (c) is, under any law in force in Sri Lanka or in any other country,\
+  \ found or declared to be of unsound mind; or\n (d) is serving or has served, a\
+  \ sentence of imprisonment imposed by any court in Sri Lanka or any other country.
+- (1) An appointed member of the Board may, at any time, resign from his office by\
+  \ letter to that effect addressed to the President\n  and such resignation shall\
+  \ take effect upon it being accepted in writing by the President.\n (2)  The President\
+  \ may, for reasons assigned, by Order published in the Gazette , remove an appointed\
+  \ member of the Board from office  and such member shall cease to hold office from\
+  \ and after the date of publication of such Order in the Gazette.\n (3)   In the\
+  \ event of any appointed member of the Board vacating office by death, resignation\
+  \ or removal from office,the President shall, having regard to the provisions of\
+  \ paragraph (b) of subsection (3) of  section 42,  appoint another person to succeed\
+  \ such member.\n (4) The member appointed under subsection (3) shall hold office\
+  \ for the unexpired period of the term of office ofthe member whom be succeeds.\n\
+  \ (5)  Where any appointed member of the Board, by reason of illness, infirmity\
+  \ or absence from Sri Lanka for a period not less than three months, is temporarily\
+  \ unable to perform the duties of the office, such member shall inform the President\
+  \ in writing, of such inability. 
+
+- ( 1) (a) It shall be the duty of the Minister, to whom the subject pertaining to\
+  \ any project has been assigned, to communicate, three months prior to the commencement\
+  \ of such project, to the public generally, and to any particular persons who are\
+  \ likely to be affected by such project all information relating to the project\
+  \ that is available with the Minister, as on the date of such communication. \n\
+  \ (b)The Commission shall issue guidelines specifying the manner in which the communication\
+  \ referred to in paragraph (a) shall be made.\n (2) (a)The Minister shall, on a\
+  \ written request made in that behalf by a member of the public, make available\
+  \ updated information about a project referred to in subsection (1), throughout\
+  \ the period of its development and implementation.\n (b)The information shall be\
+  \ made available on the payment of such fee, as shall be prescribed by the Commission\
+  \ for that purpose.\n (3) For the purposes  of this section, \"project\" means any\
+  \ project the value of which exceeds:-\n (a) in the case of foreign funded projects,\
+  \ one million United States dollars; and\n (b) in the case of locally funded projects,\
+  \ five hundred thousand rupees.
+- Every public authority shall submit annual reports to the Commission which shall\
+  \ be made available to the public in its office, furnishing information such as-\n\
+  \ (a) the total number of requests received during the year and information provided\
+  \ and rejected;\n (b) the amount of fees collected during the year;\n (c) the number\
+  \ of requests  rejected under section 5;\n (d) the number of times information was\
+  \ provided at the direction of the Commission; and\n (e) any suggestions for improving\
+  \ the effectiveness of the regime of transparency.
+- (1) There shall be established for the purposes of this Act, a body called the\
+  \ Right to Information Commission (in this Act  referred to as the \"Commission\"\
+  ).\n (2) The Commission shall by the name assigned to it by subsection (1), be a\
+  \ body corporate with perpetual succession and a common seal and may sue and be\
+  \ sued in its corporate name.
+- (1) The Commission shall consist of five persons appointed by the President upon\
+  \ the recommendation of the Constitutional Council. In making such recommendations,\
+  \ the Constitutional Council shall recommend one person nominated by each of the\
+  \ following organisations or categories of organisations:-\n (a) bar Association\
+  \ of Sri Lanka;\n (b) organizations of publishers, editors and media persons; and\n\
+  \ (c) other civil society organizations.\n (2) (a) In making recommendations under\
+  \ subsection (1), the Constitutional Council shall ensure that the persons who are\
+  \ being recommended are persons who,\n (i) have distinguished themselves in public\
+  \ life with proven knowledge, experience and eminence in the fields of law, governance,\
+  \ public administration, social services, journalism, science and technology or\
+  \ management;\n (ii) are not Members of Parliament, any Provincial Council or a\
+  \ local authority;\n (iii) do not hold any public or judicial office or any other\
+  \ office of profit;\n (iv) are not connected with any political party; or\n (v)\
+  \ are not carrying on any business or pursuing any profession.\n (b) In nominating\
+  \ persons for the consideration of the Constitutional Council the organizations\
+  \ referred to in subsection (1) shall ensure that the persons nominated meet the\
+  \ criteria specified herein.  In the event the Constitutional Council is of the\
+  \ opinion that the nominees do not meet the criteria set out herein fresh nominations\
+  \ shall be called for.\n (3) The Constitutional Council shall make its recommendations\
+  \ under subsection (1), within one month of the date of coming into operation of\
+  \ this Act or the date of a vacancy arising in the Commission.  In the event, any\
+  \ or all of the organisations concerned fail to make nominations within such period,\
+  \ the Constitutional Council shall make its own recommendations after the expiry\
+  \ of the said period. In the event any nominations are rejected the Constitutional\
+  \ Council shall make its own nominations if no acceptable nominations are resubmitted\
+  \ within two weeks from the rejection.\n (4) Where a member of the Commission while\
+  \ holding such office becomes  a Member of Parliament, any Provincial Council or\
+  \ a local authority or appointed to  any public or judicial office or an office\
+  \ bearer of any political party such member shall cease to be a member of the Commission\
+  \ on such appointment.\n (5) The President shall nominate one of the members appointed\
+  \ to the  Commission to be its Chairperson .\n (6) The members of the Commission\
+  \ shall hold office for a period of five years.\n (7) A member of the Commission\
+  \ shall not disclose any information that cannot be disclosed under the provisions\
+  \ of this Act.\n (8) The provisions of the Schedule to this Act shall apply to and\
+  \ in respect of the members of the Commission and the conduct of its meetings.
+- (1) The Commission shall appoint-\n (a) a Director-General who shall be the Chief\
+  \ Executive Officer of the Commission;\n (b) such officers and other employees as\
+  \ it considers necessary.\n (2) The Director-General shall be responsible for the\
+  \ general supervision, direction and management of the affairs of the Commission\
+  \ and exercise disciplinary control over the officers and employees of the Commission.\n\
+  \ (3) The Director-General and other officers and employees appointed under subsection\
+  \ (1), shall be subject to such terms and conditions of service as shall be determined\
+  \ by the Commission and be paid such remuneration as determined by the Commission\
+  \ in consultation with the Minister assigned the subject of Finance.
+- The duties and functions of the Commission shall be, to -\n (a) monitor the performance\
+  \ and ensure the due compliance by public authorities, of the duties cast on them\
+  \ under this Act;\n (b) make recommendations for reform both of a general nature\
+  \ and those in regard to any specific public authority;\n (c) issue guidelines \
+  \ based on reasonableness, for determining  fees to be levied by public authorities\
+  \ for the release of any information under  this Act;\n (d) prescribe the circumstances\
+  \ in which information may be provided by an information officer, without the payment\
+  \ of a fee;\n (e) prescribe the fee Schedule based on the principle of proactive\
+  \ disclosure, in regard to providing information;\n (f) co-operate with or undertake\
+  \ training activities for public officials on the effective implementation of the\
+  \ provisions of  this Act;\n (g) publicise the requirements of this Act and the\
+  \ rights of individuals under  the Act;\n (h) issue guidelines for the proper record\
+  \ management for public authorities.
+-  For the purpose of performing its duties and discharging of its functions under\
+  \ this Act, the Commission shall have the power:-\n (a) to hold inquiries and require\
+  \ any person to appear before it;\n (b) to examine such person under oath or affirmation\
+  \ and require such person where necessary to produce any information which is in\
+  \ that person's possession, provided that the information which is exempted from\
+  \ disclosure under section 5 shall be examined in confidence;\n (c) to  inspect\
+  \  any  information held by a public authority, including any information denied\
+  \ by a public authority under the provisions of this Act;\n (d) to direct a  public\
+  \ authority to provide information, in a particular form;\n (e) to direct a public\
+  \ authority to publish any information withheld by a public authority from the public,\
+  \ subject to the provisions of section 5;\n (f) to hear and determine any appeals\
+  \ made to it by any aggrieved person under section 32; and\n (g) to direct a public\
+  \ authority or any relevant information  officer of the authority to reimburse fees\
+  \ charged from a citizen due to any information requested for not been provided\
+  \ in time.
+- (1) The Commission shall have its own Fund into which shall be credited-\n (a)\
+  \ all such sums of money as may be voted upon from time to time by Parliament for\
+  \ the use of the Commission; and\n (b) donations, gifts or grants from any source\
+  \ whatsoever, whether in or outside Sri Lanka.\n (2) Where any money is received\
+  \ by way of  donations, gifts or grants under subsection (1)( b),  the sources and\
+  \ purpose for which such donation, grant or gift was made available shall be made\
+  \ public.\n (3) There shall be paid out of the Fund all such sums of money required\
+  \ to defray the expenditure incurred by the Commission in the exercise, discharge\
+  \ and performance of its powers, duties and functions.
+- (1) The financial year of the Commission shall be the calendar year.\n (2) The\
+  \ Commission shall cause proper books of accounts to be maintained of the income\
+  \ and expenditure and all other transactions of the Commission.\n (3) The provisions\
+  \ of Article 154 of the Constitution' relating to the audit of the accounts of public\
+  \ corporations shall apply to the audit of the accounts of the Commission.
+- The provisions of Part II of the Finance Act, No. 38 of 1971 shall, mutatis mutandis  apply
+  to the financial control and accounts of the Commission.
+- The members and officers and all other employees of the Commission shall be deemed
+  to be public officerswithin the meaning and for the purposes of the Penal Code (Chapter
+  19) and every inquiry held by the Commission under this Act shall be deemed to be
+  a judicial proceeding within the meaning of the Code of Criminal Procedure Act,No.
+  15 of 1979.
+- The Commission shall be deemed to be a scheduled institution within the meaning
+  of the Bribery Act (Chapter 26) and the provisions of that Act shall be construed
+  accordingly.
+- Any expenses incurred in by any member, officer or employee of the Commission in
+  any suit or prosecution brought by or against such person before any court in respect
+  of any act or omission which is done or purported to be done by such person  in
+  good faith  for the purpose of carrying out the provisions of this Act shall, if
+  the court holds that such act or omission was done in good faith, be paid out of
+  the fund of the Commission unless such expenses are recovered by him in such suit
+  or prosecution.
+- The Commission shall within six months of its establishment, formulate and give
+  adequate publicity to the procedural requirements for the submission of appeals
+  to the Commission under section 32.
+-  (1) (a) Every public authority shall for the purpose of giving effect to the provisions\
+  \ of this Act, appoint, within three months of the date of coming into operation\
+  \ of this Act, one or more officers as information officers of such public authority\
+  \ and a designated officer to hear appeals.\n (b) Until such time that an information\
+  \ officer is appointed under paragraph (a) the Head or Chief Executive Officer of\
+  \ the public authority shall be deemed to be the information officer of such public\
+  \ authority, for the purposes of this Act.\n (2) Every information officer shall\
+  \ deal with requests for information made to the public authority of which he or\
+  \ she has been appointed its information officer, and render all necessary assistance\
+  \ to any citizen making such request to obtain the information.\n (3) The Information\
+  \ Officer may seek the assistance of any other officer as he or she may consider\
+  \ necessary, for the proper discharge of the duty imposed on him under this Act,and\
+  \ where assistance is sought from any such officer, it shallbe the duty of such\
+  \ officer to provide the required assistance.
+- (1) Any citizen  who is desirous of  obtaining any information under this Act shall\
+  \ make a request in writing to the appropriate information officer, specifying the\
+  \ particulars of the information requested for:-\n Provided that where any citizen\
+  \ making a request under this subsection is unable due to any reason to make such\
+  \ request in writing, such citizen shall be entitled to make the request orally\
+  \ and it shall be the duty of the appropriate information officer to reduce such\
+  \ request to writing on behalf of the citizen.\n (2) Where a citizen-\n (a) wishes\
+  \ to make a request to a public authority; or\n (b) has made a request to a public\
+  \ authority which does not comply with the requirements of this Act, the information\
+  \ officer concerned shall take all necessary steps to  assist the citizen, free\
+  \ of charge, to make the request in a manner that complies with this Act.\n (3)\
+  \ On receipt of a request, an information officer shall immediately provide a written\
+  \ acknowledgement of the request to the citizen .\n (4) Where an information officer\
+  \ is able to provide an immediate response to a citizen making a request and such\
+  \ response is to the satisfaction of the requester, the information officer shall\
+  \ make and retain a record of the request and the response thereto.\n (5) A citizen\
+  \ making a request for information shall:-\n (a) provide such details concerning\
+  \ the information requested as is reasonably necessary to enable the information\
+  \ officer to identify the information; \n (b) identify the nature of the form and\
+  \ language in which the citizen prefers access;\n (c) where the citizen making the\
+  \ request believes that the information is necessary to safeguard the life or liberty\
+  \ of a person, include a statement to that effect, including the basis for that\
+  \ belief; and\n (d) not be required to give any reason for requesting the information\
+  \ or any other personal details except those that may be necessary for contacting\
+  \ him or her.\n (6) For the purpose of this section-\n \"writing\" includes writing\
+  \ done through electronic means; and\n \"appropriate information officer: means\
+  \ the Information Officer appointed to the public authority from which the information\
+  \ is being requested for.
+- (1) An information officer shall, as expeditiously as possible and in any case\
+  \ within fourteen working days of the receipt of a request under section 24, make\
+  \ a decision either to provide the information requested for on thepayment of a\
+  \ fee determined in accordance with the fee schedule  referred to in  section 14(\
+  \ e) or to reject the request on any one or more of the grounds referred to in section\
+  \ 5 of this Act, and shall forthwith communicate such decision to the citizen  who\
+  \ made the request.\n (2) Where a decision is made to provide the information requested\
+  \ for, access to such information shall be granted within fourteen days of arriving\
+  \ at such decision. \n (3) Where the request for information concerns the life and\
+  \ personal liberty of the citizen  making such request, the response to it shall\
+  \ be made within forty-eight hours of the receipt of the request.\n (4) Not withstanding\
+  \ the requirement made for the payment of a fee under subsection (1), the Commission\
+  \ may specify the circumstances in which information may be provided by an information\
+  \ officer, without the payment of a fee.\n (5) The period of fourteen days referred\
+  \ to in subsection (1) for providing access to information may be extended fora\
+  \ further period of not more than twenty one days where-\n (a) the request is for\
+  \ a large number of records and providing the information within fourteen days would\
+  \ unreasonably interfere with the activities ofthe public authority concerned; or\n\
+  \ (b) the request requires a search for records in, or collection of records from,\
+  \ an office of the public authority not situated in the same city, town orlocation\
+  \ as the office of the information officer that cannot reasonably be completed within\
+  \ the fourteen days.\n (6) Where a period for providing information is to be extended\
+  \ for any of the circumstances referred to in subsection (5), the information officer\
+  \ shall, as soon as reasonably possible, but in any case within fourteen days,notify\
+  \ the citizen concerned of such fact giving the followingreasons:-\n (a) the period\
+  \ of the extension; and\n (b) reasons for the extension.\n (7) A citizen who is\
+  \ dissatisfied with the reasons given under subsection (6) may lodge an appeal with\
+  \ the designated officer."
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

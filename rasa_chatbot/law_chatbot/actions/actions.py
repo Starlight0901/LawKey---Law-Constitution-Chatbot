@@ -18,7 +18,7 @@ class QASRLAction(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Load input sentences from CSV
         df = pd.read_csv('C:/Users/msi/Downloads/data.csv')
-        input_sentences = df['sentences'].tolist()
+        input_sentences = df['Laws'].tolist()
 
         # Select a random input sentence (you can customize this logic)
         random_input = random.choice(input_sentences)

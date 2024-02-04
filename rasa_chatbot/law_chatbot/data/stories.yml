@@ -9,6 +9,11 @@ stories:
   - intent: mood_great
   - action: utter_happy
 
+- story: tell law
+  steps:
+  - user: "what are laws that involves, if i kill someone?"
+  - action: utter_law
+
 - story: sad path 1
   steps:
   - intent: greet

@@ -5,28 +5,35 @@ import pickle
 
 class Q_table(object):
 
-    def __init__(self, mapping) :
-
+    def __init__(self, mapping):
         self.map_state2index = mapping['state2index']
         self.map_index2state = mapping['index2state']
         self.map_action2index = mapping['action2index']
         self.map_index2action = mapping['index2action']
+        self.feedback = mapping['feedback']
 
         self.learning_rate = 0.01
         self.epsilon = 0.2
 
         self.num_states = len(self.map_state2index)
         self.num_actions = len(self.map_action2index)
-        print('Q table size [states, actions]:', self.num_states, self.num_actions)
+        self.num_feedbacks = len(self.feedback)
+        print('Q table size [states, actions, feedbacks]:', self.num_states, self.num_actions, self.num_feedbacks)
 
+        # Initialize Q-values matrix
         self.Q = np.zeros([self.num_states, self.num_actions])
 
-
-    def add(self, value, i_s, i_a):
-
-        self.Q[i_s,i_a] = value
-
+    def add(self, feedback, utterance_index, response_index):
+        self.Q[utterance_index, response_index] = feedback
         return
+
+
+
+    def get_q_value(self, state_index, action_index, feedback_index):
+        return self.Q[state_index, action_index, feedback_index]
+
+    def update_q_value(self, state_index, action_index, feedback_index, new_value):
+        self.Q[state_index, action_index, feedback_index] = new_value
 
     def predict(self, i_s):
 
@@ -58,16 +65,5 @@ class Q_table(object):
 
         return
 
-    def greedy_policy(self, index_state):
 
-        if random.random() < self.epsilon:
-            # random exploration
-            print('eps policy:', random.randint(0, self.num_actions - 1), self.num_actions)
-            return random.randint(0, self.num_actions - 1)
-        else:
-            # exploitation
-            print('index_state:', index_state)
-            index_action, _ = self.predict(index_state)
-
-            return index_action
 

@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+from q_table import Q_table
 
 
 def parameters():
@@ -47,12 +48,19 @@ def load_data():
     # print(map_index2action)
     map_index2state, map_state2index = state_to_dict(df)
     # print(map_index2state)
+    feedback = df['feedback']
+
+
+    mapping = get_mapping(df)
+    populate_q_table(df,mapping)
 
     mapping = {}
     mapping['index2action'] = map_index2action
     mapping['action2index'] = map_action2index
     mapping['index2state'] = map_index2state
     mapping['state2index'] = map_state2index
+    mapping['index2feedback'] = feedback
+
 
     return mapping , df
 
@@ -93,78 +101,66 @@ def actions_to_dict(df):
 
     return map_index2action, map_action2index
 
+def feedback_to_dict(df):
+    feedbacks = list(df['feedback'])
+
+    count = 0
+    map_index2feedback = {}
+    map_feedback2index = {}
+
+    for utt in feedbacks:
+        map_index2feedback[count] = utt
+        map_feedback2index[utt] = count
+
+        count += 1
+    return map_index2feedback, map_feedback2index
+
 
 def get_mapping(df):
-    """ return dictionary mapping set of states (utterances) to indices and viceversa, and set of actions (responses) to indices and viceversa """
+
 
     map_index2action, map_action2index = actions_to_dict(df)
     # print(map_index2action)
     map_index2state, map_state2index = state_to_dict(df)
     # print(map_index2state)
+    feedback = df['feedback']
 
     mapping = {}
     mapping['index2action'] = map_index2action
     mapping['action2index'] = map_action2index
     mapping['index2state'] = map_index2state
     mapping['state2index'] = map_state2index
+    mapping['feedback'] = feedback
 
     return mapping
 
 
-class Simulator(object):
+def populate_q_table(conv_dict, mapping):
+    Q_tab = Q_table(mapping)
+    map_state2index = mapping['state2index']
+    map_action2index = mapping['action2index']
+    feedback_series = mapping['feedback']  # Retrieve the feedback Series
 
-    def __init__(self, conv_dict, multiply=4):
-        """ initialize parent sample of conversation and random generator """
+    # Print column headers for states and actions
+    print('States:', list(map_state2index.keys()))
+    print('Actions:', list(map_action2index.keys()))
 
-        self.conv_dict = conv_dict
+    for index, row in conv_dict.iterrows():
+        state_index = map_state2index[row['utterance']]
+        action_index = map_action2index[row['response']]
+        feedback_value = feedback_series[index]
 
-        all_utt = list(conv_dict['utterance'])
-        feedback = list(conv_dict['feedback'])
+        Q_tab.add(feedback_value, state_index, action_index)
 
-        ## define parent sample of conversations: self.utt such that extraction
-        ## of utterance triggering resp  with negative feedback has higher probability
-        ## probability ratio negative:positive defined by multiply
-        wrongs = []
-        good = []
-        utt = []
+    # Print the Q-table once after populating it
+    for state, row in zip(map_state2index.keys(), Q_tab.Q):
+        print(state, ' '.join([str(int(value)) for value in row]))
 
-        for i in range(len(all_utt)):
-            if feedback[i] == 0:
-                utt.append(all_utt[i])
-            else:
-                for k in range(multiply):
-                    utt.append(all_utt[i])
 
-        self.utt = utt
-        self.N = len(self.utt)
 
-        print()
-        print('---------------------------------------------------------------------------')
-        print('Parent sample of conversations in Simulator contains %d questions' % self.N)
 
-        ## init random generator
-        seed = 45896
-        random.seed(seed)
 
-        self.iterator = conv_dict.iterrows()
 
-        return
+load_data()
 
-    def run_random(self):
-        """ Returns random action """
 
-        r = random.randint(0, self.N - 1)
-        return self.utt[r]
-
-    def sequential(self, reset=False):
-        """ return action in sequential order """
-
-        if reset:
-            self.iterator = None
-            self.iterator = self.conv_dict.iterrows()
-            print('resetting...', self.iterator)
-
-        try:
-            return next(self.iterator)[1]
-        except StopIteration:
-            return None

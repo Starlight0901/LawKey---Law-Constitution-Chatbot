@@ -27,6 +27,9 @@ class Q_table(object):
         self.Q[utterance_index, response_index] = feedback
         return
 
+    def get_q_values_for_state(self, state_index):
+        return self.Q[state_index, :]
+
 
 
     def get_q_value(self, state_index, action_index, feedback_index):

@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 from q_table import Q_table
+from agent import Agent
 
 
 def parameters():
@@ -43,13 +44,12 @@ def load_data():
     df.dropna(subset=['utterance'], how='all', inplace=True)
     df.dropna(subset=['response'], how='all', inplace=True)
     df = filter_and_dropna(file)
-    #     print(df)
+    print(df)
     map_index2action, map_action2index = actions_to_dict(df)
     # print(map_index2action)
     map_index2state, map_state2index = state_to_dict(df)
     # print(map_index2state)
     feedback = df['feedback']
-
 
     mapping = get_mapping(df)
     populate_q_table(df,mapping)
@@ -59,8 +59,11 @@ def load_data():
     mapping['action2index'] = map_action2index
     mapping['index2state'] = map_index2state
     mapping['state2index'] = map_state2index
-    mapping['index2feedback'] = feedback
+    mapping['feedback'] = feedback
 
+    states = 'What is Hertz?'
+    agent = Agent(mapping)
+    agent.select_action(states)
 
     return mapping , df
 
@@ -124,6 +127,7 @@ def get_mapping(df):
     map_index2state, map_state2index = state_to_dict(df)
     # print(map_index2state)
     feedback = df['feedback']
+    print(feedback)
 
     mapping = {}
     mapping['index2action'] = map_index2action
@@ -139,28 +143,22 @@ def populate_q_table(conv_dict, mapping):
     Q_tab = Q_table(mapping)
     map_state2index = mapping['state2index']
     map_action2index = mapping['action2index']
-    feedback_series = mapping['feedback']  # Retrieve the feedback Series
+    feedback = mapping['feedback']  # Retrieve the feedback Series
 
     # Print column headers for states and actions
-    print('States:', list(map_state2index.keys()))
-    print('Actions:', list(map_action2index.keys()))
+    # print('States:', list(map_state2index))
+    # print('Actions:', list(map_action2index.keys()))
 
     for index, row in conv_dict.iterrows():
         state_index = map_state2index[row['utterance']]
+        print(state_index, map_state2index)
         action_index = map_action2index[row['response']]
-        feedback_value = feedback_series[index]
+        feedback_value = feedback[index]
 
         Q_tab.add(feedback_value, state_index, action_index)
 
-    # Print the Q-table once after populating it
     for state, row in zip(map_state2index.keys(), Q_tab.Q):
         print(state, ' '.join([str(int(value)) for value in row]))
-
-
-
-
-
-
 load_data()
 
 

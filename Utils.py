@@ -51,8 +51,10 @@ def load_data():
     # print(map_index2state)
     feedback = df['feedback']
 
+
     mapping = get_mapping(df)
-    populate_q_table(df,mapping)
+    q_tab = Q_table(mapping)
+    populate_q_table(df,mapping,q_tab)
 
     mapping = {}
     mapping['index2action'] = map_index2action
@@ -61,8 +63,8 @@ def load_data():
     mapping['state2index'] = map_state2index
     mapping['feedback'] = feedback
 
-    states = 'What is Hertz?'
-    agent = Agent(mapping)
+    states = 'Where is Brillancourt'
+    agent = Agent(mapping,q_tab)
     agent.select_action(states)
 
     return mapping , df
@@ -139,15 +141,15 @@ def get_mapping(df):
     return mapping
 
 
-def populate_q_table(conv_dict, mapping):
-    Q_tab = Q_table(mapping)
+def populate_q_table(conv_dict, mapping, Q_tab):
+
     map_state2index = mapping['state2index']
     map_action2index = mapping['action2index']
     feedback = mapping['feedback']  # Retrieve the feedback Series
 
     # Print column headers for states and actions
-    # print('States:', list(map_state2index))
-    # print('Actions:', list(map_action2index.keys()))
+    print('States:', list(map_state2index.keys()))
+    print('Actions:', list(map_action2index.keys()))
 
     for index, row in conv_dict.iterrows():
         state_index = map_state2index[row['utterance']]
@@ -159,6 +161,11 @@ def populate_q_table(conv_dict, mapping):
 
     for state, row in zip(map_state2index.keys(), Q_tab.Q):
         print(state, ' '.join([str(int(value)) for value in row]))
+
+
+
+
+
 load_data()
 
 

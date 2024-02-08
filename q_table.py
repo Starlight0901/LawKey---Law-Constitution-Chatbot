@@ -18,7 +18,7 @@ class Q_table(object):
         self.num_states = len(self.map_state2index)
         self.num_actions = len(self.map_action2index)
         self.num_feedbacks = len(self.feedback)
-        print('Q table size [states, actions, feedbacks]:', self.num_states, self.num_actions, self.num_feedbacks)
+        print('Q table size [states, actions, feedbacks]:', self.num_states, self.num_actions)
 
         # Initialize Q-values matrix
         self.Q = np.zeros([self.num_states, self.num_actions])

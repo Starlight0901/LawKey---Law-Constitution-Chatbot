@@ -2,6 +2,9 @@ import pandas as pd
 import random
 from q_table import Q_table
 from agent import Agent
+import embedding
+import gensim.downloader
+
 
 
 def parameters():
@@ -66,6 +69,24 @@ def load_data():
     states = 'Where is Brillancourt'
     agent = Agent(mapping,q_tab)
     agent.select_action(states)
+
+    # # embedding_cache = embedding.update_embedding_cache(mapping)
+    # # embedding.save_embedding_cache(embedding_cache)
+    # embedding_cache_loaded = embedding.load_embedding_cache()
+    #
+    # # Example: Compute embedding for the query state
+    query_state_text = "Can you explain the invoicing process at GS?"
+    # query_state_tokens = embedding.preprocess(query_state_text)
+    # word2vec_model = gensim.downloader.load("word2vec-google-news-300")
+    # query_state_embedding = embedding.get_sentence_embedding(query_state_tokens, word2vec_model)
+    #
+    # # Find the most similar state and its similarity score
+    # most_similar_state, highest_similarity = embedding.find_most_similar_state(embedding_cache_loaded, query_state_embedding,mapping)
+    # print("Most similar state:", most_similar_state)
+    # print("Highest similarity:", highest_similarity)
+    most_similar_state, highest_score = embedding.keyword_matching(query_state_text, mapping)
+    print("Most similar state:", mapping['index2state'][most_similar_state])
+    print("Keyword match score:", highest_score)
 
     return mapping , df
 

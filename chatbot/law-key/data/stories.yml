@@ -1,0 +1,19 @@
+version: "3.1"
+
+stories:
+- story: User asks for related laws
+  steps:
+  - intent: get_related_laws
+  - action: action_retrieve_related_laws
+
+
+- story: User asks for legal advice with form
+  steps:
+  - intent: get_legal_advice
+  - action: legal_advice_form
+  - active_loop: legal_advice_form
+  - slot_was_set:
+    - requested_slot: legal_topic
+  - slot_was_set:
+    - requested_slot: specific_details
+  - action: action_provide_legal_advice

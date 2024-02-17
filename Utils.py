@@ -53,6 +53,7 @@ def load_data():
     map_index2state, map_state2index = state_to_dict(df)
     # print(map_index2state)
     feedback = df['feedback']
+    similarity = df['confidence']
 
 
     mapping = get_mapping(df)
@@ -65,24 +66,25 @@ def load_data():
     mapping['index2state'] = map_index2state
     mapping['state2index'] = map_state2index
     mapping['feedback'] = feedback
+    mapping['confidence'] = similarity
 
-
-
-    query_state_text = "can you tell that place child care located?"
+    query_state_text = "where is the printshop men?"
     most_similar_state, highest_score = embedding.keyword_matching(query_state_text, mapping)
-    print("Most similar state:", mapping['index2state'][most_similar_state])
-    print("Keyword match score:", highest_score)
-    agent = Agent(mapping, q_tab)
-    agent.select_action(mapping['index2state'][most_similar_state])
+    if most_similar_state is None:
+        print("No similar state found.")
+    else:
+        print("Most similar state:", mapping['index2state'][most_similar_state])
+        print("Highest similarity score:", highest_score)
+        agent = Agent(mapping, q_tab)
+        agent.select_action(mapping['index2state'][most_similar_state])
 
-    return mapping , df
+    return mapping,df
 
 
 def state_to_dict(df):
     utterances = list(df['utterance'])
 
     unique_utterances = list(set(utterances))
-    #     print('# utterances in final DF:', len(utterances), len(list(set(utterances))))
 
     count = 0
     map_index2state = {}
@@ -114,6 +116,7 @@ def actions_to_dict(df):
 
     return map_index2action, map_action2index
 
+
 def feedback_to_dict(df):
     feedbacks = list(df['feedback'])
 
@@ -130,32 +133,35 @@ def feedback_to_dict(df):
 
 
 def get_mapping(df):
+    try:
+        map_index2action, map_action2index = actions_to_dict(df)
+        map_index2state, map_state2index = state_to_dict(df)
+        feedback = df['feedback']
+        similarity = df['confidence']
 
 
-    map_index2action, map_action2index = actions_to_dict(df)
-    # print(map_index2action)
-    map_index2state, map_state2index = state_to_dict(df)
-    # print(map_index2state)
-    feedback = df['feedback']
-    print(feedback)
+        mapping = {}
+        mapping['index2action'] = map_index2action
+        mapping['action2index'] = map_action2index
+        mapping['index2state'] = map_index2state
+        mapping['state2index'] = map_state2index
+        mapping['feedback'] = feedback
+        mapping['confidence'] = similarity
 
-    mapping = {}
-    mapping['index2action'] = map_index2action
-    mapping['action2index'] = map_action2index
-    mapping['index2state'] = map_index2state
-    mapping['state2index'] = map_state2index
-    mapping['feedback'] = feedback
 
-    return mapping
+        return mapping
+    except TypeError as e:
+        print("An error occurred while creating the mapping:", e)
+        return None
 
 
 def populate_q_table(conv_dict, mapping, Q_tab):
 
     map_state2index = mapping['state2index']
     map_action2index = mapping['action2index']
-    feedback = mapping['feedback']  # Retrieve the feedback Series
+    feedback = mapping['feedback']
+    confidence_values = mapping['confidence']
 
-    # Print column headers for states and actions
     print('States:', list(map_state2index.keys()))
     print('Actions:', list(map_action2index.keys()))
 
@@ -164,8 +170,11 @@ def populate_q_table(conv_dict, mapping, Q_tab):
         print(state_index, map_state2index)
         action_index = map_action2index[row['response']]
         feedback_value = feedback[index]
+        confidence_value = confidence_values[index]
 
-        Q_tab.add(feedback_value, state_index, action_index)
+        new_q_value = feedback_value + confidence_value
+
+        Q_tab.add(new_q_value, state_index, action_index)
 
     for state, row in zip(map_state2index.keys(), Q_tab.Q):
         print(state, ' '.join([str(int(value)) for value in row]))

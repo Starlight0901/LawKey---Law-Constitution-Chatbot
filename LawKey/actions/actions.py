@@ -1,4 +1,4 @@
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action
 import numpy as np
 import pandas as pd
 import gensim.downloader as api
@@ -6,7 +6,7 @@ from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from actions.utils import law_cleaning, tokenize, remove_stopwords, stemmer
+from utils.utils import law_cleaning, tokenize, remove_stopwords, stemmer
 
 # Load pre-trained word2vec model
 word_model = api.load("word2vec-google-news-300")

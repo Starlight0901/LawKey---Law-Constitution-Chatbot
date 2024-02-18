@@ -2,6 +2,7 @@ import streamlit as st
 import speech_recognition as sr
 from io import BytesIO
 from PIL import Image
+import requests
 
 def recognize_speech():
     recognizer = sr.Recognizer()
@@ -22,14 +23,16 @@ st.title("LAW-Key")
 with st.sidebar:    
     with st.container(height=300):
         st.text("history")
-
-with st.chat_message("ai"):
-      st.write("Hello 👋")
-
 prompt = st.chat_input ("Say something")
 if st.button("🎙️ Speak"):
     transcription = recognize_speech()
     prompt=transcription
+    
+with st.chat_message("ai"):
+      st.write("Hello 👋")
+
+
+
     
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -38,6 +41,8 @@ if prompt :
     # Display user message in chat message container
     with st.container():
         st.session_state.messages.append({"role": "user", "content": prompt})
+
+   
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])        

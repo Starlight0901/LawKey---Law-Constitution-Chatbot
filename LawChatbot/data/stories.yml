@@ -1,0 +1,45 @@
+version: "3.1"
+
+stories:
+
+- story: relevant law
+  steps:
+    - intent: query_law
+    - action: retrieve_laws
+
+- story: greet and relevant law
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_law
+    - action: retrieve_laws
+    - intent: goodbye
+    - action:  utter_goodbye
+
+- story: greet and bot challenge
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- story: query law and goodbye
+  steps:
+    - intent: query_law
+    - action: retrieve_laws
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: repeated query
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: query_law
+    - action: retrieve_laws
+    - intent: query_law
+    - action: retrieve_laws
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+

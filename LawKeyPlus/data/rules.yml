@@ -1,0 +1,33 @@
+version: "3.1"
+
+rules:
+- rule: retrieve law anytime the ask about a law
+  steps:
+  - intent: query_law
+  - action: retrieve_laws
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: retrieve simplified law anytime the ask about a simplified law
+  steps:
+  - intent: ask_for_simplification
+  - action: retrieve_simplified_laws
+
+- rule: retrieve summarize law anytime the ask about a summarize law
+  steps:
+  - intent: ask_for_summary
+  - action: retrieve_summarize_laws
+
+- rule: retrieve descriptive law anytime the ask about a descriptive law
+  steps:
+  - intent: ask_for_description
+  - action: retrieve_descriptive_laws
+

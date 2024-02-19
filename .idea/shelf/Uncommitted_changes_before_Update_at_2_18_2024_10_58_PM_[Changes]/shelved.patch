@@ -1,0 +1,528 @@
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1702174848731)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1702174848731)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="PyInterpreterInspection" enabled="false" level="WARNING" enabled_by_default="false" />
++  </profile>
++</component>
+\ No newline at end of file
+Index: stramlit1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/stramlit1.py b/stramlit1.py
+new file mode 100644
+--- /dev/null	(date 1707190605183)
++++ b/stramlit1.py	(date 1707190605183)
+@@ -0,0 +1,84 @@
++import streamlit as st
++import speech_recognition as sr
++from io import BytesIO
++from PIL import Image
++
++def recognize_speech():
++    recognizer = sr.Recognizer()
++    with sr.Microphone() as source:
++        print("Say something:")
++        audio = recognizer.listen(source)
++
++    try:
++        return recognizer.recognize_google(audio)
++    except sr.UnknownValueError:
++        print("Could not understand audio.")
++    except sr.RequestError as e:
++        print(f"Error making a request to Google API: {e}")
++
++
++st.title("LAW-Key")
++    
++with st.sidebar:    
++    with st.container(height=300):
++        st.text("history")
++
++    
++    
++    
++with st.chat_message("ai"):
++      st.write("Hello 👋")
++      
++col1, col2 = st.columns(2)
++
++
++prompt = col1.chat_input ("Say something")
++if col2.button("🎙️ Speak"):
++    transcription = recognize_speech()
++    st.write("Transcription:", transcription)
++    prompt=transcription
++    st.write("You entered:", prompt)
++
++
++if prompt:
++    with st.chat_message("user"):
++      st.write(prompt) 
++
++# Create a form using st.form
++with st.form(key='my_form'):
++    # Display the chat-like input area with the default text
++    user_input = st.text_area("Chat Input:", prompt, height=10)
++    user_input2 = user_input
++    st.write(user_input2)
++    # Add a submit button to the form
++    submit_button = st.form_submit_button(label='Submit')
++    submit_button1 = st.form_submit_button("🎙️ Speak")
++    
++
++# Check if the form was submitted
++if submit_button:
++    # Display the entered text
++    with st.chat_message("user"):
++      st.write(user_input2)
++
++if submit_button1:
++    transcription = recognize_speech()
++    user_input=transcription
++
++
++if "messages" not in st.session_state:
++    st.session_state.messages = []
++
++for message in st.session_state.messages:
++    with st.chat_message(message["role"]):
++        st.markdown(message["content"])
++
++if prompt := st.text_input("What is up?"):
++    # Add user message to chat history
++    st.session_state.messages.append({"role": "user", "content": prompt})
++    # Display user message in chat message container
++    with st.container():
++        st.markdown(prompt)
++
++# Place the voiceb button in the sidebar
++voiceb = st.button("🎙️ Voice")
+Index: test.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test.py b/test.py
+new file mode 100644
+--- /dev/null	(date 1707705138452)
++++ b/test.py	(date 1707705138452)
+@@ -0,0 +1,77 @@
++import streamlit as st
++
++# Check if the "messages" key exists in session_state
++if "messages" not in st.session_state:
++    st.session_state.messages = []
++
++# Display chat messages
++for message in st.session_state.messages:
++    with st.chat_message(message["role"]):
++        st.markdown(message["content"])
++
++# Create a form for user input
++user_input_form = st.form(key='user_input_form')
++
++# Accept user input
++with user_input_form:
++    prompt = st.text_input("What is up?")
++    submit_button = st.form_submit_button(label='Submit')
++
++# Check if the form was submitted
++if submit_button:
++    # Add user message to chat history
++    st.session_state.messages.append({"role": "user", "content": prompt})
++
++# Display user message in chat message container
++with st.chat_message("user"):
++    st.markdown(prompt)
++
++
++
++
++
++
++import streamlit as st
++import speech_recognition as sr
++from io import BytesIO
++from PIL import Image
++
++def recognize_speech():
++    recognizer = sr.Recognizer()
++    with sr.Microphone() as source:
++        print("Say something:")
++        audio = recognizer.listen(source)
++
++    try:
++        return recognizer.recognize_google(audio)
++    except sr.UnknownValueError:
++        print("Could not understand audio.")
++    except sr.RequestError as e:
++        print(f"Error making a request to Google API: {e}")
++
++
++st.title("LAW-Key")
++    
++with st.sidebar:    
++    with st.container(height=300):
++        st.text("history")
++
++with st.chat_message("ai"):
++      st.write("Hello 👋")
++
++prompt = st.chat_input ("Say something")
++if st.button("🎙️ Speak"):
++    transcription = recognize_speech()
++    prompt=transcription
++    
++if "messages" not in st.session_state:
++    st.session_state.messages = []
++
++if prompt :
++    # Display user message in chat message container
++    with st.container():
++        st.session_state.messages.append({"role": "user", "content": prompt})
++for message in st.session_state.messages:
++    with st.chat_message(message["role"]):
++        st.markdown(message["content"])        
++
+Index: .idea/LawKey---Law-Constitution-Chatbot.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/LawKey---Law-Constitution-Chatbot.iml b/.idea/LawKey---Law-Constitution-Chatbot.iml
+new file mode 100644
+--- /dev/null	(date 1702174849195)
++++ b/.idea/LawKey---Law-Constitution-Chatbot.iml	(date 1702174849195)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1702174849282)
++++ b/.idea/modules.xml	(date 1702174849282)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/LawKey---Law-Constitution-Chatbot.iml" filepath="$PROJECT_DIR$/.idea/LawKey---Law-Constitution-Chatbot.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: LawKey.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/LawKey.py b/LawKey.py
+new file mode 100644
+--- /dev/null	(date 1708275101951)
++++ b/LawKey.py	(date 1708275101951)
+@@ -0,0 +1,49 @@
++import streamlit as st
++import speech_recognition as sr
++from io import BytesIO
++from PIL import Image
++import requests
++
++def recognize_speech():
++    recognizer = sr.Recognizer()
++    with sr.Microphone() as source:
++        print("Say something:")
++        audio = recognizer.listen(source)
++
++    try:
++        return recognizer.recognize_google(audio)
++    except sr.UnknownValueError:
++        print("Could not understand audio.")
++    except sr.RequestError as e:
++        print(f"Error making a request to Google API: {e}")
++
++
++st.title("LAW-Key")
++    
++with st.sidebar:    
++    with st.container(height=300):
++        st.text("history")
++prompt = st.chat_input ("Say something")
++if st.button("🎙️ Speak"):
++    transcription = recognize_speech()
++    prompt=transcription
++    
++with st.chat_message("ai"):
++      st.write("Hello 👋")
++
++
++
++    
++if "messages" not in st.session_state:
++    st.session_state.messages = []
++
++if prompt :
++    # Display user message in chat message container
++    with st.container():
++        st.session_state.messages.append({"role": "user", "content": prompt})
++
++   
++for message in st.session_state.messages:
++    with st.chat_message(message["role"]):
++        st.markdown(message["content"])        
++
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1702174849391)
++++ b/.idea/misc.xml	(date 1702174849391)
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1702174849476)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1702174849476)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1702174849557)
++++ b/.idea/vcs.xml	(date 1702174849557)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(date 1702174850005)
++++ b/.idea/.gitignore	(date 1702174850005)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: flask/templates/styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/flask/templates/styles.css b/flask/templates/styles.css
+new file mode 100644
+--- /dev/null	(date 1702261618698)
++++ b/flask/templates/styles.css	(date 1702261618698)
+@@ -0,0 +1,79 @@
++body {
++    font-family: Arial, sans-serif;
++    margin: 0;
++    padding: 0;
++    display: flex;
++    justify-content: center;
++    align-items: center;
++    height: 100vh;
++    background-color: #f4f4f4;
++  }
++  
++  .chat-container {
++    max-width: 400px;
++    width: 100%;
++    background-color: #33e669;
++    border-radius: 8px;
++    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
++    overflow: hidden;
++  }
++  
++  .chat-box {
++    padding: 15px;
++    height: 300px;
++    overflow-y: auto;
++  }
++  
++  .chat-message {
++    margin-bottom: 15px;
++  }
++  
++  .chat-message .message {
++    padding: 8px 12px;
++    border-radius: 8px;
++    background-color: #e9e9e9;
++    display: inline-block;
++    max-width: 80%;
++  }
++  
++  .chat-message.received {
++    text-align: right;
++  }
++  .voice-button{
++    padding: 10px 20px;
++      font-size: 16px;
++      border: none;
++      cursor: pointer;
++  }
++  
++  
++  .user-input {
++    display: flex;
++    padding: 10px;
++    align-items: center;
++    border-top: 1px solid #ccc;
++  }
++  
++  .user-input input {
++    flex: 1;
++    padding: 8px;
++    border: 1px solid #ccc;
++    border-radius: 4px;
++    margin-right: 10px;
++  }
++  
++  .user-input button {
++    padding: 8px 12px;
++    border: none;
++    border-radius: 4px;
++    background-color: #007bff;
++    color: #fff;
++    cursor: pointer;
++
++  }
++
++  
++  .user-input button:hover {
++    background-color: #0056b3;
++  }
++  
+\ No newline at end of file
+Index: flask/templates/chatbot_interface.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/flask/templates/chatbot_interface.html b/flask/templates/chatbot_interface.html
+new file mode 100644
+--- /dev/null	(date 1702267518265)
++++ b/flask/templates/chatbot_interface.html	(date 1702267518265)
+@@ -0,0 +1,34 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>Chat Interface</title>
++  <link rel="stylesheet" href="styles.css">
++  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
++
++</head>
++<body>
++  <!-- <div class="chat-container">
++    <div class="chat-box">
++      <div class="chat-message">
++        <span class="message">Hey there!</span>
++      </div>
++      <div class="chat-message received">
++        <span class="message">Hi! How can I help you?</span>
++      </div>
++      
++    </div>-->
++ 
++    <div class="user-input">
++      <form action="/voice" method="post">
++        <input type="text" placeholder="Type your message...">
++        <button class="voice-button" type="submit"><i class="fas fa-microphone"></i></button>
++        <button type="submit">Send</button>
++      </form>
++      <p>{{Text}}</p>
++    </div>
++    
++  </div>
++</body>
++</html>
+Index: flask/flask_app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/flask/flask_app.py b/flask/flask_app.py
+new file mode 100644
+--- /dev/null	(date 1702267881963)
++++ b/flask/flask_app.py	(date 1702267881963)
+@@ -0,0 +1,27 @@
++from flask import Flask, render_template
++import speech_recognition as sr
++
++app = Flask(__name__)
++
++@app.route('/')
++def index():
++    return render_template('chatbot_interface.html')
++
++@app.route('/voice', methods=['POST'])
++def voice():
++    recognizer = sr.Recognizer()
++    text=''
++    with sr.Microphone() as source:
++        print("Speak")
++        audio = recognizer.listen(source)
++    try:
++        text = recognizer.recognize_google(audio)
++        print("You said: " + text)
++    except sr.UnknownValueError:
++        print("Could not understand")
++    except sr.RequestError as e:
++        print("Error with the service: " + str(e))
++    return render_template('chatbot_interface.html',Text= text)
++    
++if __name__ == '__main__':
++    app.run(debug=True)

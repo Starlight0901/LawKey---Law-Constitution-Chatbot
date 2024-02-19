@@ -1,1 +1,0 @@
-This project's actions.py file contains only word2vec model

@@ -5,14 +5,53 @@ import gensim.downloader as api
 from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+import nltk
+import string
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 
-from utils.utils import law_cleaning, tokenize, remove_stopwords, stemmer
+
+nltk.download('punkt')
+nltk.download('stopwords')
+
+
+def law_cleaning(law):
+    # Remove punctuations
+    law = law.translate(str.maketrans('', '', string.punctuation + '\r\n\t'))
+
+    # Remove special characters
+    law = law.replace('ã', '')
+    law = law.replace('Ã', '')
+
+    # Remain only the alphabetic, numeric characters and whitespaces
+    law = ''.join([i for i in law if i.isalnum() or i.isspace()])
+    return law
+
+
+def tokenize(text):
+    tokens = nltk.word_tokenize(text.lower())
+    return tokens
+
+
+def remove_stopwords(tokens):
+    stop_words = set(stopwords.words("english"))
+    filtered = [token for token in tokens if token.lower() not in stop_words]
+    return filtered
+
+
+def stemmer(tokens):
+    # Create the Porter stemmer object
+    pstemmer = PorterStemmer()
+    stemmed_words = [pstemmer.stem(token) for token in tokens]
+    # Join the list of stemmed words into a single string separated by spaces
+    stemmed_text = ' '.join(stemmed_words)
+    return stemmed_text
 
 # Load pre-trained word2vec model
 word_model = api.load("word2vec-google-news-300")
 
 # Load your law dataset (modify for your data path)
-df = pd.read_csv("C:/Users/msi/Desktop/dsgp/data.csv")
+df = pd.read_csv("C:\\Users\\asus\\OneDrive\\Desktop\\DSGP\\LawKey---Law-Constitution-Chatbot\\LawKey\\actions\\data.csv")
 
 # Preprocess data for efficiency
 vectorized = TfidfVectorizer(stop_words=stopwords.words("english"))

@@ -16,18 +16,17 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: retrieve simplified law anytime the ask about a simplified law
-  steps:
-  - intent: ask_for_simplification
-  - action: retrieve_simplified_laws
-
 - rule: retrieve summarize law anytime the ask about a summarize law
   steps:
   - intent: ask_for_summary
   - action: retrieve_summarize_laws
 
-- rule: retrieve descriptive law anytime the ask about a descriptive law
-  steps:
-  - intent: ask_for_description
-  - action: retrieve_descriptive_laws
-
+#- rule: retrieve descriptive law anytime the ask about a descriptive law
+#  steps:
+#  - intent: ask_for_description
+#  - action: retrieve_descriptive_laws
+#
+#- rule: retrieve simplified law anytime the ask about a simplified law
+#  steps:
+#  - intent: ask_for_simplification
+#  - action: retrieve_simplified_laws

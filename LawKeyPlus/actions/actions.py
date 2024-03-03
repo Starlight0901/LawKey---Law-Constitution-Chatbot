@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from utils.nlpUtils import tokenize, law_cleaning, remove_stopwords, stemmer
-from utils.simplifedLawUtils import simplify_laws
+# from utils.simplifedLawUtils import simplify_laws
 from utils.summarizedLawUtils import summarize_laws_with_t5
 
 # Load pre-trained word2vec model
@@ -51,6 +51,7 @@ class RetrieveLaws(Action):
 
         # Combine similarities (simple average)
         combined_similarities = (similarities_tfidf + similarities_word2vec) / 2
+        highest_similarity = max(combined_similarities)
 
         # Retrieve top 3 relevant laws based on combined scores
         sorted_indices = np.argsort(combined_similarities)[::-1][:3]
@@ -59,26 +60,27 @@ class RetrieveLaws(Action):
         # Create and dispatch Rasa response
         message = f"Here are the top 3 relevant laws based on your query:\n\n"
         for law in top_laws:
-            message += f"- {law}\n"
+            message += f"-> {law}\n"
+        message += f"Highest similarity - {highest_similarity}"
         dispatcher.utter_message(text=message)
         # Set the value of the retrieved_laws slot
         return [SlotSet("retrieved_laws", top_laws)]
 
 
-class RetrieveSimplifiedLaws(Action):
-    def name(self):
-        return "retrieve_simplified_laws"
-
-    def run(self, dispatcher, tracker, domain):
-        retrieved_laws = tracker.get_slot("retrieved_laws")
-        simplified_laws = simplify_laws(retrieved_laws)
-
-        message = f"Here are the simplified versions of the retrieved laws:\n\n"
-        for law in simplified_laws:
-            message += f"- {law}\n"
-        dispatcher.utter_message(text=message)
-
-        return []
+# class RetrieveSimplifiedLaws(Action):
+#     def name(self):
+#         return "retrieve_simplified_laws"
+#
+#     def run(self, dispatcher, tracker, domain):
+#         retrieved_laws = tracker.get_slot("retrieved_laws")
+#         simplified_laws = simplify_laws(retrieved_laws)
+#
+#         message = f"Here are the simplified versions of the retrieved laws:\n\n"
+#         for law in simplified_laws:
+#             message += f"- {law}\n"
+#         dispatcher.utter_message(text=message)
+#
+#         return []
 
 
 class RetrieveSummarizeLaws(Action):
@@ -91,29 +93,29 @@ class RetrieveSummarizeLaws(Action):
 
         message = f"Here are the summaries of the retrieved laws:\n\n"
         for law, summary in summarized_laws.items():
-            message += f"**Law:** {law}\n**Summary:** {summary}\n\n"
+            message += f"**Summary:** {summary}\n\n" # for get summary with law- **Law:** {law}\n
         dispatcher.utter_message(text=message)
 
         return []
 
 
-class RetrieveDescriptiveLaws(Action):
-    def name(self):
-        return "retrieve_descriptive_laws"
-
-    def run(self, dispatcher, tracker, domain):
-        retrieved_laws = tracker.get_slot("retrieved_laws")
-        summarized_laws = summarize_laws_with_t5(retrieved_laws)
-
-        # Combine summary and simplified version
-        descriptive_laws = {}
-        for law, summary in summarized_laws.items():
-            simplified_law = simplify_laws(summary)
-            descriptive_laws[law] = f"{simplified_law}\n(Summary: {summary})"
-
-        message = f"Here are the descriptive summaries of the retrieved laws:\n\n"
-        for law, description in descriptive_laws.items():
-            message += f"**{law}**\n{description}\n\n"
-        dispatcher.utter_message(text=message)
-
-        return []
+# class RetrieveDescriptiveLaws(Action):
+#     def name(self):
+#         return "retrieve_descriptive_laws"
+#
+#     def run(self, dispatcher, tracker, domain):
+#         retrieved_laws = tracker.get_slot("retrieved_laws")
+#         summarized_laws = summarize_laws_with_t5(retrieved_laws)
+#
+#         # Combine summary and simplified version
+#         descriptive_laws = {}
+#         for law, summary in summarized_laws.items():
+#             simplified_law = simplify_laws(summary)
+#             descriptive_laws[law] = f"{simplified_law}\n(Summary: {summary})"
+#
+#         message = f"Here are the descriptive summaries of the retrieved laws:\n\n"
+#         for law, description in descriptive_laws.items():
+#             message += f"**{law}**\n{description}\n\n"
+#         dispatcher.utter_message(text=message)
+#
+#         return []

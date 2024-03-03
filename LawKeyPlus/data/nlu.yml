@@ -8,23 +8,23 @@ nlu:
     - What happens to an allowance for the maintenance of a child, adult offspring, or disabled offspring under this Act once the individual in question no longer falls within the defined categories?
     - Which court should an individual apply to for maintenance if they, the person in respect of whom the application is made, or the person against whom the application is made resides within its jurisdiction?
 
-- intent: ask_for_simplification
-  examples: |
-    - give above laws in simple terms.
-    - Please simplify the above answers.
-    - give simplified versions of the retrieved laws.
-
 - intent: ask_for_summary
   examples: |
     - Can you summarize those laws for me?
     - Could you give me a brief overview of the main points?
     - Please summarize the key aspects of those laws.
 
-- intent: ask_for_description
-  examples: |
-    - Can you describe those laws in simpler terms?
-    - Could you give me a more detailed explanation of the points?
-    - Please provide a breakdown of the key aspects in simpler language.
+#- intent: ask_for_simplification
+#  examples: |
+#    - give above laws in simple terms.
+#    - Please simplify the above answers.
+#    - give simplified versions of the retrieved laws.
+#
+#- intent: ask_for_description
+#  examples: |
+#    - Can you describe those laws in simpler terms?
+#    - Could you give me a more detailed explanation of the points?
+#    - Please provide a breakdown of the key aspects in simpler language.
 
 - intent: greet
   examples: |

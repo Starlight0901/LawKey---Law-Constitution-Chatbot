@@ -41,15 +41,6 @@ stories:
     - intent: goodbye
     - action: utter_goodbye
 
-- story: Simplify retrieved laws
-  steps:
-    - intent: query_law
-    - action: retrieve_laws
-    - slot_was_set:
-        - retrieved_laws: ["law1", "law2", "law3"]
-    - intent: ask_for_simplification
-    - action: retrieve_simplified_laws
-
 - story: Summarize retrieved laws
   steps:
     - intent: query_law
@@ -59,12 +50,20 @@ stories:
     - intent: ask_for_summary
     - action: retrieve_summarize_laws
 
-
-- story: Describe retrieved laws
-  steps:
-    - intent: query_law
-    - action: retrieve_laws
-    - slot_was_set:
-        - retrieved_laws: ["law1", "law2", "law3"]
-    - intent: ask_for_description
-    - action: retrieve_descriptive_laws
+#- story: Simplify retrieved laws
+#  steps:
+#    - intent: query_law
+#    - action: retrieve_laws
+#    - slot_was_set:
+#        - retrieved_laws: ["law1", "law2", "law3"]
+#    - intent: ask_for_simplification
+#    - action: retrieve_simplified_laws
+#
+#- story: Describe retrieved laws
+#  steps:
+#    - intent: query_law
+#    - action: retrieve_laws
+#    - slot_was_set:
+#        - retrieved_laws: ["law1", "law2", "law3"]
+#    - intent: ask_for_description
+#    - action: retrieve_descriptive_laws

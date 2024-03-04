@@ -6,9 +6,6 @@ import streamlit as st
 import speech_recognition as sr
 from gtts import gTTS
 import pyttsx3
-from IPython.display import Audio, display
-import pygame
-import os
 
 
 def recognize_speech():
@@ -36,9 +33,7 @@ def text_to_speech(text):
     return tts
 
 
-# Define a function to play the speech
-
-
+# function to play the speech
 def play_speech(tts):
     with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_audio:
         tts.save(temp_audio.name)
@@ -49,17 +44,6 @@ def homepage():
     st.title("Home Page")
     st.write("Welcome to the Home Page!")
 
-    # Define a function to convert text to speech
-
-    # Get user input
-    user_input = st.text_input("Enter some text:")
-
-    # Convert text to speech and play it
-    if user_input:
-        tts = text_to_speech(user_input)
-        st.write("Playing speech...")
-        play_speech(tts)
-
 
 def chatbot():
     st.title("LAW-Key")
@@ -67,18 +51,16 @@ def chatbot():
     with st.sidebar:
         with st.container(height=300):
             st.text("history")
-    recognized_text8 = ""
-    recognized_text = st.chat_input("Say something")
-    recognized_text8 = recognized_text
-    button_pressed = False
 
+    recognized_text = st.chat_input("Say something")
+    button_pressed = False
+    col1 , col2 = st.columns(2)
     # Check if "🎙️ Speak" button is clicked
-    if st.button("🎙️ Speak"):
+    if col1.button("🎙️ "):
         transcription = recognize_speech()
         recognized_text = transcription
-        recognized_text8 = recognized_text
     # Check if "Press Me" button is pressed
-    if st.button("Listen to Me"):
+    if col2.button(":loud_sound:"):
         button_pressed = True
 
     with st.chat_message("ai"):
@@ -86,8 +68,11 @@ def chatbot():
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
+    if "voice" not in st.session_state:
+        st.session_state.voice = ""
 
     if recognized_text:
+        st.session_state.voice = recognized_text
         with st.container():
             st.session_state.messages.append({"role": "user", "content": recognized_text})
             # rasa_output = interact_with_rasa(recognized_text.text_input)
@@ -97,11 +82,9 @@ def chatbot():
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-    print(recognized_text, "5")
-    st.write(recognized_text)
-    tts2 = text_to_speech(recognized_text8)
-    play_speech(tts2)
+
     if button_pressed:
+        tts2 = text_to_speech(st.session_state.voice)
         play_speech(tts2)
 
 
@@ -118,24 +101,36 @@ def account():
         engine.runAndWait()
 
     # Sample text (replace this with your variable)
-    text_to_speak = "Hello, this is a sample text from mandinu."
+    text_to_speak = "Hello, this is a sample text ."
 
     # Generate the speech and play it
     if st.button("test"):
         speak(text_to_speak)
 
 
+def helpu():
+    st.title("how can we help")
+
+
+def about_us():
+    st.title("We are ")
+
+
 def main():
     st.sidebar.title("Navigation")
-    page_options = ["Home", "chatbot", "account"]
+    page_options = ["Home", "chatbot", "Account", "About us", "Help"]
     selected_page = st.sidebar.selectbox("Select Page", page_options)
 
     if selected_page == "Home":
         homepage()
     elif selected_page == "chatbot":
         chatbot()
-    elif selected_page == "account":
+    elif selected_page == "Account":
         account()
+    elif selected_page == "About us":
+        about_us()
+    elif selected_page == "Help":
+        helpu()
 
 
 if __name__ == "__main__":

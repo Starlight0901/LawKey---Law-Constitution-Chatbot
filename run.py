@@ -49,10 +49,11 @@ def save(query,similar_state,response,feedback,similarity,mapping,q_table):
         pass
     if similar_state is not None:
         if similarity > 0:
-            map_action2index = mapping['action2index']
-            action_index = map_action2index[response]
-            q_value = similarity + feedback
-            q_table.update_q_value(similar_state, action_index, q_value)
+            map_action2index = mapping.get('action2index')  # Use .get() to safely access the dictionary
+            if map_action2index is not None and response in map_action2index:
+                action_index = map_action2index[response]
+                q_value = similarity + feedback
+                q_table.update_q_value(similar_state, action_index, q_value)
 
     with open('query_responses.csv', 'a', encoding='utf-8', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -77,6 +78,7 @@ if __name__ == "__main__":
             break
         except Exception as e:
             print(f"An error occurred: {e}")
+            raise
 
 # def main(query):
 #     try:

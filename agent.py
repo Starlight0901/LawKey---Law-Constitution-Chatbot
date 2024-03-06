@@ -1,6 +1,5 @@
 import random
 import re
-
 import pandas as pd
 from nltk.corpus import stopwords
 import gensim.downloader as api
@@ -103,8 +102,8 @@ class Agent:
                     similarity, random_laws = calculate_similarity_random_laws(state)
                     print(min(q_values))
                     print('third one')
-                    print('q: ',preprocessed_q_table_action)
-                    print('rasa: ', preprocessed_rasa_response)
+                    # print('q: ',preprocessed_q_table_action)
+                    # print('rasa: ', preprocessed_rasa_response)
                     return rasa_response, similarity
             else:
                 response = self.get_response_from_rasa(state)

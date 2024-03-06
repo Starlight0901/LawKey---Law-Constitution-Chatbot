@@ -21,7 +21,7 @@ class Q_table(object):
         print('Q table size [states, actions, feedbacks]:', self.num_states, self.num_actions)
 
         # Initialize Q-values matrix
-        self.Q = np.zeros([self.num_states, self.num_actions])
+        self.Q = np.zeros([self.num_states+1, self.num_actions+1])
 
     def add(self, feedback, utterance_index, response_index):
         self.Q[utterance_index, response_index] = feedback
@@ -30,43 +30,20 @@ class Q_table(object):
     def get_q_values_for_state(self, state_index):
         return self.Q[state_index, :]
 
+    def update_q_value(self, state_index, action_index, new_value):
+        self.Q[state_index, action_index] = new_value
+
+    def save_q_table(self, q_table, filename = 'Q.pkl'):
+        with open(filename, 'wb') as f:
+            pickle.dump(q_table, f)
+
+    # Load Q table from a file
+    def load_q_table(self, filename = 'Q.pkl'):
+        with open(filename, 'rb') as f:
+            q_table = pickle.load(f)
+        return q_table
 
 
-    def get_q_value(self, state_index, action_index, feedback_index):
-        return self.Q[state_index, action_index, feedback_index]
-
-    def update_q_value(self, state_index, action_index, feedback_index, new_value):
-        self.Q[state_index, action_index, feedback_index] = new_value
-
-    def predict(self, i_s):
-
-        Q_row = self.Q[i_s, :]
-
-        return np.argmax(Q_row), np.amax(Q_row)
-
-    def save_Q(self, pfile = 'Q.pck'):
-
-        with open(pfile, 'wb') as f:
-            pickle.dump(self.Q, f)
-
-        return
-
-    def load_Q(self, pfile='Q.pck'):
-
-        with open(pfile, 'rb') as f:
-            self.Q = pickle.load(f)
-
-        return
-
-    def learn(self, index_state, index_action, reward):
-
-        current_q = self.Q[index_state, index_action]
-        # using Bellman Optimality Equation to update q function
-        new_q = float(reward)
-
-        self.Q[index_state, index_action] += self.learning_rate * (new_q - current_q)
-
-        return
 
 
 

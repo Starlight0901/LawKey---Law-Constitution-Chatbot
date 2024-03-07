@@ -52,7 +52,7 @@ word_model = api.load("word2vec-google-news-300")
 
 # Load your law dataset (modify for your data path)
 
-df = pd.read_csv("C:/Users/msi/Desktop/dsgp/data.csv")
+# df = pd.read_csv("C:/Users/msi/Desktop/dsgp/data.csv")
 
 df = pd.read_csv("C:\\Users\\asus\\OneDrive\\Desktop\\DSGP\\LawKey---Law-Constitution-Chatbot\\LawKey\\actions\\data.csv")
 

@@ -56,7 +56,6 @@ df = pd.read_csv("C:/Users/msi/Desktop/dsgp/data.csv")
 
 df = pd.read_csv("C:\\Users\\asus\\OneDrive\\Desktop\\DSGP\\LawKey---Law-Constitution-Chatbot\\LawKey\\actions\\data.csv")
 
-
 # Preprocess data for efficiency
 vectorized = TfidfVectorizer(stop_words=stopwords.words("english"))
 doc_vectors_tfidf = vectorized.fit_transform(df["Law"])
@@ -93,7 +92,7 @@ class RetrieveLaws(Action):
         # Combine similarities (simple average)
 
         # Combine similarities (example: simple average)
->>>>>>> Reinforcement-learning
+
         combined_similarities = (similarities_tfidf + similarities_word2vec) / 2
 
         # Retrieve top 3 relevant laws based on combined scores

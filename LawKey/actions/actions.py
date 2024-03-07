@@ -5,10 +5,6 @@ import gensim.downloader as api
 from nltk.corpus import stopwords
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
-<<<<<<< HEAD
-
-from utils.utils import law_cleaning, tokenize, remove_stopwords, stemmer
-=======
 import nltk
 import string
 from nltk.corpus import stopwords
@@ -50,17 +46,16 @@ def stemmer(tokens):
     # Join the list of stemmed words into a single string separated by spaces
     stemmed_text = ' '.join(stemmed_words)
     return stemmed_text
->>>>>>> Reinforcement-learning
 
 # Load pre-trained word2vec model
 word_model = api.load("word2vec-google-news-300")
 
 # Load your law dataset (modify for your data path)
-<<<<<<< HEAD
+
 df = pd.read_csv("C:/Users/msi/Desktop/dsgp/data.csv")
-=======
+
 df = pd.read_csv("C:\\Users\\asus\\OneDrive\\Desktop\\DSGP\\LawKey---Law-Constitution-Chatbot\\LawKey\\actions\\data.csv")
->>>>>>> Reinforcement-learning
+
 
 # Preprocess data for efficiency
 vectorized = TfidfVectorizer(stop_words=stopwords.words("english"))
@@ -94,9 +89,9 @@ class RetrieveLaws(Action):
         input_vector_word2vec = np.mean([word_model[word] for word in tokens if word in word_model], axis=0)
         similarities_word2vec = cosine_similarity([input_vector_word2vec], law_vectors_word2vec)[0]
 
-<<<<<<< HEAD
+
         # Combine similarities (simple average)
-=======
+
         # Combine similarities (example: simple average)
 >>>>>>> Reinforcement-learning
         combined_similarities = (similarities_tfidf + similarities_word2vec) / 2

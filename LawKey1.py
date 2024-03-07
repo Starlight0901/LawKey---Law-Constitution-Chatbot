@@ -7,6 +7,9 @@ import speech_recognition as sr
 from gtts import gTTS
 import pyttsx3
 
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 
 def recognize_speech():
     recognizer = sr.Recognizer()
@@ -41,8 +44,20 @@ def play_speech(tts):
 
 
 def homepage():
-    st.title("Home Page")
-    st.write("Welcome to the Home Page!")
+    bt1, bt2, bt3, bt4 = st.columns(4)
+    if bt4.button('Already a Member?'):
+        st.write('sign in')
+    with st.form(key='signup', clear_on_submit=True):
+        st.subheader('Sign Up')
+        name = st.text_input(':blue[Name]', placeholder='Enter your name')
+        username = st.text_input(':blue[User Name]', placeholder='Enter a user name')
+        password1 = st.text_input(':blue[Password]', placeholder="Enter Your Password", type='password')
+        password2 = st.text_input(':blue[Confirm Password]', placeholder=" Re Enter Your Password", type='password')
+
+        btn1, btn2,btn3,btn4,btn5 = st.columns(5)
+        with btn3:
+            st.form_submit_button('Sign Up')
+
 
 
 def chatbot():
@@ -54,13 +69,13 @@ def chatbot():
 
     recognized_text = st.chat_input("Say something")
     button_pressed = False
-    col1 , col2 = st.columns(2)
+    col1, col2 = st.columns(2)
     # Check if "🎙️ Speak" button is clicked
-    if col1.button("🎙️ "):
+    if col1.button("🎙️ voice "):
         transcription = recognize_speech()
         recognized_text = transcription
     # Check if "Press Me" button is pressed
-    if col2.button(":loud_sound:"):
+    if col2.button(":loud_sound: speaker"):
         button_pressed = True
 
     with st.chat_message("ai"):
@@ -90,22 +105,6 @@ def chatbot():
 
 def account():
     st.title("Account")
-    st.write("Welcome to the Home Page!")
-
-    # Initialize the text-to-speech engine
-    engine = pyttsx3.init()
-
-    # Function to speak the given text
-    def speak(text):
-        engine.say(text)
-        engine.runAndWait()
-
-    # Sample text (replace this with your variable)
-    text_to_speak = "Hello, this is a sample text ."
-
-    # Generate the speech and play it
-    if st.button("test"):
-        speak(text_to_speak)
 
 
 def helpu():

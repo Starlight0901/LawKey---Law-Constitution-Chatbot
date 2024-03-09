@@ -16,7 +16,7 @@ def parameters():
 
 def filter_and_dropna(file_path):
     df = pd.read_csv(file_path)
-    keep_words = ['what', 'which', 'when', 'where', 'who', 'whom', 'whose', 'why', 'whether', 'how', 'is', 'are','do','can']
+    keep_words = ['what', 'which', 'when', 'where', 'who', 'whom', 'whose', 'why', 'whether', 'how', 'is', 'are','do','can','explain','describe','clarify','Define','in','under','Explore','elaborate','the','a']
 
     def starts_with_keep_words(sentence):
         return any(sentence.lower().lstrip().startswith(word) for word in keep_words)

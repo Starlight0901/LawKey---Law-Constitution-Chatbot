@@ -1,4 +1,6 @@
 import pickle
+
+import LawKey1
 from agent import Agent
 from Utils import load_data , populate_q_table
 from q_table import Q_table
@@ -23,6 +25,7 @@ def main(query):
         mapping, df  = load_data()
         q_table = Q_table(mapping)
         print("Attempting to load Q-table from file...")
+        print(query)
         q_table.load_q_table()
         print("Q-table loaded successfully.")
         print("populating")
@@ -68,10 +71,12 @@ def save(query,similar_state,response,feedback,similarity,mapping,q_table):
 if __name__ == "__main__":
     while True:
         try:
-            query = input("query: ")
+            query = input("Enter recognized text: ")
+            print(query)
             response, similarity, mapping, similar_state, q_table, query = main(query)
             print(f"response: {response}")  # Displaying the response to the user
-            feedback = int(input("feedback: "))
+            LawKey1.chatbot(response)
+            feedback = 0
             save(query, similar_state, response, feedback, similarity, mapping, q_table)
         except KeyboardInterrupt:
             print("\nTerminating the program.")

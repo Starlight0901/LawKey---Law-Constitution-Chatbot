@@ -5,10 +5,7 @@ import requests
 import streamlit as st
 import speech_recognition as sr
 from gtts import gTTS
-import pyttsx3
-
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+import run
 
 
 def recognize_speech():
@@ -25,12 +22,6 @@ def recognize_speech():
         print(f"Error making a request to Google API: {e}")
 
 
-def speak_text(text):
-    engine = pyttsx3.init()
-    engine.say(text)
-    engine.runAndWait()
-
-
 def text_to_speech(text):
     tts = gTTS(text=text, lang='en')
     return tts
@@ -43,24 +34,32 @@ def play_speech(tts):
         st.audio(temp_audio.name, format='audio/mp3')
 
 
+def signin():
+    with st.form(key='signin', clear_on_submit=True):
+        username = st.text_input(':blue[User Name]', placeholder='Enter a user name')
+        password = st.text_input(':blue[Password]', placeholder="Enter Your Password", type='password')
+        btns1, btns2, btns3, btns4, btns5 = st.columns(5)
+        with btns3:
+            st.form_submit_button('Sign Up')
+
+
 def homepage():
     bt1, bt2, bt3, bt4 = st.columns(4)
     if bt4.button('Already a Member?'):
-        st.write('sign in')
+        signin()
     with st.form(key='signup', clear_on_submit=True):
         st.subheader('Sign Up')
         name = st.text_input(':blue[Name]', placeholder='Enter your name')
-        username = st.text_input(':blue[User Name]', placeholder='Enter a user name')
+        username1 = st.text_input(':blue[User Name]', placeholder='Enter a user name')
         password1 = st.text_input(':blue[Password]', placeholder="Enter Your Password", type='password')
         password2 = st.text_input(':blue[Confirm Password]', placeholder=" Re Enter Your Password", type='password')
 
-        btn1, btn2,btn3,btn4,btn5 = st.columns(5)
+        btn1, btn2, btn3, btn4, btn5 = st.columns(5)
         with btn3:
             st.form_submit_button('Sign Up')
 
 
-
-def chatbot():
+def chatbot(chatbot_res=None):
     st.title("LAW-Key")
 
     with st.sidebar:
@@ -90,17 +89,15 @@ def chatbot():
         st.session_state.voice = recognized_text
         with st.container():
             st.session_state.messages.append({"role": "user", "content": recognized_text})
+            run.main(recognized_text)
+            chatbot_response = chatbot_res
+            st.session_state.messages.append({"role": "AI", "content": chatbot_response})
             # rasa_output = interact_with_rasa(recognized_text.text_input)
             # for response in rasa_output:
-            #     st.session_state.messages.append({"role": "AI", "content": response.get("text", "")})
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
-
-    if button_pressed:
-        tts2 = text_to_speech(st.session_state.voice)
-        play_speech(tts2)
 
 
 def account():

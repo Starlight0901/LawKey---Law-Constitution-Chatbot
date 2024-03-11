@@ -1,0 +1,43 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - appreciation
+  - query_law
+  - ask_about_services
+  - file_complaint
+
+slots:
+  retrieved_laws:
+    type: list
+    mappings:
+      - type: from_intent
+        value: ["law1", "law2", "law3"]
+        intent: query_law
+
+actions:
+  - retrieve_laws
+  - handle_complaint_details
+
+responses:
+  utter_greet:
+  - text: "Hi there! How can I help you today?"
+
+  utter_services:
+  - text: "I can assist you with legal information (related to motor traffic, civil laws, labor laws, criminal laws, and maintenance laws) retrieval tasks. What can I help you with today?"
+
+
+  utter_appreciation:
+    - text: "Happy to help! Is there anything else I can do for you today?"
+
+  utter_goodbye:
+  - text: "Thank you for engaging with our legal chatbot today. If you have any more questions in the future or need further assistance with your legal inquiries, don't hesitate to reach out. Wishing you the best of luck with your legal matters. Goodbye!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

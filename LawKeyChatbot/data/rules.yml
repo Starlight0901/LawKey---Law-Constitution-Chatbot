@@ -1,0 +1,33 @@
+version: "3.1"
+
+rules:
+- rule: retrieve law anytime the ask about a law
+  steps:
+  - intent: query_law
+  - action: retrieve_laws
+
+- rule: Trigger action for filing a complaint
+  steps:
+  - intent: file_complaint
+  - action: handle_complaint_details
+
+- rule: Ask about services and greet
+  steps:
+  - intent: ask_about_services
+  - action: utter_services
+
+- rule: Appreciation and goodbye
+  steps:
+  - intent: appreciation
+  - action: utter_appreciation
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+

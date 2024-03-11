@@ -92,14 +92,19 @@ def chatbot():
         st.session_state.voice = recognized_text
         with st.container():
             st.session_state.messages.append({"role": "user", "content": recognized_text})
-            run.main(recognized_text)
+            #run.main(recognized_text)
 
-            st.session_state.messages.append({"role": "AI", "content": chatbot_response})
+            response, similarity, mapping, similar_state, q_table, query = run.main(recognized_text)
+            st.session_state.messages.append({"role": "AI", "content": response})
+            st.session_state.voice = response
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
+    if button_pressed:
+        tts2 = text_to_speech(st.session_state.voice)
+        play_speech(tts2)
 
 def account():
     st.title("Account")

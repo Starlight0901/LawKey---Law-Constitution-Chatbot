@@ -36,7 +36,6 @@ def main(query):
         response, similarity = agent.select_action(similar_state, query)
         q_table.save_q_table(q_table)
         print(response)
-        LawKey1.get_responce(response)
         return response,similarity , mapping,similar_state, q_table, query
 
     except Exception as e:
@@ -75,10 +74,8 @@ if __name__ == "__main__":
     while True:
         try:
             query = input("Enter recognized text: ")
-            #print(query)
+
             response, similarity, mapping, similar_state, q_table, query = main(query)
-            #print(f"response: {response}")  # Displaying the response to the user
-            #LawKey1.chatbot(response)
             feedback = 0
             save(query, similar_state, response, feedback, similarity, mapping, q_table)
         except KeyboardInterrupt:

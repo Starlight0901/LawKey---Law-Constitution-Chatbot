@@ -1,0 +1,87 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: ask_about_services
+  examples: |
+    - What services do you offer?
+    - Can you assist me with my legal issue?
+    - How can you help me?
+    - What can you do for me?
+
+- intent: query_law
+  examples: |
+    - What steps can be taken if a member of the Commission is unable to perform their duties temporarily due to reasons such as illness or being out of the country? 
+    - Does any provision within maintenance Act imply a deprivation of the right for an individual, such as a child, adult offspring, disabled offspring, spouse, or parent, to pursue a civil action for maintenance?
+    - What happens to an allowance for the maintenance of a child, adult offspring, or disabled offspring under this Act once the individual in question no longer falls within the defined categories?
+    - Which court should an individual apply to for maintenance if they, the person in respect of whom the application is made, or the person against whom the application is made resides within its jurisdiction?
+    - If a man engages in sexual intercourse with a woman under various circumstances, such as without her consent, through force or threats, or when she is intoxicated or of unsound mind, what are the legal implications for the man? 
+    - Who is responsible for the administration and management of the Authority, as outlined in the law, and how is this responsibility allocated among various individuals and entities, including ex-officio members and appointed members?
+    - Under what circumstances can a member of the Commission be removed from office by the President, based on the recommendations of the Constitutional Council?
+    - What do the terms 'adopted', 'adult offspring', 'child', 'disabled offspring,' 'marital', 'non-marital', 'parent', and 'salary' mean in the context of Criminal Law?
+    - If a traffic sign or notice is placed in compliance with these regulations, what specific information must be displayed on its reverse side, and in what manner?
+    - What rights does a witness have when participating in legal proceedings?
+
+- intent: appreciation
+  examples: |
+    - Thank you for your help!
+    - That's helpful, thanks.
+    - I appreciate your assistance.
+    - ty
+    - Thankz
+    - thankyou
+    - thnx
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: file_complaint
+  examples: |
+    - The responses from your chatbot were slow and unhelpful, leaving me dissatisfied.
+    - The laws provided were outdated and irrelevant to my situation.
+    - The legal information given did not match my query, causing confusion.
+    - Your service failed to provide accurate laws pertinent to my legal issue.
+    - I'm frustrated with the overall user experience of your legal chatbot.
+    - The explanations of the laws were unclear and difficult to understand.
+    - Your service provided convoluted explanations that did not clarify my legal situation.
+    - I found the legal information presented to be confusing and unhelpful.
+    - Your service lacks efficiency and effectiveness in addressing users' legal concerns.
+    - The laws provided were incomplete and did not address all aspects of my query.
+    - Your service failed to provide comprehensive information regarding relevant laws.
+    - I expected more detailed information about the laws pertaining to my legal issue.
+    - I'm frustrated with the inaccurate legal advice provided by your service.
+    - Your service did not provide any relevant laws related to my legal question.
+    - I could not find any laws that directly addressed my specific legal concern.
+    - The laws presented were not applicable to my situation, rendering the service useless.

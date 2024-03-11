@@ -34,9 +34,6 @@ def play_speech(tts):
         st.audio(temp_audio.name, format='audio/mp3')
 
 
-
-
-
 def signin():
     with st.form(key='signin', clear_on_submit=True):
         username = st.text_input(':blue[User Name]', placeholder='Enter a user name')
@@ -92,8 +89,6 @@ def chatbot():
         st.session_state.voice = recognized_text
         with st.container():
             st.session_state.messages.append({"role": "user", "content": recognized_text})
-            #run.main(recognized_text)
-
             response, similarity, mapping, similar_state, q_table, query = run.main(recognized_text)
             st.session_state.messages.append({"role": "AI", "content": response})
             st.session_state.voice = response

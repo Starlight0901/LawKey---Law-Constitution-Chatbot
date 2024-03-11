@@ -54,8 +54,7 @@ word_model = api.load("word2vec-google-news-300")
 
 # df = pd.read_csv("C:/Users/msi/Desktop/dsgp/data.csv")
 
-df = pd.read_csv("C:\\Users\\asus\\OneDrive\\Desktop\\DSGP\\LawKey---Law-Constitution-Chatbot\\LawKey\\actions\\data.csv")
-
+df = pd.read_csv("C:\\Users\\admin\\Desktop\\L5\\DSGP\\LawKey---Law-Constitution-Chatbot\\data.csv")
 # Preprocess data for efficiency
 vectorized = TfidfVectorizer(stop_words=stopwords.words("english"))
 doc_vectors_tfidf = vectorized.fit_transform(df["Law"])

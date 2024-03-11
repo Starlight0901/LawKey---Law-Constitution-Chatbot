@@ -10,7 +10,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import requests
 from LawKey.actions.actions import law_cleaning, tokenize, remove_stopwords, stemmer
 
-df = pd.read_csv("C:\\Users\\asus\\PycharmProjects\\pythonProject6\\LawKey\\actions\\data.csv")
+df = pd.read_csv("C:\\Users\\admin\\Desktop\\L5\\DSGP\\LawKey---Law-Constitution-Chatbot\\data.csv")
 word_model = api.load("word2vec-google-news-300")
 vectorized = TfidfVectorizer(stop_words=stopwords.words("english"))
 doc_vectors_tfidf = vectorized.fit_transform(df["Law"])

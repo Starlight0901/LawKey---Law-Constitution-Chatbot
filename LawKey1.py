@@ -34,6 +34,9 @@ def play_speech(tts):
         st.audio(temp_audio.name, format='audio/mp3')
 
 
+
+
+
 def signin():
     with st.form(key='signin', clear_on_submit=True):
         username = st.text_input(':blue[User Name]', placeholder='Enter a user name')
@@ -59,7 +62,7 @@ def homepage():
             st.form_submit_button('Sign Up')
 
 
-def chatbot(chatbot_res=None):
+def chatbot():
     st.title("LAW-Key")
 
     with st.sidebar:
@@ -90,10 +93,8 @@ def chatbot(chatbot_res=None):
         with st.container():
             st.session_state.messages.append({"role": "user", "content": recognized_text})
             run.main(recognized_text)
-            chatbot_response = chatbot_res
+
             st.session_state.messages.append({"role": "AI", "content": chatbot_response})
-            # rasa_output = interact_with_rasa(recognized_text.text_input)
-            # for response in rasa_output:
 
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):

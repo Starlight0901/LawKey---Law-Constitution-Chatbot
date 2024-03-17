@@ -77,29 +77,80 @@ def chatbot():
     if col2.button(":loud_sound: speaker"):
         button_pressed = True
 
-    with st.chat_message("ai"):
-        st.write("Hello 👋")
-
     if "messages" not in st.session_state:
         st.session_state.messages = []
     if "voice" not in st.session_state:
         st.session_state.voice = ""
+    if 'session_data' not in st.session_state:
+        st.session_state.session_data = []
 
     if recognized_text:
         st.session_state.voice = recognized_text
         with st.container():
             st.session_state.messages.append({"role": "user", "content": recognized_text})
             response, similarity, mapping, similar_state, q_table, query = run.main(recognized_text)
+            st.session_state.session_data.append(
+                {'query': query, 'similar_state': similar_state, 'response': response, 'similarity': similarity,
+                 'mapping': mapping, 'q_table': q_table})
             st.session_state.messages.append({"role": "AI", "content": response})
             st.session_state.voice = response
+    if not st.session_state.messages:
+        with st.chat_message("ai"):
+            st.write("Hello 👋")
+    else:
+        for message in st.session_state.messages:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+        st.write('please give a feedback for the response')
+        emoji_positive = "😃"
+        emoji_neutral = "😐"
+        emoji_negative = "😢"
 
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+        # Handle button clicks
+        emcol1, emcol2, emcol3, emcol4, emcol5, emcol6, emcol7, emcol8, emcol9 = st.columns(9)
+        if emcol1.button(emoji_positive, key="positive_button"):
+            feedback = 1
+            last_data = st.session_state.session_data[-1]
+
+            # Assigning  individual variables from the last data
+            query = last_data['query']
+            similar_state = last_data['similar_state']
+            response = last_data['response']
+            similarity = last_data['similarity']
+            mapping = last_data['mapping']
+            q_table = last_data['q_table']
+            save = run.save(query, similar_state, response, feedback, similarity, mapping, q_table)
+
+        if emcol2.button(emoji_neutral, key="neutral_button"):
+            feedback = 0
+            last_data = st.session_state.session_data[-1]
+
+            # Assigning  individual variables from the last data
+            query = last_data['query']
+            similar_state = last_data['similar_state']
+            response = last_data['response']
+            similarity = last_data['similarity']
+            mapping = last_data['mapping']
+            q_table = last_data['q_table']
+            save = run.save(query, similar_state, response, feedback, similarity, mapping, q_table)
+
+        if emcol3.button(emoji_negative, key="negative_button"):
+            feedback = -1
+            last_data = st.session_state.session_data[-1]
+
+            # Assigning  individual variables from the last data
+            query = last_data['query']
+            similar_state = last_data['similar_state']
+            response = last_data['response']
+            similarity = last_data['similarity']
+            mapping = last_data['mapping']
+            q_table = last_data['q_table']
+            save = run.save(query, similar_state, response, feedback, similarity, mapping, q_table)
 
     if button_pressed:
         tts2 = text_to_speech(st.session_state.voice)
         play_speech(tts2)
+
 
 def account():
     st.title("Account")

@@ -33,7 +33,7 @@ def load_data():
 
     df.dropna(subset=['utterance'], how='all', inplace=True)
     df.dropna(subset=['response'], how='all', inplace=True)
-    print(df)
+    #print(df)
     map_index2action, map_action2index = actions_to_dict(df)
     # print(map_index2action)
     map_index2state, map_state2index = state_to_dict(df)
@@ -150,7 +150,7 @@ def populate_q_table(conv_dict, mapping, Q_tab):
 
     for index, row in conv_dict.iterrows():
         state_index = map_state2index[row['utterance']]
-        print(state_index, map_state2index)
+        #print(state_index, map_state2index)
         action_index = map_action2index[row['response']]
         feedback_value = feedback[index]
         confidence_value = confidence_values[index]
@@ -160,8 +160,8 @@ def populate_q_table(conv_dict, mapping, Q_tab):
         Q_tab.add(new_q_value, state_index, action_index)
 
 
-    for state, row in zip(map_state2index.keys(), Q_tab.Q):
-        print(state, ' '.join([str(int(value)) for value in row]))
+    # for state, row in zip(map_state2index.keys(), Q_tab.Q):
+    #     print(state, ' '.join([str(int(value)) for value in row]))
 
 
 # load_data()

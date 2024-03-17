@@ -1,20 +1,20 @@
 import pickle
-
-import LawKey1
 from agent import Agent
-from Utils import load_data , populate_q_table
+from Utils import load_data, populate_q_table
 from q_table import Q_table
 from embedding import keyword_matching
 import csv
 
+global user_feedback
 
-def save_mapping(mapping, filename = 'mapping.pkl'):
+
+def save_mapping(mapping, filename='mapping.pkl'):
     with open(filename, 'wb') as f:
         pickle.dump(mapping, f)
 
 
 # Load mapping from a file
-def load_mapping(filename = 'mapping.pkl'):
+def load_mapping(filename='mapping.pkl'):
     with open(filename, 'rb') as f:
         mapping = pickle.load(f)
     return mapping
@@ -22,27 +22,28 @@ def load_mapping(filename = 'mapping.pkl'):
 
 def main(query):
     try:
-        mapping, df  = load_data()
+        mapping, df = load_data()
         q_table = Q_table(mapping)
         print("Attempting to load Q-table from file...")
         print(query)
         q_table.load_q_table()
         print("Q-table loaded successfully.")
         print("populating")
-        populate_q_table(df,mapping,q_table)
+        populate_q_table(df, mapping, q_table)
         print("populate done")
         agent = Agent(mapping, q_table)
         similar_state, score = keyword_matching(query, mapping)
         response, similarity = agent.select_action(similar_state, query)
         q_table.save_q_table(q_table)
-        print(response)
-        return response,similarity , mapping,similar_state, q_table, query
+        # print(response)
+        return response, similarity, mapping, similar_state, q_table, query
 
     except Exception as e:
         print("An error occurred:", e)
         raise
 
-def save(query,similar_state,response,feedback,similarity,mapping,q_table):
+
+def save(query, similar_state, response, feedback, similarity, mapping, q_table):
     fieldnames = ['utterance', 'response', 'feedback', 'confidence']
 
     # Write column names to CSV file if the file doesn't exist
@@ -70,20 +71,22 @@ def save(query,similar_state,response,feedback,similarity,mapping,q_table):
         })
 
 
-if __name__ == "__main__":
-    while True:
-        try:
-            query = input("Enter recognized text: ")
 
-            response, similarity, mapping, similar_state, q_table, query = main(query)
-            feedback = 0
-            save(query, similar_state, response, feedback, similarity, mapping, q_table)
-        except KeyboardInterrupt:
-            print("\nTerminating the program.")
-            break
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            raise
+
+#if __name__ == "__main__":
+    #while True:
+    #     try:
+    #         # query = input("Enter recognized text: ")
+    #         feedback()
+    #         response, similarity, mapping, similar_state, q_table, query = main(query)
+
+    #         save(query, similar_state, response, user_feedback, similarity, mapping, q_table)
+    #     except KeyboardInterrupt:
+    #         print("\nTerminating the program.")
+    #         break
+    #     except Exception as e:
+    #         print(f"An error occurred: {e}")
+    #         raise
 
 # def main(query):
 #     try:
@@ -96,4 +99,3 @@ if __name__ == "__main__":
 #     except Exception as e:
 #         print("An error occurred:", e)
 #         return None
-

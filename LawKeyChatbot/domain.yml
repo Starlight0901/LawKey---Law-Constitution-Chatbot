@@ -8,6 +8,8 @@ intents:
   - query_law
   - ask_about_services
   - file_complaint
+  - express_apology
+  - express_displeasure
 
 slots:
   retrieved_laws:
@@ -28,7 +30,6 @@ responses:
   utter_services:
   - text: "I can assist you with legal information (related to motor traffic, civil laws, labor laws, criminal laws, and maintenance laws) retrieval tasks. What can I help you with today?"
 
-
   utter_appreciation:
     - text: "Happy to help! Is there anything else I can do for you today?"
 
@@ -36,7 +37,13 @@ responses:
   - text: "Thank you for engaging with our legal chatbot today. If you have any more questions in the future or need further assistance with your legal inquiries, don't hesitate to reach out. Wishing you the best of luck with your legal matters. Goodbye!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am a bot, powered by Rasa. I'm specialized in legal matters and may not be able to assist with this kind of issues. However, you can try searching online for solutions."
+
+  utter_express_apology:
+  - text: "No problem at all. If there's anything else you need, just let me know."
+
+  utter_apology:
+  - text: "I apologize if my response didn't meet your expectations. Please feel free to provide more details about your issue, and I'll do my best to assist you further."
 
 session_config:
   session_expiration_time: 60

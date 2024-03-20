@@ -62,3 +62,70 @@ stories:
   steps:
     - intent: ask_about_services
     - action: utter_services
+
+- story: Query law, appreciate, file complaint, and goodbye
+  steps:
+    - intent: query_law
+    - action: retrieve_laws
+    - intent: appreciation
+    - action: utter_appreciation
+    - intent: file_complaint
+    - action: handle_complaint_details
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Ask about services and relevant law
+  steps:
+    - intent: ask_about_services
+    - action: utter_services
+    - intent: query_law
+    - action: retrieve_laws
+
+- story: Greet and appreciate
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: appreciation
+    - action: utter_appreciation
+
+- story: Query law, appreciate, and goodbye
+  steps:
+    - intent: query_law
+    - action: retrieve_laws
+    - intent: appreciation
+    - action: utter_appreciation
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Greet, file complaint, and goodbye
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: file_complaint
+    - action: handle_complaint_details
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Bot challenge and relevant law
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+    - intent: query_law
+    - action: retrieve_laws
+
+- story: Express apology
+  steps:
+    - intent: express_apology
+    - action: utter_express_apology
+
+- story: Expressing Displeasure
+  steps:
+    - intent: express_displeasure
+    - action: utter_apology
+
+- story: Another Expressing Displeasure
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+    - intent: express_displeasure
+    - action: utter_apology

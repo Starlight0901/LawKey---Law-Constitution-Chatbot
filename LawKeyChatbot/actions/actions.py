@@ -91,7 +91,7 @@ class RetrieveLaws(Action):
         highest_similarity = max(combined_similarities)
 
         if highest_similarity < 0.35:
-            # If the highest similarity is below 0.3, it's an out-of-scope query
+            # If the highest similarity is below 0.35, it's an out-of-scope query
             message = ("I'm sorry, I can only assist with legal-related queries related to motor traffic, "
                        "civil laws, labor laws, criminal laws, and maintenance laws. Can I help you with anything "
                        "else?\n\n")
@@ -154,5 +154,5 @@ class FileComplaint(Action):
 
         # Respond to the user
         dispatcher.utter_message(text="I'm sorry to hear that you're experiencing issues. Your complaint has been "
-                                      "filed. We will look into it shortly.")
+                                      "stored. We will look into it shortly.")
         return []

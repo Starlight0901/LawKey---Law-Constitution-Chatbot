@@ -119,6 +119,43 @@ nlu:
     - am I talking to a human?
     - who are you?
     - how are you?
+    - What's going on?
+    - what's the weather today?
+    - do you know any good places to travel
+    - What's the point?
+    - Please explain.
+    - Could you clarify?
+    - 123437
+    - i65hgbh
+    - gvrhuyef738hbufi74389
+    - vdgdsbhbbq77w
+    - 67
+    - 02679
+    - 12345
+    - Lorem ipsum dolor sit amet
+    - @#$%^&*()
+    - abcdefghijklmnopqrstuvwxyz
+    - 9876543210
+    - Why is the sky blue?
+    - What's your favorite color?
+    - How tall is Mount Everest?
+    - Tell me a joke.
+    - What is the meaning of life?
+    - Who won the World Series last year?
+    - Can you sing a song?
+    - What time is it?
+    - How do I bake a cake?
+    - What is the capital of France?
+    - Define photosynthesis.
+    - Why did the chicken cross the road?
+    - What's the weather like today?
+    - How do I tie a tie?
+    - Calculate 2 + 2.
+    - 455+545
+    - 44/4
+    - 425;.'']/wsdef
+    - 32*6
+    - -+=^/';12!fdcg67[]';/.
 
 - intent: file_complaint
   examples: |

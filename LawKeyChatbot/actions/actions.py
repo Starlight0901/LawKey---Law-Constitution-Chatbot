@@ -90,11 +90,10 @@ class RetrieveLaws(Action):
         combined_similarities = (similarities_tfidf + similarities_word2vec) / 2
         highest_similarity = max(combined_similarities)
 
-        if highest_similarity < 0.35:
-            # If the highest similarity is below 0.35, it's an out-of-scope query
+        if highest_similarity < 0.3:
+            # If the highest similarity is below 0.3, it's an out-of-scope query.
             message = ("I'm sorry, I can only assist with legal-related queries related to motor traffic, "
-                       "civil laws, labor laws, criminal laws, and maintenance laws. Can I help you with anything "
-                       "else?\n\n")
+                       "civil laws, labor laws, criminal laws, and maintenance laws.\n\n")
             message += (
                 f"\nHighest similarity - {highest_similarity}\n\nAre you satisfied with the answer? If not, feel free "
                 f"to file a complaint.")

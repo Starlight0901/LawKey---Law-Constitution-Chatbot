@@ -1,0 +1,231 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: ask_about_services
+  examples: |
+    - What services do you offer?
+    - Can you assist me with my legal issue?
+    - How can you help me?
+    - What can you do for me?
+    - how can you assist me?
+<<<<<<< Updated upstream
+    - Can you help me?
+    - I need some assistance.
+    - I'm having trouble, can you help?
+    - Could you lend me a hand?
+=======
+>>>>>>> Stashed changes
+
+- intent: query_law
+  examples: |
+    - What steps can be taken if a member of the Commission is unable to perform their duties temporarily due to reasons such as illness or being out of the country? 
+    - Does any provision within maintenance Act imply a deprivation of the right for an individual, such as a child, adult offspring, disabled offspring, spouse, or parent, to pursue a civil action for maintenance?
+    - What happens to an allowance for the maintenance of a child, adult offspring, or disabled offspring under this Act once the individual in question no longer falls within the defined categories?
+    - Which court should an individual apply to for maintenance if they, the person in respect of whom the application is made, or the person against whom the application is made resides within its jurisdiction?
+    - If a man engages in sexual intercourse with a woman under various circumstances, such as without her consent, through force or threats, or when she is intoxicated or of unsound mind, what are the legal implications for the man? 
+    - Who is responsible for the administration and management of the Authority, as outlined in the law, and how is this responsibility allocated among various individuals and entities, including ex-officio members and appointed members?
+    - Under what circumstances can a member of the Commission be removed from office by the President, based on the recommendations of the Constitutional Council?
+    - What do the terms 'adopted', 'adult offspring', 'child', 'disabled offspring,' 'marital', 'non-marital', 'parent', and 'salary' mean in the context of Criminal Law?
+    - If a traffic sign or notice is placed in compliance with these regulations, what specific information must be displayed on its reverse side, and in what manner?
+    - What rights does a witness have when participating in legal proceedings?
+    - A parent, despite having sufficient means, neglects or refuses to maintain their adult offspring who is disabled and unable to support themselves. If an application is filed for maintenance, discuss the factors the Magistrate would take into consideration while determining the monthly allowance for the disabled adult offspring. Additionally, explore the conditions under which the Magistrate may or may not make an order for maintenance in the case of a non-marital disabled adult offspring, and what evidence is required to establish parentage in such situations
+    - Explain the circumstances under which an order for maintenance allowance, issued under this Act, loses its force and validity,after the person in respect of whom the order is made ceases to be a child.
+    - Who are the eligible applicants for making an application for maintenance, and what are the specific conditions for each category, including maintenance for a child, disabled offspring, adult offspring, and a spouse?
+    - Describe the jurisdictional requirement outlined in the maintenance law for filing an application. Explain the criteria based on the residence of the applicant, the person in respect of whom the application is made or the person against whom such application is made, resides whom the application is filed, and identify the appropriate Court to which such an application should be submitted.
+    - What legal measures does a Magistrate have at their disposal for enforcing compliance with an order of maintenance? Explain the consequences for a person who neglects to comply with the maintenance order, and describe the authority of the Magistrate to issue a warrant for levying the amount in default before resorting to the imposition of imprisonment.
+    - Explain the legal provisions and procedures outlined in the maintenance law regarding the attachment of salary orders as a means of enforcing compliance with maintenance obligations. Describe the conditions under which a Magistrate can issue such an order, the considerations involved in determining the amount to be deducted from the respondent's salary, and the consequences for the employer if they fail or neglect to comply with an attachment of salary order.
+    - Describe the provisions outlined in the maintenance law regarding the deposit of maintenance payments under an order. Explain the authority of the Magistrate to direct the respondent to deposit the amount due each month at a specified post office or bank, and the process by which the person entitled to receive the payment can withdraw the deposited amount. Additionally, discuss the consequences for the respondent in the event of default in the deposit of payments and the actions that the Magistrate may take to address such defaults.
+    - Explain the provisions in the maintenance law concerning the cancellation or alteration of orders for maintenance allowances. Under what circumstances can a person receiving or ordered to pay a monthly allowance apply for such changes, and what factors does the Magistrate consider in making alterations to the allowance ordered? Additionally, discuss the effective date of cancellation or alteration and the circumstances under which the Magistrate may order a different effective date, providing reasons for such a decision.
+    - Who is entitled to receive a copy of the order of maintenance certified under the hand of the Magistrate without payment? Why is the person to whom the allowance is to be paid, and the Court making such order or any Magistrate having jurisdiction over the place where any such person or the respondent may be, shall, on the production of such order and on being satisfied as to the identity of the parties and the non-payment of the allowance due
+    - What are the requirements for submitting an application for an order of maintenance or to enforce such an order? Explain the necessary characteristics of the written application, including the signature and absence of stamp duty. Additionally, clarify the stipulations regarding summonses to a respondent or witness, emphasizing the exemption from stamp duty.
+    - What are the criteria that disqualify an individual from being appointed or continuing as a member of the Board?
+    - What are the provisions regarding the establishment and functioning of the Victims of Crime and Witnesses Assistance and Protection Division, also known as the "Protection Division," as outlined in Criminal Law?
+    - What are the stipulations regarding the burden of proof and the admissibility of evidence in claims for compensation or interim awards under this section of Criminal Law?
+    - What are the procedures and composition of the Advisory Board responsible for making recommendations on interim monetary awards under section 67, as outlined in the relevant legislation?
+    - What are the procedural requirements prior to the commencement of recording evidence or statements of victims of crime or witnesses through contemporaneous audio-visual linkage from remote locations, as stipulated in the relevant legislation?
+    - In cases where an offense under Criminal Law is committed by an entity, who are the individuals deemed responsible according to the legislation, and what conditions must be met for them to avoid being held accountable for the offense?
+    - What are the provisions and penalties outlined in the legislation regarding the involvement of individuals in the production, distribution, or possession of obscene materials involving children, as described in the relevant section of the law?
+    - What are the penalties specified in the law for individuals who engage in acts of gross indecency with another person, both in general circumstances and specifically if the offense involves a person under the age of sixteen, as outlined in the relevant legal provision?
+    - When does the court appoint a date for the pre-trial conference to commence, as outlined in the relevant legal provision, either upon the filing of the answer or under what circumstances if a replication is permitted?
+    - What amendment has been made to subsection (1) of Section 104 of the principal enactment, specifically regarding the timing for a party to an action to take a certain action, as outlined in the provided text?
+    - What are the circumstances under which the seat of a Member becomes vacant, as specified in the provided text, including reasons such as resignation, death, assumption of the office of President, disqualification, employment in the public sector, absence from Parliament, declaration of void election, dissolution of Parliament, or expulsion via resolution?
+<<<<<<< Updated upstream
+    - What are the penalties for driving under the influence of alcohol or drugs, as specified in the motor traffic regulations?
+    - Can a person contest a traffic violation ticket issued by law enforcement officers, and if so, what is the procedure for contesting such a ticket?
+    - Under what circumstances can a driver's license be suspended or revoked, as outlined in motor traffic laws?
+    - What are the legal requirements for filing a civil lawsuit against a negligent driver for damages resulting from a motor vehicle accident?
+    - In cases of workplace discrimination, what legal remedies are available to employees under labor laws?
+    - Can an employer terminate an employee without providing a valid reason, and what protections do employees have against unfair dismissal under labor laws?
+    - What are the legal obligations of employers regarding workplace safety and health standards, as stipulated in labor regulations?
+    - Under what circumstances can an individual be charged with fraud under criminal laws, and what are the potential penalties for committing fraud?
+    - How does the legal system define and address cases of identity theft and financial fraud, particularly in the context of online transactions?
+    - What legal recourse is available to victims of domestic violence, and what protective measures can be enforced by the authorities under criminal laws?
+    - Can a landlord evict a tenant without following proper legal procedures, and what rights do tenants have to contest an eviction under civil laws?
+    - What legal protections exist for consumers against false advertising or deceptive business practices, as provided for in civil regulations?
+    - What are the legal responsibilities of parents regarding child support payments under maintenance laws, and what actions can be taken if a parent fails to fulfill these obligations?
+    - Can a person be held criminally liable for failing to pay alimony or spousal support as ordered by the court, and what are the potential consequences for such non-compliance?
+    - How does the legal system define and address cases of intellectual property infringement, such as copyright or trademark violations?
+    - What are the legal requirements for forming a contract between parties, and how can breaches of contract be remedied under civil laws?
+    - Can an individual be held criminally liable for engaging in online harassment or cyberbullying, and what legal protections exist for victims of such behavior?
+    - What legal avenues are available to tenants who have been unlawfully denied their security deposit refund by a landlord, as outlined in civil regulations?
+    - Under what circumstances can a person be charged with manslaughter or homicide under criminal laws, and what are the potential penalties for these offenses?
+    - What legal steps can be taken to enforce a court order for child custody or visitation rights, particularly in cases where one parent refuses to comply with the order?
+=======
+>>>>>>> Stashed changes
+
+- intent: appreciation
+  examples: |
+    - Thank you for your help!
+    - That's helpful, thanks.
+    - I appreciate your assistance.
+    - ty
+    - Thankz
+    - thankyou
+    - thnx
+<<<<<<< Updated upstream
+    - Thank you for your assistance!
+    - I appreciate your help.
+    - Thanks for clarifying that.
+    - I'm grateful for your guidance.
+    - You've been very helpful, thank you!
+=======
+>>>>>>> Stashed changes
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+    - how are you?
+<<<<<<< Updated upstream
+    - What's going on?
+    - what's the weather today?
+    - do you know any good places to travel
+    - What's the point?
+    - Please explain.
+    - Could you clarify?
+    - 123437
+    - i65hgbh
+    - gvrhuyef738hbufi74389
+    - vdgdsbhbbq77w
+    - 67
+    - 02679
+    - 12345
+    - Lorem ipsum dolor sit amet
+    - @#$%^&*()
+    - abcdefghijklmnopqrstuvwxyz
+    - 9876543210
+    - Why is the sky blue?
+    - What's your favorite color?
+    - How tall is Mount Everest?
+    - Tell me a joke.
+    - What is the meaning of life?
+    - Who won the World Series last year?
+    - Can you sing a song?
+    - What time is it?
+    - How do I bake a cake?
+    - What is the capital of France?
+    - Define photosynthesis.
+    - Why did the chicken cross the road?
+    - What's the weather like today?
+    - How do I tie a tie?
+    - Calculate 2 + 2.
+    - 455+545
+    - 44/4
+    - 425;.'']/wsdef
+    - 32*6
+    - -+=^/';12!fdcg67[]';/.
+=======
+>>>>>>> Stashed changes
+
+- intent: file_complaint
+  examples: |
+    - The responses from your chatbot were slow and unhelpful, leaving me dissatisfied.
+    - The laws provided were outdated and irrelevant to my situation.
+    - The legal information given did not match my query, causing confusion.
+    - Your service failed to provide accurate laws pertinent to my legal issue.
+    - I'm frustrated with the overall user experience of your legal chatbot.
+    - The explanations of the laws were unclear and difficult to understand.
+    - Your service provided convoluted explanations that did not clarify my legal situation.
+    - I found the legal information presented to be confusing and unhelpful.
+    - Your service lacks efficiency and effectiveness in addressing users' legal concerns.
+    - The laws provided were incomplete and did not address all aspects of my query.
+    - Your service failed to provide comprehensive information regarding relevant laws.
+    - I expected more detailed information about the laws pertaining to my legal issue.
+    - I'm frustrated with the inaccurate legal advice provided by your service.
+    - Your service did not provide any relevant laws related to my legal question.
+    - I could not find any laws that directly addressed my specific legal concern.
+    - The laws presented were not applicable to my situation, rendering the service useless.
+    - The legal chatbot failed to understand the nuances of my legal question, resulting in irrelevant responses.
+    - Despite multiple attempts, the chatbot was unable to provide satisfactory solutions to my legal issue.
+    - I encountered technical glitches while using the legal chatbot, hindering my ability to obtain accurate legal advice.
+    - The chatbot's responses lacked depth and failed to provide comprehensive guidance on complex legal matters.
+    - I'm disappointed with the lack of personalized assistance from the legal chatbot in addressing my specific legal concerns.
+    - The legal chatbot provided contradictory information, leading to further confusion regarding my legal situation.
+    - I expected the legal chatbot to offer more practical solutions or resources to help resolve my legal problem.
+    - The chatbot's interface was difficult to navigate, making it challenging to access relevant legal information efficiently.
+    - Despite inputting detailed information about my legal issue, the chatbot's responses were generic and unhelpful.
+    - I'm dissatisfied with the lack of real-time support or the ability to connect with a human lawyer through the chatbot platform.
+<<<<<<< Updated upstream
+    - The chatbot frequently provided error messages, making it difficult to use.
+    - Despite following the instructions provided, the chatbot failed to recognize or respond to my queries.
+    - The language used by the chatbot was too technical and complex, making it challenging to understand.
+    - I encountered delays in receiving responses from the chatbot, leading to frustration and wasted time.
+    - The chatbot's recommendations for legal actions were impractical or unrealistic in my situation.
+    - There were limitations in the types of legal issues the chatbot could address, leaving me without assistance for my specific concern.
+    - The chatbot's database of laws and regulations seemed outdated, with no recent updates or amendments reflected in the responses.
+    - I encountered difficulties in accessing the chatbot, either due to website crashes or server issues.
+    - The chatbot's interface lacked accessibility features, making it inaccessible to users with disabilities.
+    - Despite providing personal information, the chatbot failed to tailor its responses to my individual circumstances, providing generic advice instead.
+
+- intent: express_apology
+  examples: |
+    - I'm sorry.
+    - My apologies.
+    - Sorry about that.
+    - I apologize for the inconvenience.
+
+- intent: express_displeasure
+  examples: |
+    - I'm not happy with that response.
+    - This isn't what I was looking for.
+    - I'm disappointed with the service.
+    - That's not helpful at all.
+    - That's not what I asked.
+    - I expected better assistance.
+    - That's not relevant.
+    - This seems wrong.
+    - I don't understand
+=======
+>>>>>>> Stashed changes

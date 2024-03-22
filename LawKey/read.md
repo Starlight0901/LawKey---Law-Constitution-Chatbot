@@ -1,1 +1,0 @@
-This project use both tf-idf and word2vec models to get vectors

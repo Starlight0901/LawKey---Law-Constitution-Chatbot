@@ -111,7 +111,6 @@ stories:
     - intent: bot_challenge
     - action: utter_iamabot
     - intent: query_law
-<<<<<<< Updated upstream
     - action: retrieve_laws
 
 - story: Express apology
@@ -130,6 +129,5 @@ stories:
     - action: utter_iamabot
     - intent: express_displeasure
     - action: utter_apology
-=======
     - action: retrieve_laws
->>>>>>> Stashed changes
+

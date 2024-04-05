@@ -37,13 +37,10 @@ nlu:
     - How can you help me?
     - What can you do for me?
     - how can you assist me?
-<<<<<<< Updated upstream
     - Can you help me?
     - I need some assistance.
     - I'm having trouble, can you help?
     - Could you lend me a hand?
-=======
->>>>>>> Stashed changes
 
 - intent: query_law
   examples: |
@@ -78,7 +75,6 @@ nlu:
     - When does the court appoint a date for the pre-trial conference to commence, as outlined in the relevant legal provision, either upon the filing of the answer or under what circumstances if a replication is permitted?
     - What amendment has been made to subsection (1) of Section 104 of the principal enactment, specifically regarding the timing for a party to an action to take a certain action, as outlined in the provided text?
     - What are the circumstances under which the seat of a Member becomes vacant, as specified in the provided text, including reasons such as resignation, death, assumption of the office of President, disqualification, employment in the public sector, absence from Parliament, declaration of void election, dissolution of Parliament, or expulsion via resolution?
-<<<<<<< Updated upstream
     - What are the penalties for driving under the influence of alcohol or drugs, as specified in the motor traffic regulations?
     - Can a person contest a traffic violation ticket issued by law enforcement officers, and if so, what is the procedure for contesting such a ticket?
     - Under what circumstances can a driver's license be suspended or revoked, as outlined in motor traffic laws?
@@ -99,8 +95,6 @@ nlu:
     - What legal avenues are available to tenants who have been unlawfully denied their security deposit refund by a landlord, as outlined in civil regulations?
     - Under what circumstances can a person be charged with manslaughter or homicide under criminal laws, and what are the potential penalties for these offenses?
     - What legal steps can be taken to enforce a court order for child custody or visitation rights, particularly in cases where one parent refuses to comply with the order?
-=======
->>>>>>> Stashed changes
 
 - intent: appreciation
   examples: |
@@ -111,14 +105,11 @@ nlu:
     - Thankz
     - thankyou
     - thnx
-<<<<<<< Updated upstream
     - Thank you for your assistance!
     - I appreciate your help.
     - Thanks for clarifying that.
     - I'm grateful for your guidance.
     - You've been very helpful, thank you!
-=======
->>>>>>> Stashed changes
 
 - intent: bot_challenge
   examples: |
@@ -128,7 +119,6 @@ nlu:
     - am I talking to a human?
     - who are you?
     - how are you?
-<<<<<<< Updated upstream
     - What's going on?
     - what's the weather today?
     - do you know any good places to travel
@@ -166,8 +156,7 @@ nlu:
     - 425;.'']/wsdef
     - 32*6
     - -+=^/';12!fdcg67[]';/.
-=======
->>>>>>> Stashed changes
+
 
 - intent: file_complaint
   examples: |
@@ -197,7 +186,6 @@ nlu:
     - The chatbot's interface was difficult to navigate, making it challenging to access relevant legal information efficiently.
     - Despite inputting detailed information about my legal issue, the chatbot's responses were generic and unhelpful.
     - I'm dissatisfied with the lack of real-time support or the ability to connect with a human lawyer through the chatbot platform.
-<<<<<<< Updated upstream
     - The chatbot frequently provided error messages, making it difficult to use.
     - Despite following the instructions provided, the chatbot failed to recognize or respond to my queries.
     - The language used by the chatbot was too technical and complex, making it challenging to understand.
@@ -227,5 +215,4 @@ nlu:
     - That's not relevant.
     - This seems wrong.
     - I don't understand
-=======
->>>>>>> Stashed changes
+

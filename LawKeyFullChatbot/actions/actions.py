@@ -90,8 +90,8 @@ class RetrieveLaws(Action):
         combined_similarities = (similarities_tfidf + similarities_word2vec) / 2
         highest_similarity = max(combined_similarities)
 
-        if highest_similarity < 0.48:
-            # If the highest similarity is below 0.5, there are no relevant laws in the dataset
+        if highest_similarity < 0.4988:
+            # If the highest similarity is below 0.4988, there are no relevant laws in the dataset
             message = ("I'm sorry, I can only assist with legal-related queries related to motor traffic, civil laws, "
                        "labor laws, criminal laws, and maintenance laws.I found no relevant laws in my database for "
                        "your query. However, I can still try to assist"
@@ -106,13 +106,12 @@ class RetrieveLaws(Action):
         sorted_indices = np.argsort(combined_similarities)[::-1][:3]
         top_laws = df["Law"].iloc[sorted_indices].tolist()
 
-        # Get summaries directly from the dataset (no similarity involved)
-        top_summaries = df[df['Law'].isin(top_laws)]['Law_Summary'].tolist()
-
         # Combine laws and summaries into a single list of dictionaries
         law_summary_pairs = []
-        for i, law in enumerate(top_laws):
-            law_summary_pairs.append({"Law": law, "Summary": top_summaries[i]})
+        for idx in sorted_indices:
+            law = df.iloc[idx]["Law"]
+            summary = df[df["Law"] == law]["Law_Summary"].tolist()[0]  # Get the exact summary for the law
+            law_summary_pairs.append({"Law": law, "Summary": summary})
 
         # Create and dispatch Rasa response
         message = f"Here are the top 3 relevant laws and their summaries based on your query:\n\n"

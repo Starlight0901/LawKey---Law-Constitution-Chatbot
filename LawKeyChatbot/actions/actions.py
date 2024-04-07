@@ -11,8 +11,8 @@ import string
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
-nltk.download('punkt')
-nltk.download('stopwords')
+#nltk.download('punkt')
+#nltk.download('stopwords')
 
 
 def law_cleaning(law):
@@ -47,9 +47,8 @@ def stemmer(tokens):
     stemmed_text = ' '.join(stemmed_words)
     return stemmed_text
 
-
 # Load your law dataset (modify for your data path)
-df = pd.read_csv("C:\BACHELORS\DSGP\LawKeyChatbot\data\dataset.csv")
+df = pd.read_csv("C:\\Users\\admin\\Desktop\\L5\\DSGP\\LawKey---Law-Constitution-Chatbot\\LawKeyChatbot\\data\\dataset.csv")
 
 # Load pre-trained word2vec model
 word_model = api.load("word2vec-google-news-300")
@@ -90,46 +89,22 @@ class RetrieveLaws(Action):
         combined_similarities = (similarities_tfidf + similarities_word2vec) / 2
         highest_similarity = max(combined_similarities)
 
-        if highest_similarity < 0.3:
-            # If the highest similarity is below 0.3, it's an out-of-scope query.
-            message = ("I'm sorry, I can only assist with legal-related queries related to motor traffic, "
-                       "civil laws, labor laws, criminal laws, and maintenance laws.\n\n")
-            message += (
-                f"\nHighest similarity - {highest_similarity}\n\nAre you satisfied with the answer? If not, feel free "
-                f"to file a complaint.")
-            dispatcher.utter_message(text=message)
-            return []
-
-        if highest_similarity < 0.5:
-            # If the highest similarity is below 0.5, there are no relevant laws in the dataset
-            message = ("I found no relevant laws in my database for your query. However, I can still try to assist "
-                       "you. Can you provide more details?\n\n")
-            message += (
-                f"\nHighest similarity - {highest_similarity}\nAre you satisfied with the answer? If not, feel free "
-                f"to file a complaint.")
-            dispatcher.utter_message(text=message)
-            return []
-
         # Retrieve top 3 relevant laws based on combined scores
         sorted_indices = np.argsort(combined_similarities)[::-1][:3]
         top_laws = df["Law"].iloc[sorted_indices].tolist()
 
-        # Get summaries directly from the dataset (no similarity involved)
-        top_summaries = df[df['Law'].isin(top_laws)]['Law_Summary'].tolist()
-
         # Combine laws and summaries into a single list of dictionaries
         law_summary_pairs = []
-        for i, law in enumerate(top_laws):
-            law_summary_pairs.append({"Law": law, "Summary": top_summaries[i]})
 
+        for idx in sorted_indices:
+            law = df.iloc[idx]["Law"]
+            summary = df[df["Law"] == law]["Law_Summary"].tolist()[0]  # Get the exact summary for the law
+            law_summary_pairs.append({"Law": law, "Summary":summary})
         # Create and dispatch Rasa response
         message = f"Here are the top 3 relevant laws and their summaries based on your query:\n\n"
         for law_summary in law_summary_pairs:
             message += f"- **Law:** {law_summary['Law']}\n"
             message += f"  **Summary:** {law_summary['Summary']}\n\n"
-        message += (
-            f"\nHighest similarity - {highest_similarity}\nAre you satisfied with the answer? If not, feel free "
-            f"to file a complaint.")
         dispatcher.utter_message(text=message)
 
         return [SlotSet("retrieved_laws", top_laws)]
@@ -144,7 +119,7 @@ class FileComplaint(Action):
         complaint_text = tracker.latest_message.get("text")
 
         # Define the path to the CSV file
-        csv_file_path = "C:\BACHELORS\DSGP\LawKeyChatbot\complaints\complaints.csv"
+        csv_file_path = "C:\\Users\\admin\\Desktop\\L5\\DSGP\\LawKey---Law-Constitution-Chatbot\\LawKeyChatbot\\complaints\\complaints.csv"
 
         # Write the complaint to the CSV file
         with open(csv_file_path, 'a', newline='', encoding='utf-8') as file:
@@ -153,5 +128,5 @@ class FileComplaint(Action):
 
         # Respond to the user
         dispatcher.utter_message(text="I'm sorry to hear that you're experiencing issues. Your complaint has been "
-                                      "stored. We will look into it shortly.")
+                                      "filed. We will look into it shortly.")
         return []

@@ -1,7 +1,5 @@
 import tempfile
 from datetime import datetime
-import firebase_admin
-from firebase_admin import credentials, firestore
 from firebase_admin import auth
 import streamlit as st
 import speech_recognition as sr
@@ -10,8 +8,6 @@ import run
 import pyrebase
 
 # fire base configuration
-
-
 config = {
     "apiKey": "AIzaSyDt4EqnrB2clEi1G2Mf_5OIyV9c2lfgE9M",
     "authDomain": "lawkey-561f0.firebaseapp.com",
@@ -21,7 +17,7 @@ config = {
     "messagingSenderId": "416592353192",
     "appId": "1:416592353192:web:177992bf2343da4edaaf9d"
 }
-# Initialize Firebase app using Pyrebase
+# Initializing Firebase app using Pyrebase
 firebase = pyrebase.initialize_app(config)
 auther = firebase.auth()
 
@@ -33,6 +29,7 @@ def is_authenticated():
     return 'user' in st.session_state
 
 
+# function to voice to text
 def recognize_speech():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -98,9 +95,9 @@ def homepage():
         if bt4.button('Already a Member?'):
             st.session_state.signin_clicked = True
     else:
-        if st.button('Create Account'):  # Button to navigate to sign-up page
-            st.session_state.signin_clicked = False  # Reset sign-in flag
-        signin_form = st.form(key='signin', clear_on_submit=True)
+        if st.button('Create Account'):
+            st.session_state.signin_clicked = False
+        signin_form = st.form(key='signin', clear_on_submit=True) #sign in
         with signin_form:
             st.subheader('Sign In')
             email = st.text_input("Email")
@@ -117,7 +114,7 @@ def homepage():
                     st.error("Failed to sign in. Please try again.")
                     print("Error during login:", e)
 
-    if not st.session_state.signin_clicked:
+    if not st.session_state.signin_clicked: #sign up
         signup_form = st.form(key='signup', clear_on_submit=True)
         with signup_form:
             st.subheader('Sign up')
@@ -134,7 +131,7 @@ def homepage():
                         if uid:
                             # Save user data to database
                             save_user_data(uid, email, username)
-                        st.session_state.signin_clicked = True  # Automatically switch to sign-in after sign-up
+                        st.session_state.signin_clicked = True  # Automatically switching to sign-in after sign-up
                         main()
                     except Exception as e:
                         st.error('An error occurred during signup. Please try again.')
@@ -153,11 +150,10 @@ def chatbot():
     recognized_text = st.chat_input("Say something")
     button_pressed = False
     col1, col2 = st.columns(2)
-    # Check if "🎙️ Speak" button is clicked
     if col1.button("🎙️ voice "):
         transcription = recognize_speech()
         recognized_text = transcription
-    # Check if "Press Me" button is pressed
+
     if col2.button(":loud_sound: speaker"):
         button_pressed = True
 
@@ -172,10 +168,10 @@ def chatbot():
         st.session_state.voice = recognized_text
         with st.container():
             st.session_state.messages.append({"role": "user", "content": recognized_text})
-            response, similarity, mapping, similar_state, q_table, query = run.main(recognized_text)
+            response, similarity, mapping, similar_state, q_table, query = run.main(recognized_text) #getting the responce
             st.session_state.session_data.append(
                 {'query': query, 'similar_state': similar_state, 'response': response, 'similarity': similarity,
-                 'mapping': mapping, 'q_table': q_table})
+                 'mapping': mapping, 'q_table': q_table})  #saving the responce
             st.session_state.messages.append({"role": "AI", "content": response})
             save_chat_message("AI", st.session_state.user, query, response)
             st.session_state.voice = response
@@ -185,7 +181,7 @@ def chatbot():
     else:
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
-                st.markdown(message["content"])
+                st.markdown(message["content"])   #getting feedback for  R learning
         st.write('please give a feedback for the response')
         emoji_positive = "😃"
         emoji_neutral = "😐"
@@ -265,10 +261,10 @@ def about_us():
 
     st.write("""
     -Specializing in
-      -Motor Traffic Laws
-      -Criminal Laws pertaining to the rights and entitlements of victims of crime and witnesses
-      -Procedural Civil Laws
-      -Labor Laws concerning wages
+      Motor Traffic Laws
+      Criminal Laws pertaining to the rights and entitlements of victims of crime and witnesses
+      Procedural Civil Laws
+      Labor Laws concerning wages
         
     our application offers unparalleled support to individuals navigating the intricacies of the Sri Lankan legal system by the law and explaination.
     """)
@@ -282,11 +278,9 @@ def logout():
     # Clear session state to remove user authentication information
     if 'user' in st.session_state:
         del st.session_state['user']
-    st.session_state.signin_clicked = False  # Reset signin_clicked flag if needed
-    st.session_state.messages = []  # Clear chat history if needed
-    # You can also clear any other session sta
+    st.session_state.signin_clicked = False
+    st.session_state.messages = []  # Clearing chat history
 
-    # Sign out user from Firebase
     try:
         auth.revoke_refresh_tokens(st.session_state.user['idToken'])
     except Exception as e:

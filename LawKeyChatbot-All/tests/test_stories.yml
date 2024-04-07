@@ -1,0 +1,126 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+
+- story: Greet and ask about services
+  steps:
+  - user: |
+      Hello, how can you assist me?
+    intent: ask_about_services
+  - action: utter_services
+
+- story: Query law and express appreciation
+  steps:
+  - user: |
+      Can you provide information about labor laws?
+    intent: query_law
+  - action: retrieve_laws
+  - user: |
+      Thanks for the help.
+    intent: appreciation
+  - action: utter_appreciation
+
+- story: File complaint and say goodbye
+  steps:
+  - user: |
+      The information provided was outdated and unhelpful.
+    intent: file_complaint
+  - action: handle_complaint_details
+  - user: |
+      Goodbye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: Bot challenge and response
+  steps:
+  - user: |
+      Are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+- story: Greet and query law
+  steps:
+  - user: |
+      Hi there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      What happens if someone commits a crime under certain circumstances?
+    intent: query_law
+  - action: retrieve_laws
+
+- story: Appreciate and file complaint
+  steps:
+  - user: |
+      Thank you for the assistance.
+    intent: appreciation
+  - action: utter_appreciation
+  - user: |
+      I'm dissatisfied with the service provided.
+    intent: file_complaint
+  - action: handle_complaint_details
+
+- story: Multiple queries and goodbye
+  steps:
+  - user: |
+      Hi, I have queries about labor laws and civil laws.
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Can you explain the rights of employees under labor laws?
+    intent: query_law
+  - action: retrieve_laws
+  - user: |
+      What are the procedures for filing a civil lawsuit?
+    intent: query_law
+  - action: retrieve_laws
+  - user: |
+      Thanks, I'm done for now. Goodbye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: Greet, query law, appreciate, and say goodbye
+  steps:
+  - user: |
+      Hello! Can you provide information about maintenance laws?
+    intent: greet
+  - action: utter_greet
+  - user: |
+      What are the provisions for maintenance if the individual no longer fits the defined categories?
+    intent: query_law
+  - action: retrieve_laws
+  - user: |
+      Thanks for the help.
+    intent: appreciation
+  - action: utter_appreciation
+  - user: |
+      Goodbye.
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: Bot challenge and appreciate
+  steps:
+  - user: |
+      Are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+  - user: |
+      Thank you for the information.
+    intent: appreciation
+  - action: utter_appreciation
+
+- story: Query law, file complaint, and say goodbye
+  steps:
+  - user: |
+      Can you provide information about motor traffic laws?
+    intent: query_law
+  - action: retrieve_laws
+  - user: |
+      The information provided doesn't match my query.
+    intent: file_complaint
+  - action: handle_complaint_details
+  - user: |
+      Goodbye!
+    intent: goodbye
+  - action: utter_goodbye

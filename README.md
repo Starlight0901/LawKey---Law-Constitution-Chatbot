@@ -7,15 +7,15 @@ Explaination of Law-Key chatbot
 
 ### Installing Libraries
 Before you run the application check if the needed libraries are installed. If not execute the below pip install commands in your terminal to install the libraries.
-pip install firebase-admin
-pip install streamlit
-pip install SpeechRecognition
-pip install gTTS
-pip install pyrebase4
-pip install pyAudio
-pip install rasa
-pip install gensim
-pip install nltk
+- pip install firebase-admin
+- pip install streamlit
+- pip install SpeechRecognition
+- pip install gTTS
+- pip install pyrebase4
+- pip install pyAudio
+- pip install rasa
+- pip install gensim
+- pip install nltk
 
 ### Change Filepaths
 Make sure to change the file paths in the below code lines of the files

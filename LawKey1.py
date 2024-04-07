@@ -1,9 +1,8 @@
-import io
 import tempfile
+from datetime import datetime
 import firebase_admin
-from firebase_admin import credentials
+from firebase_admin import credentials, firestore
 from firebase_admin import auth
-import requests
 import streamlit as st
 import speech_recognition as sr
 from gtts import gTTS
@@ -11,7 +10,7 @@ import run
 import pyrebase
 
 # fire base configuration
-creden = credentials.Certificate('lawkey-561f0-54b1d35f6611.json')
+
 
 config = {
     "apiKey": "AIzaSyDt4EqnrB2clEi1G2Mf_5OIyV9c2lfgE9M",
@@ -22,9 +21,12 @@ config = {
     "messagingSenderId": "416592353192",
     "appId": "1:416592353192:web:177992bf2343da4edaaf9d"
 }
-#firebase_admin.initialize_app(creden)
+# Initialize Firebase app using Pyrebase
 firebase = pyrebase.initialize_app(config)
 auther = firebase.auth()
+
+# Access Firestore client
+db = firebase.database()
 
 
 def is_authenticated():
@@ -58,44 +60,33 @@ def play_speech(tts):
         st.audio(temp_audio.name, format='audio/mp3')
 
 
-# def login(email, password):
-#     try:
-#         auth_user = auth.sign_in_with_email_and_password(email, password)
-#         return auth_user
-#     except auth.InvalidEmailException:
-#         return None
-#     except auth.InvalidPasswordException:
-#         return None
-#     except auth.UserNotFoundException:
-#         return None
+def get_chat_history(username):
+    user_ref = db.child("users_chat").child(username)
+    chat_history = user_ref.child("chatHistory").get()
+    return chat_history
+
+
+def save_chat_message(bot, username, content_user, content_bot):
+    chat_ref = db.child("users_chat").child(username).child("chatHistory")
+    timestamp = str(datetime.now())  # Converting timestamp to string
+    new_chat_ref = chat_ref.push({
+        'bot ': bot,
+        'recipientId': username,
+        'content_user': content_user,
+        'content_bot': content_bot,
+        'timestamp': timestamp
+    })
+
+
+def save_user_data(uid, email, username):
+    user_data = {"email": email, "name": username}
+    db.child("users_data").child(uid).set(user_data)
 
 
 def get_user_details(uid):
-    try:
-        user = auth.get_user(uid)
-        st.write(user)
-        return user
-    except auther.AuthError as e:
-        print("Error retrieving user details:", e)
-        return None
-
-
-# def signin():
-#     signin_form = st.form(key='signin', clear_on_submit=True)
-#     with signin_form:
-#         email = st.text_input("Email")
-#         password = st.text_input("Password", type="password")
-#
-#         if signin_form.form_submit_button("Login"):
-#             try:
-#                 st.write(email,password)
-#                 user = auther.sign_in_with_email_and_password(email, password)
-#                 st.success("Logged in successfully")
-#                 st.write(user)
-#             except Exception as e:
-#
-#                 st.write(e)
-#                 st.error("Failed to log in")
+    user_data = db.child("users_data").child(uid).get().val()
+    user_name = user_data.get("name")
+    return user_name
 
 
 def homepage():
@@ -107,6 +98,8 @@ def homepage():
         if bt4.button('Already a Member?'):
             st.session_state.signin_clicked = True
     else:
+        if st.button('Create Account'):  # Button to navigate to sign-up page
+            st.session_state.signin_clicked = False  # Reset sign-in flag
         signin_form = st.form(key='signin', clear_on_submit=True)
         with signin_form:
             st.subheader('Sign In')
@@ -116,10 +109,12 @@ def homepage():
             if signin_form.form_submit_button("Login"):
                 try:
                     user = auther.sign_in_with_email_and_password(email, password)
-                    st.success("Logged in successfully")
-                    st.session_state.user = user
+                    st.success("Sign in successfully")
+                    user_name = get_user_details(user['localId'])
+                    st.session_state.user = user_name
+
                 except Exception as e:
-                    st.error("Failed to log in. Please try again.")
+                    st.error("Failed to sign in. Please try again.")
                     print("Error during login:", e)
 
     if not st.session_state.signin_clicked:
@@ -133,12 +128,18 @@ def homepage():
             if signup_form.form_submit_button('Sign Up'):
                 if password == confirm_password:
                     try:
-                        auth.create_user(email=email, password=password, uid=username)
-                        st.success('Account created successfully')
+                        user = auther.create_user_with_email_and_password(email=email, password=password)
+                        st.success('Account created successfully. You can now sign in using Already a member.')
+                        uid = user['localId']
+                        if uid:
+                            # Save user data to database
+                            save_user_data(uid, email, username)
                         st.session_state.signin_clicked = True  # Automatically switch to sign-in after sign-up
+                        main()
                     except Exception as e:
                         st.error('An error occurred during signup. Please try again.')
                         print("Error during signup:", e)
+                        return None
                 else:
                     st.error('Passwords do not match')
 
@@ -146,7 +147,7 @@ def homepage():
 def chatbot():
     st.title("LAW-Key")
     with st.sidebar:
-        if st.button("Log Out"):
+        if st.button("Sign Out"):
             logout()
 
     recognized_text = st.chat_input("Say something")
@@ -176,10 +177,11 @@ def chatbot():
                 {'query': query, 'similar_state': similar_state, 'response': response, 'similarity': similarity,
                  'mapping': mapping, 'q_table': q_table})
             st.session_state.messages.append({"role": "AI", "content": response})
+            save_chat_message("AI", st.session_state.user, query, response)
             st.session_state.voice = response
     if not st.session_state.messages:
         with st.chat_message("ai"):
-            st.write("Hello 👋")
+            st.write("Hello ", st.session_state.user, "👋")
     else:
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
@@ -235,16 +237,45 @@ def chatbot():
         play_speech(tts2)
 
 
-def account():
-    st.title("Account")
+def Chat_History():
+    st.title("Chat History Viewer")
+    chat_history = db.child("users_chat").child(st.session_state.user).child("chatHistory").get().val()
+
+    if chat_history:
+        st.subheader("Chat History")
+        for message_key, message_data in chat_history.items():
+            st.write("Timestamp:", message_data["timestamp"])
+            st.write("Question:", message_data["content_user"])
+            st.write("Answer:", message_data["content_bot"])
+            st.write("---")
+    else:
+        st.write("No chat history available.")
 
 
 def helpu():
-    st.title("how can we help")
+    st.title("How can we Help")
 
 
 def about_us():
-    st.title("We are ")
+    st.title("Welcome to LAW-Key ")
+    st.subheader("Law Constitution Chatbot, ")
+    st.write("where we fuse legal empowerment with technological innovation. Our Law Constitutional Chatbot app is "
+             "tailored for Sri Lanka's intricate legal terrain, offering accessible and reliable guidance on various "
+             "legal issues.")
+
+    st.write("""
+    -Specializing in
+      -Motor Traffic Laws
+      -Criminal Laws pertaining to the rights and entitlements of victims of crime and witnesses
+      -Procedural Civil Laws
+      -Labor Laws concerning wages
+        
+    our application offers unparalleled support to individuals navigating the intricacies of the Sri Lankan legal system by the law and explaination.
+    """)
+
+    st.write("Driven by a passion for democratizing legal knowledge, our team of experts has painstakingly curated a "
+             "wealth of accurate and up-to-date information, ensuring that our users are equipped with the resources "
+             "they need to make informed decisions.")
 
 
 def logout():
@@ -253,7 +284,7 @@ def logout():
         del st.session_state['user']
     st.session_state.signin_clicked = False  # Reset signin_clicked flag if needed
     st.session_state.messages = []  # Clear chat history if needed
-    # You can also clear any other session state variables that need to be reset upon logout
+    # You can also clear any other session sta
 
     # Sign out user from Firebase
     try:
@@ -267,17 +298,15 @@ def logout():
 def main():
     st.sidebar.title("Navigation")
     if is_authenticated():
-        page_options = ["Chatbot", "Account", "About us", "Help"]
+        page_options = ["Chatbot", "Chat History", "About us"]
         selected_page = st.sidebar.selectbox("Select Page", page_options)
 
         if selected_page == "Chatbot":
             chatbot()
-        elif selected_page == "Account":
-            account()
+        elif selected_page == "Chat History":
+            Chat_History()
         elif selected_page == "About us":
             about_us()
-        elif selected_page == "Help":
-            helpu()
     else:
         homepage()
 

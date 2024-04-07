@@ -8,9 +8,9 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 import requests
-from LawKey.actions.actions import law_cleaning, tokenize, remove_stopwords, stemmer
+from LawKeyChatbot.actions.actions import law_cleaning, tokenize, remove_stopwords, stemmer
 
-df = pd.read_csv("C:\\Users\\admin\\Desktop\\L5\\DSGP\\LawKey---Law-Constitution-Chatbot\\data.csv")
+df = pd.read_csv("C:\\Users\\admin\\Desktop\\L5\\DSGP\\LawKey---Law-Constitution-Chatbot\\LawKeyChatbot\\data\\dataset.csv")
 word_model = api.load("word2vec-google-news-300")
 vectorized = TfidfVectorizer(stop_words=stopwords.words("english"))
 doc_vectors_tfidf = vectorized.fit_transform(df["Law"])
@@ -42,8 +42,13 @@ def calculate_similarity_random_laws(input_text):
     sorted_indices = np.argsort(combined_similarities)[::-1][:10]
     top_indices = sorted_indices[3:]
     laws = df["Law"].iloc[top_indices].tolist()
+    top_summaries = df[df['Law'].isin(laws)]['Law_Summary'].tolist()
 
-    random_laws = random.sample(laws, k=3)
+    law_summary_pairs = []
+    for i, law in enumerate(laws):
+        law_summary_pairs.append({"Law": law, "Summary": top_summaries[i]})
+
+    random_laws = random.sample(law_summary_pairs, k=3)
 
     return highest_similarity , random_laws
 
@@ -92,9 +97,10 @@ class Agent:
                 preprocessed_q_table_action = preprocess_response(self.map_index2action[min_q_value_index])
                 if preprocessed_rasa_response == preprocessed_q_table_action:
                     similarity, random_laws = calculate_similarity_random_laws(state)
-                    message = f"Here are the top 3 relevant laws based on your query:\n\n"
-                    for law in random_laws:
-                        message += f"-> {law}\n"
+                    message = f"Here are the top 3 relevant laws and their summaries for :\n\n"
+                    for law_summary in random_laws:
+                        message += f"- **Law:** {law_summary['Law']}\n"
+                        message += f"- **Summary:** {law_summary['Summary']}\n\n"
                     print('second one')
                     print(message)
                     return message , 0
@@ -102,8 +108,8 @@ class Agent:
                     similarity, random_laws = calculate_similarity_random_laws(state)
                     print(min(q_values))
                     print('third one')
-                    # print('q: ',preprocessed_q_table_action)
-                    # print('rasa: ', preprocessed_rasa_response)
+                    print('q: ',preprocessed_q_table_action)
+                    print('rasa: ', preprocessed_rasa_response)
                     return rasa_response, similarity
             else:
                 response = self.get_response_from_rasa(state)
@@ -124,15 +130,25 @@ class Agent:
 
         if len(rasa_response) > 1:
             message = rasa_response[0]['text']
-            laws = rasa_response[1]['text']
 
-            # Split laws based on "-" sign and get the first 3 laws
-            law_list = laws.split('-')
-            first_3_laws = '\n'.join(law_list[:4])
+            # Extract all laws and summaries from the Rasa response
+            laws_and_summaries = []
+            for entry in rasa_response[1:]:
 
-            formatted_output = f"{message}\n{first_3_laws}"
+                law = entry['text'].split('**Law:** ')[1].split(' **Summary:**')[0].strip()
+                summary = entry['text'].split('**Summary:** ')[1].strip()
+
+                combined_entry = f"- **Law:** {law}\n - **Summary:** {summary}"
+
+                laws_and_summaries.append(combined_entry)
+
+            # Join laws and summaries using '\n\n' to keep each law and its summary together
+            joined_laws_and_summaries = '\n\n'.join(laws_and_summaries)
+
+            # Format the output
+            formatted_output = message + '\n\n' + joined_laws_and_summaries
+
             similarity, random_laws = calculate_similarity_random_laws(state)
-            # print(formatted_output)
             print(similarity)
             return formatted_output
         elif len(rasa_response) == 1:
